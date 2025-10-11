@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0dm5722t1ls7"]
+
+[ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://mapa.tscn" id="1_evvns"]
+[ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
+
+[node name="jogo" type="Node2D"]
+
+[node name="Mapa" parent="." instance=ExtResource("1_evvns")]
+
+[node name="Player" parent="." instance=ExtResource("2_yq54j")]
+position = Vector2(-26, 6)
