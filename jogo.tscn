@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
 
 [node name="jogo" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Mapa" parent="." instance=ExtResource("1_evvns")]
 
 [node name="Player" parent="." instance=ExtResource("2_yq54j")]
-position = Vector2(-26, 6)
+y_sort_enabled = true
+position = Vector2(146, 78)
