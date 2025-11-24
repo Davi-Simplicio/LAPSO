@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://0dm5722t1ls7"]
+[gd_scene load_steps=5 format=3 uid="uid://0dm5722t1ls7"]
 
 [ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://mapa.tscn" id="1_evvns"]
 [ext_resource type="PackedScene" uid="uid://bco2k2fhfgfpq" path="res://door.tscn" id="2_1ap6j"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
+[ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://npc.tscn" id="4_1ap6j"]
 
 [node name="jogo" type="Node2D"]
 y_sort_enabled = true
@@ -11,14 +12,12 @@ y_sort_enabled = true
 
 [node name="Door" parent="." node_paths=PackedStringArray("destination_point") instance=ExtResource("2_1ap6j")]
 z_index = 1
-position = Vector2(73, -48)
-scale = Vector2(0.01, 0.01)
+position = Vector2(73, -49)
 destination_point = NodePath("../Room2SpawnPoint2")
 
 [node name="Door2" parent="." node_paths=PackedStringArray("destination_point") instance=ExtResource("2_1ap6j")]
 z_index = 1
 position = Vector2(74, -124)
-scale = Vector2(0.01, 0.01)
 destination_point = NodePath("../Room2SpawnPoint")
 
 [node name="Player" parent="." instance=ExtResource("2_yq54j")]
@@ -31,3 +30,8 @@ position = Vector2(28, -176)
 
 [node name="Room2SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(89, 17)
+
+[node name="NPC 1" parent="." instance=ExtResource("4_1ap6j")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-19, -6)

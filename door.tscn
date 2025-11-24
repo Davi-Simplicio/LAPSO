@@ -4,20 +4,31 @@
 [ext_resource type="Script" uid="uid://sexn7r33ldum" path="res://portal_door.gd" id="1_v6xrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
-size = Vector2(2541, 4675)
+size = Vector2(26, 48)
 
 [node name="PortalDoor" type="Area2D"]
 script = ExtResource("1_v6xrn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-116, -701.23193)
+position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_v6xrn")
 
 [node name="Door" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
-position = Vector2(-108, -718.73193)
-scale = Vector2(100, 104.316)
+position = Vector2(-1, -6)
+scale = Vector2(1, 1.043)
 texture = ExtResource("1_ba8gm")
 region_enabled = true
 region_rect = Rect2(130.93073, 1.8370657, 26.222504, 46.071747)
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 118.0
+offset_bottom = 9.0
+scale = Vector2(0.3, 0.3)
+text = "Press E to Open"
+horizontal_alignment = 1
+vertical_alignment = 1
