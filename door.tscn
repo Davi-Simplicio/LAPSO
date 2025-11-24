@@ -6,16 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
 size = Vector2(2541, 4675)
 
-[node name="Door" type="Node2D"]
-
-[node name="PortalDoor" type="Area2D" parent="."]
+[node name="PortalDoor" type="Area2D"]
 script = ExtResource("1_v6xrn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-116, -701.23193)
 shape = SubResource("RectangleShape2D_v6xrn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Door" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
 position = Vector2(-108, -718.73193)
 scale = Vector2(100, 104.316)
 texture = ExtResource("1_ba8gm")

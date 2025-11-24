@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 200.0
+@export var speed = 100.0
 
 # Get references to the nodes
 @onready var anim_player = $AnimationPlayer
@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 func _physics_process(_delta):
 	# 1. GET INPUT
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	
 	# 2. MOVE
 	if direction:
