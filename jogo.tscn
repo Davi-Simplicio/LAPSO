@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://0dm5722t1ls7"]
+[gd_scene load_steps=4 format=3 uid="uid://0dm5722t1ls7"]
 
 [ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://mapa.tscn" id="1_evvns"]
+[ext_resource type="PackedScene" uid="uid://bco2k2fhfgfpq" path="res://door.tscn" id="2_1ap6j"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
 
 [node name="jogo" type="Node2D"]
@@ -8,6 +9,32 @@ y_sort_enabled = true
 
 [node name="Mapa" parent="." instance=ExtResource("1_evvns")]
 
+[node name="Door" parent="." instance=ExtResource("2_1ap6j")]
+z_index = 1
+position = Vector2(73, -48)
+scale = Vector2(0.01, 0.01)
+
+[node name="PortalDoor" parent="Door" index="0" node_paths=PackedStringArray("destination_point")]
+destination_point = NodePath("../../Room2SpawnPoint2")
+
+[node name="Door2" parent="." instance=ExtResource("2_1ap6j")]
+z_index = 1
+position = Vector2(74, -124)
+scale = Vector2(0.01, 0.01)
+
+[node name="PortalDoor" parent="Door2" index="0" node_paths=PackedStringArray("destination_point")]
+destination_point = NodePath("../../Room2SpawnPoint")
+
 [node name="Player" parent="." instance=ExtResource("2_yq54j")]
+z_index = 1
 y_sort_enabled = true
-position = Vector2(146, 78)
+position = Vector2(38, 10)
+
+[node name="Room2SpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(28, -176)
+
+[node name="Room2SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(72, -24)
+
+[editable path="Door"]
+[editable path="Door2"]

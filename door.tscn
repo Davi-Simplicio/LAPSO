@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bco2k2fhfgfpq"]
+
+[ext_resource type="Texture2D" uid="uid://cuakiiis8wl6c" path="res://house_assets/TopDownHouse_DoorsAndWindows.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://sexn7r33ldum" path="res://portal_door.gd" id="1_v6xrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(2541, 4675)
+
+[node name="Door" type="Node2D"]
+
+[node name="PortalDoor" type="Area2D" parent="."]
+script = ExtResource("1_v6xrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalDoor"]
+position = Vector2(-116, -701.23193)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-108, -718.73193)
+scale = Vector2(100, 104.316)
+texture = ExtResource("1_ba8gm")
+region_enabled = true
+region_rect = Rect2(130.93073, 1.8370657, 26.222504, 46.071747)
