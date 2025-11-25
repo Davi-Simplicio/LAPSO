@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://6foeujt16n08"]
+
+[ext_resource type="Script" uid="uid://m1e5fkbwjrn3" path="res://dialogue_box.gd" id="1_yc7nv"]
+[ext_resource type="Texture2D" uid="uid://o7k28xi26p61" path="res://NPC's/Gemini_Generated_Image_b8dph3b8dph3b8dp-removebg-preview.png" id="2_3coqq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfxbl"]
+bg_color = Color(0.99215686, 0.9764706, 0.92941177, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8156863, 0.7529412, 0.6117647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yc7nv")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 14.0
+offset_top = 452.0
+offset_right = 1133.0
+offset_bottom = 643.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kfxbl")
+
+[node name="TextField" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 11.0
+offset_right = 1114.0
+offset_bottom = 182.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Teste
+"
+
+[node name="Portrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 201.0
+offset_bottom = 189.0
+texture = ExtResource("2_3coqq")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1018.0
+offset_top = 165.0
+offset_right = 1114.0
+offset_bottom = 192.0
+text = "CLOSE"
+
+[node name="DialogueBox" type="Node2D" parent="."]
+position = Vector2(0, 452)
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

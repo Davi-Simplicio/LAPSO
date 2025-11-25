@@ -2,10 +2,8 @@ extends CharacterBody2D
 
 @onready var interaction_label = $Label
 @onready var anim_player = $AnimationPlayer
-
-# You can type unique text for each NPC in the Inspector
-@export_multiline var dialogue_text: String = "Hello! I am an NPC."
-
+@export_multiline var dialogue_text: String = "Hello!"
+@export var face_texture: Texture2D  # <--- Drag the face image here in Inspector!
 var player_in_range = false
 
 func _ready():
@@ -17,11 +15,9 @@ func _unhandled_input(event):
 		start_dialogue()
 
 func start_dialogue():
-	print("NPC Says: ", dialogue_text)
-	# Later, you will connect this to your HUD to show a real text box
-	# For now, we just print to the console or show a bubble
-
-# --- Signal Connections from InteractionArea ---
+	# We call the group "dialogue_ui" and trigger the function "show_dialogue"
+	# We pass 2 arguments: The text, and the face image.
+	get_tree().call_group("dialogue_ui", "show_dialogue", dialogue_text, face_texture)
 
 func _on_interaction_area_body_entered(body):
 	if body.is_in_group("player"):

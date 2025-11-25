@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://0dm5722t1ls7"]
+[gd_scene load_steps=7 format=3 uid="uid://0dm5722t1ls7"]
 
 [ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://mapa.tscn" id="1_evvns"]
 [ext_resource type="PackedScene" uid="uid://bco2k2fhfgfpq" path="res://door.tscn" id="2_1ap6j"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
 [ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://npc.tscn" id="4_1ap6j"]
+[ext_resource type="Texture2D" uid="uid://o7k28xi26p61" path="res://NPC's/Gemini_Generated_Image_b8dph3b8dph3b8dp-removebg-preview.png" id="5_8c340"]
+[ext_resource type="PackedScene" uid="uid://6foeujt16n08" path="res://dialogueBox.tscn" id="5_qn35j"]
 
 [node name="jogo" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(187, 230)
 
 [node name="Mapa" parent="." instance=ExtResource("1_evvns")]
 
@@ -35,3 +38,7 @@ position = Vector2(89, 17)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-19, -6)
+dialogue_text = "Hello, are you Cleber's Son?"
+face_texture = ExtResource("5_8c340")
+
+[node name="DialogueBox" parent="." groups=["dialogue_ui"] instance=ExtResource("5_qn35j")]
