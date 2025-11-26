@@ -44,12 +44,21 @@ offset_bottom = 189.0
 texture = ExtResource("2_3coqq")
 expand_mode = 1
 
+[node name="ChoicesContainer" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 865.0
+offset_top = 7.0
+offset_right = 1114.0
+offset_bottom = 145.0
+alignment = 2
+
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 1018.0
-offset_top = 165.0
+offset_left = 865.0
+offset_top = 155.0
 offset_right = 1114.0
-offset_bottom = 192.0
+offset_bottom = 186.0
 text = "CLOSE"
 
 [node name="DialogueBox" type="Node2D" parent="."]
