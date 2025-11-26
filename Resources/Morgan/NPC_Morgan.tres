@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://cmbys0kn5mysk"]
+
+[ext_resource type="Texture2D" uid="uid://o7k28xi26p61" path="res://NPC's/Gemini_Generated_Image_b8dph3b8dph3b8dp-removebg-preview.png" id="1_n3l88"]
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://NPCResource.gd" id="2_bc76r"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://DialogueTopic.gd" id="3_ojkxx"]
+[ext_resource type="Resource" uid="uid://cahikdj5npk00" path="res://Resources/Morgan/normal_talk.tres" id="4_jlqab"]
+[ext_resource type="Resource" uid="uid://dm0ofax4gqffo" path="res://Resources/Morgan/Topic_AboutPostIt.tres" id="5_frxum"]
+
+[resource]
+script = ExtResource("2_bc76r")
+npc_name = "Morgan"
+portrait = ExtResource("1_n3l88")
+greeting_text = "Hello, How are you?"
+topics = Array[ExtResource("3_ojkxx")]([ExtResource("4_jlqab"), ExtResource("5_frxum")])
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

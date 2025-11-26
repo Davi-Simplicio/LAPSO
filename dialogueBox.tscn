@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://6foeujt16n08"]
+[gd_scene load_steps=5 format=3 uid="uid://6foeujt16n08"]
 
 [ext_resource type="Script" uid="uid://m1e5fkbwjrn3" path="res://dialogue_box.gd" id="1_yc7nv"]
 [ext_resource type="Texture2D" uid="uid://o7k28xi26p61" path="res://NPC's/Gemini_Generated_Image_b8dph3b8dph3b8dp-removebg-preview.png" id="2_3coqq"]
@@ -15,6 +15,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3coqq"]
+bg_color = Color(0.015686275, 0.6745098, 0.76862746, 0.6156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_yc7nv")
 
@@ -25,11 +32,24 @@ offset_right = 1133.0
 offset_bottom = 643.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kfxbl")
 
+[node name="AdvanceButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -452.0
+offset_right = 15.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
 [node name="TextField" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 242.0
 offset_top = 11.0
-offset_right = 1114.0
+offset_right = 854.0
 offset_bottom = 182.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Teste
@@ -50,18 +70,22 @@ layout_mode = 0
 offset_left = 865.0
 offset_top = 7.0
 offset_right = 1114.0
-offset_bottom = 145.0
+offset_bottom = 184.0
 alignment = 2
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="NameLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 865.0
-offset_top = 155.0
-offset_right = 1114.0
-offset_bottom = 186.0
-text = "CLOSE"
+offset_left = 3.0
+offset_top = 148.0
+offset_right = 205.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3coqq")
+text = "Morgan"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DialogueBox" type="Node2D" parent="."]
 position = Vector2(0, 452)
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/AdvanceButton" to="." method="_on_advance_pressed"]

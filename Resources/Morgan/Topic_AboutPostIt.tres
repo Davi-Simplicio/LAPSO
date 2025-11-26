@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueTopic" load_steps=2 format=3 uid="uid://dm0ofax4gqffo"]
+
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://DialogueTopic.gd" id="1_ufonm"]
+
+[resource]
+script = ExtResource("1_ufonm")
+button_label = "Ask about the yellow note"
+required_fact_id = "found_post_it"
+lines = Array[String](["Player: I found This note that is assigned with your name, what this means?", "NPC: Oh, this a long history..."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"

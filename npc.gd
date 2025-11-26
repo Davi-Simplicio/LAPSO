@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var interaction_label = $Label
 @onready var anim_player = $AnimationPlayer
 @export_multiline var dialogue_text: String = "Hello!"
-@export var face_texture: Texture2D  # <--- Drag the face image here in Inspector!
+@export var my_data: NPCResource
 var player_in_range = false
 
 func _ready():
@@ -17,7 +17,7 @@ func _unhandled_input(event):
 func start_dialogue():
 	# We call the group "dialogue_ui" and trigger the function "show_dialogue"
 	# We pass 2 arguments: The text, and the face image.
-	get_tree().call_group("dialogue_ui", "show_dialogue", dialogue_text, face_texture)
+	DialogueBox.start_dialogue(my_data)
 
 func _on_interaction_area_body_entered(body):
 	if body.is_in_group("player"):
