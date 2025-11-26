@@ -24,7 +24,7 @@ position = Vector2(74, -124)
 destination_point = NodePath("../Room2SpawnPoint")
 
 [node name="Player" parent="." instance=ExtResource("2_yq54j")]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 position = Vector2(38, 10)
 
