@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://6foeujt16n08"]
+[gd_scene load_steps=6 format=3 uid="uid://6foeujt16n08"]
 
 [ext_resource type="Script" uid="uid://m1e5fkbwjrn3" path="res://dialogue_box.gd" id="1_yc7nv"]
 [ext_resource type="Texture2D" uid="uid://o7k28xi26p61" path="res://NPC's/Gemini_Generated_Image_b8dph3b8dph3b8dp-removebg-preview.png" id="2_3coqq"]
+[ext_resource type="Texture2D" uid="uid://dq0wsxjh20wjx" path="res://NPC's/Gemini_Generated_Image_uho4opuho4opuho4-removebg-preview.png" id="2_kfxbl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfxbl"]
 bg_color = Color(0.99215686, 0.9764706, 0.92941177, 1)
@@ -54,30 +55,52 @@ offset_bottom = 182.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Teste
 "
+horizontal_alignment = 2
 
-[node name="Portrait" type="TextureRect" parent="Panel"]
+[node name="LeftPortrait" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 9.0
 offset_top = 2.0
-offset_right = 201.0
+offset_right = 204.0
+offset_bottom = 189.0
+texture = ExtResource("2_kfxbl")
+expand_mode = 1
+
+[node name="RightPortrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 2.0
+offset_right = 1106.0
 offset_bottom = 189.0
 texture = ExtResource("2_3coqq")
 expand_mode = 1
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="Panel"]
-visible = false
 layout_mode = 0
-offset_left = 865.0
-offset_top = 7.0
-offset_right = 1114.0
-offset_bottom = 184.0
+offset_left = 6.0
+offset_top = -143.0
+offset_right = 231.0
+offset_bottom = -8.0
 alignment = 2
 
-[node name="NameLabel" type="RichTextLabel" parent="Panel"]
+[node name="LeftName" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 3.0
+offset_left = 12.0
+offset_top = 147.0
+offset_right = 214.0
+offset_bottom = 187.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3coqq")
+text = "José
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightName" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 908.0
 offset_top = 148.0
-offset_right = 205.0
+offset_right = 1110.0
 offset_bottom = 188.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_3coqq")

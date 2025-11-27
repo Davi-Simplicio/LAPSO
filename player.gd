@@ -5,6 +5,7 @@ extends CharacterBody2D
 # Get references to the nodes
 @onready var anim_player = $AnimationPlayer
 @onready var sprite = $Sprite2D
+@onready var doc_menu = $"../DocumentsMenu"
 
 var can_move = true
 
@@ -50,3 +51,10 @@ func update_animation(dir):
 		anim_player.play("walk up")
 	elif dir.y > 0:
 		anim_player.play("walk down")
+		
+func _unhandled_input(event):
+	if event.is_action_pressed("open_journal"): # Define this in Input Map (e.g. "J" or "Tab")
+		if doc_menu.visible:
+			doc_menu.close_menu()
+		else:
+			doc_menu.open_menu()

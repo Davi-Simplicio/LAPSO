@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ccv2b")
 button_label = "Talk"
-lines = Array[String](["Player: I'm good and you?", "NPC: I'm fine too."])
+lines = Array[String](["José: I'm good and you?", "Morgan: I'm fine too."])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
