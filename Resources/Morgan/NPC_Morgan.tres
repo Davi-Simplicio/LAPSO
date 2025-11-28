@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("2_bc76r")
-npc_name = "Morgan"
+npc_name = "Jane"
 portrait = ExtResource("1_n3l88")
 greeting_text = "Hello, How are you?"
 topics = Array[ExtResource("3_ojkxx")]([ExtResource("4_jlqab"), ExtResource("5_frxum")])

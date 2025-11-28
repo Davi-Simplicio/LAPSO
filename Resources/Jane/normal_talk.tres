@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueTopic" load_steps=2 format=3 uid="uid://dtuk14yexlyp6"]
+
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://DialogueTopic.gd" id="1_1vluy"]
+
+[resource]
+script = ExtResource("1_1vluy")
+button_label = "Talk"
+lines = Array[String](["José: Hello", "Jane: Are you okay?"])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
