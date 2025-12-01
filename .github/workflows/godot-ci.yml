@@ -11,35 +11,18 @@ on:
       - master
 
 jobs:
-  unit-tests:
-	name: Run Unit Tests
-	runs-on: ubuntu-latest
-	
-	steps:
+    unit-tests:
+        name: Run Unit Tests
+        runs-on: ubuntu-latest
+        steps:
 	  # 1. Check out your repository code
-	  - name: Checkout Code
-		uses: actions/checkout@v4
-		with:
-		  lfs: true  # Enable LFS if you use it for large assets (images/audio)
-
-	  # 2. Run the GdUnit4 Action
-	  # This action automatically downloads Godot and the GdUnit4 runner
-	  - name: GdUnit4 Tests
-		uses: MikeSchulze/gdUnit4-action@v1
-		with:
+          - name: Checkout Code
+            uses: actions/checkout@v4
+            with:
+                lfs: true  # Enable LFS if you use it for large assets (images/audio)
+          - name: GdUnit4 Tests
+            uses: MikeSchulze/gdUnit4-action@v1
+            with:
 		  # CHANGE THIS to match your local Godot version (e.g. 4.2, 4.3)
-		  godot-version: '4.3'
-		  
-		  # Where your tests are located (folder path)
-		  paths: 'res://test' 
-		  
-		  # Optional: Stop pipeline if tests fail
-		  stop-on-failure: true
-		  
-	  # 3. (Optional) Publish Test Report
-	  # This adds a nice visual report to your GitHub Actions summary
-	  - name: Publish Report
-		if: always() # Run even if tests failed
-		uses: mikepenz/action-junit-report@v4
-		with:
-		  report_paths: '**/report.xml'
+                godot-version: '4.3'	  
+                paths: 'res://test' 
