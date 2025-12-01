@@ -24,6 +24,10 @@ DocumentViewer="*res://DocumentViewer.tscn"
 
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
+
 [input]
 
 interact={
