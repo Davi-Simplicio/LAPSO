@@ -21,5 +21,6 @@ jobs:
           - name: GdUnit4 Tests
             uses: MikeSchulze/gdUnit4-action@v1
             with:
-                godot-version: '4.3'	  
+                godot-version: '4.3'	
+                version: 'v5.0.3'  
                 paths: 'res://test' 
