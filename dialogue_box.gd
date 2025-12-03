@@ -28,7 +28,7 @@ func start_dialogue(npc_data):
 	current_npc = npc_data
 	panel.visible = true
 	get_tree().call_group("player", "set_move_state", false)
-	
+	right_portrait.texture = current_npc.portrait
 	# --- SETUP PORTRAITS ---
 	# Right side is always the NPC
 	

@@ -1,13 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://0dm5722t1ls7"]
+[gd_scene load_steps=15 format=3 uid="uid://0dm5722t1ls7"]
 
 [ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://mapa.tscn" id="1_evvns"]
 [ext_resource type="PackedScene" uid="uid://bco2k2fhfgfpq" path="res://door.tscn" id="2_1ap6j"]
-[ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://LightningController.gd" id="2_2ka1p"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
 [ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://npc.tscn" id="4_1ap6j"]
 [ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Morgan/NPC_Morgan.tres" id="5_8c340"]
 [ext_resource type="PackedScene" uid="uid://6foeujt16n08" path="res://dialogueBox.tscn" id="5_qn35j"]
-[ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Jane/NPC_Jane.tres" id="7_01kpq"]
 [ext_resource type="PackedScene" uid="uid://ccnncabq2mige" path="res://DocumentPickup.tscn" id="7_ysdx3"]
 [ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Morgan/Documents/PostIt_Morgan.tres" id="8_t8pok"]
 [ext_resource type="PackedScene" uid="uid://bky3fyxawu28k" path="res://DocumentsMenu.tscn" id="9_t8pok"]
@@ -20,19 +18,15 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 shader_parameter/grain_amount = 0.030000001425
 
-[sub_resource type="Gradient" id="Gradient_01kpq"]
-interpolation_mode = 2
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_mtw28"]
+metadata/_snap_enabled = true
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ka1p"]
-gradient = SubResource("Gradient_01kpq")
-fill = 1
-fill_from = Vector2(0.99065423, 0.6728972)
-fill_to = Vector2(0.63084114, 0.5)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_orj5g"]
+gradient = SubResource("Gradient_mtw28")
 
 [node name="jogo" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(215, 295)
+position = Vector2(187, 230)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -52,16 +46,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 y_sort_enabled = true
-color = Color(0.101960786, 0.10980392, 0.22745098, 1)
-script = ExtResource("2_2ka1p")
+color = Color(0.14509805, 0.15686275, 0.2901961, 1)
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 y_sort_enabled = true
-position = Vector2(62, -7)
-scale = Vector2(3.0703123, 2.2500002)
+position = Vector2(64, -8.999996)
+scale = Vector2(3.109375, 2.34375)
 color = Color(0.5019608, 1, 1, 1)
-energy = 0.38
-texture = SubResource("GradientTexture2D_2ka1p")
+texture = SubResource("GradientTexture2D_orj5g")
 
 [node name="Mapa" parent="." instance=ExtResource("1_evvns")]
 
@@ -99,7 +91,6 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(-9, -168)
 dialogue_text = "Hello!"
-npc_data = ExtResource("7_01kpq")
 
 [node name="DialogueBox" parent="." groups=["dialogue_ui"] instance=ExtResource("5_qn35j")]
 

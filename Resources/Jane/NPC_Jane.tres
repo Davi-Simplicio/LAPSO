@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=5 format=3 uid="uid://bbeqjlkyofnun"]
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://bbeqjlkyofnun"]
 
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://NPCResource.gd" id="1_jp621"]
-[ext_resource type="Texture2D" uid="uid://btlpw5a8b8x0v" path="res://icon.svg" id="1_w5b4n"]
+[ext_resource type="Texture2D" uid="uid://okv714hddgqh" path="res://Resources/Jane/Gemini_Generated_Image_1c6y9c1c6y9c1c6y-removebg-preview.png" id="1_qevnj"]
 [ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://DialogueTopic.gd" id="2_imqy8"]
+[ext_resource type="Texture2D" uid="uid://cx8dg57rb8r8m" path="res://NPC's/Free Character Sprites - Fantasy Dreamland/16x16/Char_003_Idle.png" id="3_qevnj"]
 [ext_resource type="Resource" uid="uid://dtuk14yexlyp6" path="res://Resources/Jane/normal_talk.tres" id="4_qevnj"]
 
 [resource]
 script = ExtResource("1_jp621")
 npc_name = "Jane"
-portrait = ExtResource("1_w5b4n")
+portrait = ExtResource("1_qevnj")
 greeting_text = "Hi José."
 topics = Array[ExtResource("2_imqy8")]([ExtResource("4_qevnj")])
+sprite_sheet = ExtResource("3_qevnj")
 metadata/_custom_type_script = "uid://bu7jjxyxibyf"
