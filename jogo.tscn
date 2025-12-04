@@ -1,111 +1,24 @@
-[gd_scene load_steps=17 format=3 uid="uid://0dm5722t1ls7"]
+[gd_scene load_steps=7 format=3 uid="uid://0dm5722t1ls7"]
 
 [ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://mapa.tscn" id="1_evvns"]
-[ext_resource type="PackedScene" uid="uid://bco2k2fhfgfpq" path="res://door.tscn" id="2_1ap6j"]
-[ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://LightningController.gd" id="2_2ka1p"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://player.tscn" id="2_yq54j"]
-[ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://npc.tscn" id="4_1ap6j"]
-[ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Morgan/NPC_Morgan.tres" id="5_8c340"]
 [ext_resource type="PackedScene" uid="uid://6foeujt16n08" path="res://dialogueBox.tscn" id="5_qn35j"]
-[ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Jane/NPC_Jane.tres" id="7_01kpq"]
-[ext_resource type="PackedScene" uid="uid://ccnncabq2mige" path="res://DocumentPickup.tscn" id="7_ysdx3"]
 [ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Morgan/Documents/PostIt_Morgan.tres" id="8_t8pok"]
 [ext_resource type="PackedScene" uid="uid://bky3fyxawu28k" path="res://DocumentsMenu.tscn" id="9_t8pok"]
 [ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://DocumentResource.gd" id="10_mtw28"]
-[ext_resource type="Shader" uid="uid://btie0tn143cxl" path="res://jogo.gdshader" id="11_orj5g"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_01kpq"]
-shader = ExtResource("11_orj5g")
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
-shader_parameter/grain_amount = 0.030000001425
-
-[sub_resource type="Gradient" id="Gradient_01kpq"]
-interpolation_mode = 2
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ka1p"]
-gradient = SubResource("Gradient_01kpq")
-fill = 1
-fill_from = Vector2(0.99065423, 0.6728972)
-fill_to = Vector2(0.63084114, 0.5)
 
 [node name="jogo" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(215, 295)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_01kpq")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -2.0
-offset_right = -2.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-y_sort_enabled = true
-color = Color(0.101960786, 0.10980392, 0.22745098, 1)
-script = ExtResource("2_2ka1p")
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-y_sort_enabled = true
-position = Vector2(62, -7)
-scale = Vector2(3.0703123, 2.2500002)
-color = Color(0.5019608, 1, 1, 1)
-energy = 0.38
-texture = SubResource("GradientTexture2D_2ka1p")
-
 [node name="Mapa" parent="." instance=ExtResource("1_evvns")]
-
-[node name="Door" parent="." node_paths=PackedStringArray("destination_point") instance=ExtResource("2_1ap6j")]
-z_index = 1
-position = Vector2(73, -49)
-destination_point = NodePath("../Room2SpawnPoint2")
-
-[node name="Door2" parent="." node_paths=PackedStringArray("destination_point") instance=ExtResource("2_1ap6j")]
-z_index = 1
-position = Vector2(74, -124)
-destination_point = NodePath("../Room2SpawnPoint")
 
 [node name="Player" parent="." instance=ExtResource("2_yq54j")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(38, 10)
 
-[node name="Room2SpawnPoint2" type="Marker2D" parent="."]
-position = Vector2(28, -176)
-
-[node name="Room2SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(89, 17)
-
-[node name="NPC 1" parent="." instance=ExtResource("4_1ap6j")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-19, -6)
-dialogue_text = "Teste
-"
-npc_data = ExtResource("5_8c340")
-
-[node name="NPC 2" parent="." instance=ExtResource("4_1ap6j")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-9, -168)
-dialogue_text = "Hello!"
-npc_data = ExtResource("7_01kpq")
-
 [node name="DialogueBox" parent="." groups=["dialogue_ui"] instance=ExtResource("5_qn35j")]
 
 [node name="DocumentsMenu" parent="." instance=ExtResource("9_t8pok")]
 all_documents_list = Array[ExtResource("10_mtw28")]([ExtResource("8_t8pok")])
-
-[node name="PostIt" parent="." instance=ExtResource("7_ysdx3")]
-position = Vector2(-24, -123)
-doc_data = ExtResource("8_t8pok")
