@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogueTopic" load_steps=2 format=3 uid="uid://cahikdj5npk00"]
 
-[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://DialogueTopic.gd" id="1_ccv2b"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="1_ccv2b"]
 
 [resource]
 script = ExtResource("1_ccv2b")

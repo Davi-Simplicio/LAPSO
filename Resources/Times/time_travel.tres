@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DocumentResource" load_steps=4 format=3 uid="uid://c7ajy5m4wcsli"]
+
+[ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="1_7o73d"]
+[ext_resource type="Texture2D" uid="uid://dttk4hlvp21uk" path="res://assets/Buildings/Blue Buildings/Tower.png" id="1_inc1b"]
+[ext_resource type="Texture2D" uid="uid://btlpw5a8b8x0v" path="res://assets/icon.svg" id="2_2gvjk"]
+
+[resource]
+script = ExtResource("1_7o73d")
+full_image = ExtResource("1_inc1b")
+icon = ExtResource("2_2gvjk")
+doc_name = "Time Travel"
+fact_id_to_unlock = "time_travel"
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"

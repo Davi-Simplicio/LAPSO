@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bngcwufu2uukq" path="res://Resources/Morgan/Documents/postit.png" id="1_ubroh"]
 [ext_resource type="Texture2D" uid="uid://dbgulg76315qo" path="res://Resources/Morgan/Documents/Captura de tela 2025-11-27 105753.png" id="2_ubroh"]
-[ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://DocumentResource.gd" id="3_uvnb2"]
+[ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="3_ubroh"]
 
 [resource]
-script = ExtResource("3_uvnb2")
+script = ExtResource("3_ubroh")
 full_image = ExtResource("1_ubroh")
 icon = ExtResource("2_ubroh")
 doc_name = "Morgan Postit"

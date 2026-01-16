@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TimeState" load_steps=2 format=3 uid="uid://2tg8eral0sj4"]
+
+[ext_resource type="Script" uid="uid://b158uy751xg03" path="res://States/TimeState.gd" id="1_jndc2"]
+
+[resource]
+script = ExtResource("1_jndc2")
+state_name = "Future"
+active_decor_group = "Future"
+metadata/_custom_type_script = "uid://b158uy751xg03"

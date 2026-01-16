@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccnncabq2mige"]
+
+[ext_resource type="Script" uid="uid://disgv5bysm8uy" path="res://Scripts/documents.gd" id="1_m320e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m320e"]
+size = Vector2(66.25, 64)
+
+[node name="DocumentPickup" type="Area2D"]
+z_index = 2
+y_sort_enabled = true
+script = ExtResource("1_m320e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 86.000015)
+scale = Vector2(0.171875, 0.171875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(161, 86)
+shape = SubResource("RectangleShape2D_m320e")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 147.0
+offset_top = 61.0
+offset_right = 282.0
+offset_bottom = 94.0
+scale = Vector2(0.2, 0.2)
+text = "Press E to pick up"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

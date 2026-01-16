@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://6foeujt16n08"]
+
+[ext_resource type="Script" uid="uid://m1e5fkbwjrn3" path="res://Scripts/dialogue_box.gd" id="1_yc7nv"]
+[ext_resource type="Texture2D" uid="uid://o7k28xi26p61" path="res://assets/NPC's/Gemini_Generated_Image_b8dph3b8dph3b8dp-removebg-preview.png" id="2_3coqq"]
+[ext_resource type="Texture2D" uid="uid://dq0wsxjh20wjx" path="res://assets/NPC's/Gemini_Generated_Image_uho4opuho4opuho4-removebg-preview.png" id="2_kfxbl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfxbl"]
+bg_color = Color(0.99215686, 0.9764706, 0.92941177, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8156863, 0.7529412, 0.6117647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3coqq"]
+bg_color = Color(0.015686275, 0.6745098, 0.76862746, 0.6156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yc7nv")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 14.0
+offset_top = 452.0
+offset_right = 1133.0
+offset_bottom = 643.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kfxbl")
+
+[node name="AdvanceButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -452.0
+offset_right = 15.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="TextField" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 11.0
+offset_right = 854.0
+offset_bottom = 182.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Teste
+"
+horizontal_alignment = 2
+
+[node name="LeftPortrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 204.0
+offset_bottom = 189.0
+texture = ExtResource("2_kfxbl")
+expand_mode = 1
+
+[node name="RightPortrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 2.0
+offset_right = 1106.0
+offset_bottom = 189.0
+texture = ExtResource("2_3coqq")
+expand_mode = 1
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -143.0
+offset_right = 231.0
+offset_bottom = -8.0
+alignment = 2
+
+[node name="LeftName" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 147.0
+offset_right = 214.0
+offset_bottom = 187.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3coqq")
+text = "José
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightName" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 148.0
+offset_right = 1110.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3coqq")
+text = "Morgan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueBox" type="Node2D" parent="."]
+position = Vector2(0, 452)
+
+[connection signal="pressed" from="Panel/AdvanceButton" to="." method="_on_advance_pressed"]
