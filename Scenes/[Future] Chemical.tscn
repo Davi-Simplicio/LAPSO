@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://c78f7un8omk5s"]
+
+[ext_resource type="Texture2D" uid="uid://cnyrqdb63eq3" path="res://assets/ChemicalWorkstation/Background.png" id="1_efr58"]
+[ext_resource type="Texture2D" uid="uid://c370g140ca8f5" path="res://assets/ChemicalWorkstation/LabIcons.png" id="2_xivst"]
+[ext_resource type="Script" uid="uid://bd24kifoa4r0r" path="res://Scenes/test_tube_1.gd" id="3_b88rs"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_h8vul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b88rs"]
+atlas = ExtResource("2_xivst")
+region = Rect2(5.1153526, 80.03882, 6.8564453, 15.499161)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b88rs"]
+load_path = "res://.godot/imported/LabIcons.png-24664e7a0a16a6a5c6b0a8aeb87f6164.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qagd5"]
+atlas = SubResource("CompressedTexture2D_b88rs")
+region = Rect2(5.1153526, 81.888725, 6.8564453, 14.759377)
+
+[node name="Node2D" type="Control" unique_id=1791258392]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=904953601]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_efr58")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2008672768]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 9
+
+[node name="Space" type="Control" parent="GridContainer" unique_id=866376972]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space2" type="Control" parent="GridContainer" unique_id=1533324365]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestTube" type="TextureButton" parent="GridContainer/Space2" unique_id=658658298]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 222.00002
+offset_right = 25.0
+offset_bottom = 237.00002
+scale = Vector2(14, 14)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_b88rs")
+texture_hover = SubResource("AtlasTexture_qagd5")
+stretch_mode = 0
+script = ExtResource("3_b88rs")
+
+[node name="Space3" type="Control" parent="GridContainer" unique_id=237916581]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestTube" type="TextureButton" parent="GridContainer/Space3" unique_id=1483993026]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 222.00002
+offset_right = 25.0
+offset_bottom = 237.00002
+scale = Vector2(14, 14)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_b88rs")
+texture_hover = SubResource("AtlasTexture_qagd5")
+stretch_mode = 0
+script = ExtResource("3_b88rs")
+
+[node name="Space4" type="Control" parent="GridContainer" unique_id=699544865]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestTube" type="TextureButton" parent="GridContainer/Space4" unique_id=1615601479]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 222.00002
+offset_right = 25.0
+offset_bottom = 237.00002
+scale = Vector2(14, 14)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_b88rs")
+texture_hover = SubResource("AtlasTexture_qagd5")
+stretch_mode = 0
+script = ExtResource("3_b88rs")
+
+[node name="Space5" type="Control" parent="GridContainer" unique_id=556380207]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space6" type="Control" parent="GridContainer" unique_id=640776881]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space7" type="Control" parent="GridContainer" unique_id=1228562114]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space8" type="Control" parent="GridContainer" unique_id=149673364]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestTube" type="TextureButton" parent="GridContainer/Space8" unique_id=1368708889]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 258.0
+offset_right = 44.0
+offset_bottom = 273.0
+scale = Vector2(14, 14)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_b88rs")
+texture_hover = SubResource("AtlasTexture_qagd5")
+stretch_mode = 0
+script = ExtResource("3_b88rs")
+
+[connection signal="pressed" from="GridContainer/Space2/TestTube" to="GridContainer/Space2/TestTube" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Space3/TestTube" to="GridContainer/Space3/TestTube" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Space4/TestTube" to="GridContainer/Space4/TestTube" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Space8/TestTube" to="GridContainer/Space8/TestTube" method="_on_pressed"]
