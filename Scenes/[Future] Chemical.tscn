@@ -1,21 +1,59 @@
 [gd_scene format=3 uid="uid://c78f7un8omk5s"]
 
 [ext_resource type="Texture2D" uid="uid://cnyrqdb63eq3" path="res://assets/ChemicalWorkstation/Background.png" id="1_efr58"]
-[ext_resource type="Texture2D" uid="uid://c370g140ca8f5" path="res://assets/ChemicalWorkstation/LabIcons.png" id="2_xivst"]
+[ext_resource type="Texture2D" uid="uid://bri0ugqx3ot3h" path="res://assets/ChemicalWorkstation/blue.png" id="2_b88rs"]
+[ext_resource type="Texture2D" uid="uid://bl35f4iq43pgv" path="res://assets/ChemicalWorkstation/empty.png" id="2_qagd5"]
 [ext_resource type="Script" uid="uid://bd24kifoa4r0r" path="res://Scenes/test_tube_1.gd" id="3_b88rs"]
+[ext_resource type="Texture2D" uid="uid://dxdjd8okjwvc" path="res://assets/ChemicalWorkstation/red.png" id="4_qagd5"]
+[ext_resource type="Texture2D" uid="uid://duivw57drurhg" path="res://assets/ChemicalWorkstation/yellow.png" id="5_bpp4y"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_h8vul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b88rs"]
-atlas = ExtResource("2_xivst")
-region = Rect2(5.1153526, 80.03882, 6.8564453, 15.499161)
+atlas = ExtResource("2_b88rs")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 20, 0, 20)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b88rs"]
-load_path = "res://.godot/imported/LabIcons.png-24664e7a0a16a6a5c6b0a8aeb87f6164.ctex"
+load_path = "res://.godot/imported/blue.png-af3f398ba5dc43e4e9eb58367632a39f.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qagd5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8vul"]
 atlas = SubResource("CompressedTexture2D_b88rs")
-region = Rect2(5.1153526, 81.888725, 6.8564453, 14.759377)
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8scc6"]
+atlas = ExtResource("4_qagd5")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpp4y"]
+atlas = ExtResource("4_qagd5")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p6fg"]
+atlas = ExtResource("5_bpp4y")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mxqy"]
+atlas = ExtResource("5_bpp4y")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okl0j"]
+atlas = ExtResource("2_qagd5")
+region = Rect2(24.892107, 24.870865, 35.84999, 98.5169)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_flg45"]
+load_path = "res://.godot/imported/empty.png-506757313be3a3e6525bfc6a7420f7e1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxgy5"]
+atlas = SubResource("CompressedTexture2D_flg45")
+region = Rect2(24.892107, 24.870865, 35.84999, 98.5169)
+margin = Rect2(0, 0, 0, 20)
 
 [node name="Node2D" type="Control" unique_id=1791258392]
 clip_contents = true
@@ -60,15 +98,15 @@ size_flags_vertical = 3
 
 [node name="TestTube" type="TextureButton" parent="GridContainer/Space2" unique_id=658658298]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 222.00002
-offset_right = 25.0
-offset_bottom = 237.00002
-scale = Vector2(14, 14)
+offset_left = 28.0
+offset_top = 216.0
+offset_right = 63.0
+offset_bottom = 335.0
+scale = Vector2(2, 2)
 toggle_mode = true
 button_group = SubResource("ButtonGroup_h8vul")
 texture_normal = SubResource("AtlasTexture_b88rs")
-texture_hover = SubResource("AtlasTexture_qagd5")
+texture_hover = SubResource("AtlasTexture_h8vul")
 stretch_mode = 0
 script = ExtResource("3_b88rs")
 
@@ -79,15 +117,15 @@ size_flags_vertical = 3
 
 [node name="TestTube" type="TextureButton" parent="GridContainer/Space3" unique_id=1483993026]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 222.00002
-offset_right = 25.0
-offset_bottom = 237.00002
-scale = Vector2(14, 14)
+offset_left = 24.0
+offset_top = 215.0
+offset_right = 59.0
+offset_bottom = 334.0
+scale = Vector2(2, 2)
 toggle_mode = true
 button_group = SubResource("ButtonGroup_h8vul")
-texture_normal = SubResource("AtlasTexture_b88rs")
-texture_hover = SubResource("AtlasTexture_qagd5")
+texture_normal = SubResource("AtlasTexture_8scc6")
+texture_hover = SubResource("AtlasTexture_bpp4y")
 stretch_mode = 0
 script = ExtResource("3_b88rs")
 
@@ -98,15 +136,15 @@ size_flags_vertical = 3
 
 [node name="TestTube" type="TextureButton" parent="GridContainer/Space4" unique_id=1615601479]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 222.00002
-offset_right = 25.0
-offset_bottom = 237.00002
-scale = Vector2(14, 14)
+offset_left = 23.0
+offset_top = 215.0
+offset_right = 58.0
+offset_bottom = 334.0
+scale = Vector2(2, 2)
 toggle_mode = true
 button_group = SubResource("ButtonGroup_h8vul")
-texture_normal = SubResource("AtlasTexture_b88rs")
-texture_hover = SubResource("AtlasTexture_qagd5")
+texture_normal = SubResource("AtlasTexture_4p6fg")
+texture_hover = SubResource("AtlasTexture_4mxqy")
 stretch_mode = 0
 script = ExtResource("3_b88rs")
 
@@ -132,15 +170,15 @@ size_flags_vertical = 3
 
 [node name="TestTube" type="TextureButton" parent="GridContainer/Space8" unique_id=1368708889]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 258.0
-offset_right = 44.0
-offset_bottom = 273.0
-scale = Vector2(14, 14)
+offset_left = 43.0
+offset_top = 236.0
+offset_right = 78.0
+offset_bottom = 355.0
+scale = Vector2(2, 2)
 toggle_mode = true
 button_group = SubResource("ButtonGroup_h8vul")
-texture_normal = SubResource("AtlasTexture_b88rs")
-texture_hover = SubResource("AtlasTexture_qagd5")
+texture_normal = SubResource("AtlasTexture_okl0j")
+texture_hover = SubResource("AtlasTexture_qxgy5")
 stretch_mode = 0
 script = ExtResource("3_b88rs")
 
