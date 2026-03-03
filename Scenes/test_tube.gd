@@ -1,5 +1,6 @@
 extends GridContainer
 
+
 var last_button: BaseButton = null
 var sum = 0
 
@@ -22,12 +23,43 @@ var FromNum = {
 	25: "GREEN"
 }
 
+var FinalColorToNum = {
+	"RED": "9533",
+	"BLUE":"1238",
+	"YELLOW": "8374",
+	"ORANGE": "1235",
+	"PURPLE":"1827",
+	"GREEN":"9854",
+	"EMPTY": "0000"
+}
+
+
 const READY_COLORS = [20, 11, 25]
 
 
 
 func _process(delta: float) -> void:
-	var trash = get_node("SpaceTrash")
+	
+	var trash = find_child("SpaceTrash")
+	var REDOpt = find_child("REDOpt")
+	var YELLOWOpt = find_child("YELLOWOpt")
+	var BLUEOpt = find_child("BLUEOpt")
+	var valueLabel = find_child("Value")
+	
+	var opacity = 0.5 if READY_COLORS.has(sum) else 1
+	if valueLabel:
+		valueLabel.text = FinalColorToNum[FromNum[sum]]
+		
+	if REDOpt:
+		REDOpt.modulate.a = opacity
+		REDOpt.disabled = READY_COLORS.has(sum)
+	if YELLOWOpt:
+		YELLOWOpt.modulate.a = opacity
+		YELLOWOpt.disabled = READY_COLORS.has(sum)
+	if BLUEOpt:
+		BLUEOpt.modulate.a = opacity
+		BLUEOpt.disabled = READY_COLORS.has(sum)
+	
 	if sum > 0:
 		trash.get_children()[0].visible = true
 	else:
