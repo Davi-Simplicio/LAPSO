@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://g8ab7ge23gtn"]
+
+[ext_resource type="Script" uid="uid://bw1jyhwua6f31" path="res://Scenes/puzzles_fios.gd" id="1_60mjs"]
+[ext_resource type="Texture2D" uid="uid://b8nwl5vqg5xm6" path="res://assets/PuzzleFios/dijuntor.png" id="1_dvkci"]
+[ext_resource type="Texture2D" uid="uid://btg4c4hnhmagg" path="res://assets/PuzzleFios/Ativo 4ci.png" id="3_q8qml"]
+[ext_resource type="Script" uid="uid://d3ial2fyl47ke" path="res://Scenes/terminal_azul.gd" id="4_m3qa0"]
+[ext_resource type="Texture2D" uid="uid://cfhfc6bhk22dt" path="res://assets/PuzzleFios/Ativo 5ci.png" id="5_a74g3"]
+[ext_resource type="Script" uid="uid://dblxxnyl22yuq" path="res://Scenes/terminal_laranja.gd" id="6_8ykux"]
+[ext_resource type="Texture2D" uid="uid://dqib8as2t0i7g" path="res://assets/PuzzleFios/Ativo 6ci.png" id="7_dv60c"]
+[ext_resource type="Script" uid="uid://bebe7mwjpq5ye" path="res://Scenes/terminal_verde.gd" id="8_kf63c"]
+[ext_resource type="Texture2D" uid="uid://di8525rr0n8bi" path="res://assets/PuzzleFios/Ativo 7ci.png" id="9_5k3q4"]
+[ext_resource type="Script" uid="uid://cm40ipmwu3pt" path="res://Scenes/terminal_amarelo.gd" id="10_wgqg5"]
+[ext_resource type="Texture2D" uid="uid://cq2acjpg2a37r" path="res://assets/PuzzleFios/Ativo 2ci.png" id="11_tn3ub"]
+[ext_resource type="Script" uid="uid://drau0dxepmoqx" path="res://Scenes/terminal_rosa.gd" id="12_lrfxd"]
+[ext_resource type="Texture2D" uid="uid://sv2y82ola4vj" path="res://assets/PuzzleFios/Ativo 3ci.png" id="13_tdg2u"]
+[ext_resource type="Script" uid="uid://dsrw6uy2401l1" path="res://Scenes/terminal_roxo.gd" id="14_340of"]
+[ext_resource type="Script" uid="uid://d1soq5uil76ii" path="res://Scenes/terminal_dir_rosa.gd" id="15_flday"]
+[ext_resource type="Script" uid="uid://dyx4up8ok4war" path="res://Scenes/terminal_dir_amarelo.gd" id="16_8cthb"]
+[ext_resource type="Script" uid="uid://cky7mbomvw22o" path="res://Scenes/terminal_dir_roxo.gd" id="17_oqki8"]
+[ext_resource type="Script" uid="uid://5opnc5f58h7u" path="res://Scenes/terminal_dir_laranja.gd" id="18_lyuin"]
+[ext_resource type="Script" uid="uid://bkm0udu8a22mf" path="res://Scenes/terminal_dir_azul.gd" id="19_34uwj"]
+[ext_resource type="Script" uid="uid://b1x36fiiuq6ns" path="res://Scenes/terminal_dir_verde.gd" id="20_qu1qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60mjs"]
+size = Vector2(270.25305, 270.25366)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8qml"]
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3qa0"]
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a74g3"]
+size = Vector2(26.5, 26)
+
+[node name="PuzzlesFios" type="Node2D" unique_id=476429961]
+script = ExtResource("1_60mjs")
+
+[node name="Dijuntor" type="Sprite2D" parent="." unique_id=832959965]
+position = Vector2(576.0599, 324)
+scale = Vector2(0.8570537, 0.84375)
+texture = ExtResource("1_dvkci")
+
+[node name="VBoxContainerDIR" type="VBoxContainer" parent="." unique_id=854095780]
+offset_left = 357.0
+offset_top = 163.0
+offset_right = 429.0
+offset_bottom = 501.0
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="VBoxContainerDIR" unique_id=813244820]
+position = Vector2(40, 41)
+scale = Vector2(0.096205965, 0.096205965)
+
+[node name="TerminalAzul" type="Sprite2D" parent="VBoxContainerDIR/Area2D" unique_id=1580674925]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_q8qml")
+script = ExtResource("4_m3qa0")
+cor_id = "Azul"
+is_left = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDIR/Area2D" unique_id=1686436638]
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_60mjs")
+
+[node name="Area2D2" type="Area2D" parent="VBoxContainerDIR" unique_id=1714604624]
+
+[node name="TerminalLaranja" type="Sprite2D" parent="VBoxContainerDIR/Area2D2" unique_id=1069226100]
+position = Vector2(40, 90)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("5_a74g3")
+script = ExtResource("6_8ykux")
+cor_id = "Laranja"
+is_left = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDIR/Area2D2" unique_id=1384637481]
+position = Vector2(40, 90)
+shape = SubResource("RectangleShape2D_q8qml")
+
+[node name="Area2D3" type="Area2D" parent="VBoxContainerDIR" unique_id=1555837367]
+
+[node name="TerminalVerde" type="Sprite2D" parent="VBoxContainerDIR/Area2D3" unique_id=755089139]
+position = Vector2(40, 135)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("7_dv60c")
+script = ExtResource("8_kf63c")
+cor_id = "Verde"
+is_left = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDIR/Area2D3" unique_id=1297923784]
+position = Vector2(40, 135)
+shape = SubResource("RectangleShape2D_m3qa0")
+
+[node name="Area2D4" type="Area2D" parent="VBoxContainerDIR" unique_id=129939296]
+
+[node name="TerminalAmarelo" type="Sprite2D" parent="VBoxContainerDIR/Area2D4" unique_id=1130017630]
+position = Vector2(40, 185)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("9_5k3q4")
+script = ExtResource("10_wgqg5")
+cor_id = "Amarelo"
+is_left = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDIR/Area2D4" unique_id=1607979172]
+position = Vector2(39.75, 185)
+shape = SubResource("RectangleShape2D_a74g3")
+
+[node name="Area2D5" type="Area2D" parent="VBoxContainerDIR" unique_id=1529466366]
+
+[node name="TerminalRosa" type="Sprite2D" parent="VBoxContainerDIR/Area2D5" unique_id=1778292834]
+position = Vector2(40, 236)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("11_tn3ub")
+script = ExtResource("12_lrfxd")
+cor_id = "Rosa"
+is_left = true
+
+[node name="Area2D6" type="Area2D" parent="VBoxContainerDIR" unique_id=1219025962]
+
+[node name="TerminalRoxo" type="Sprite2D" parent="VBoxContainerDIR/Area2D6" unique_id=1224670084]
+position = Vector2(40, 290)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("13_tdg2u")
+script = ExtResource("14_340of")
+cor_id = "Roxo"
+is_left = true
+
+[node name="VBoxContainerESQ" type="VBoxContainer" parent="." unique_id=1924759096]
+offset_left = 728.0
+offset_top = 163.0
+offset_right = 800.0
+offset_bottom = 501.0
+mouse_filter = 2
+
+[node name="TerminalDIRRosa" type="Sprite2D" parent="VBoxContainerESQ" unique_id=2037503316]
+position = Vector2(40, 41)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("11_tn3ub")
+script = ExtResource("15_flday")
+cor_id = "Rosa"
+
+[node name="TerminalDIRAmarelo" type="Sprite2D" parent="VBoxContainerESQ" unique_id=1747346316]
+position = Vector2(40, 90)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("9_5k3q4")
+script = ExtResource("16_8cthb")
+cor_id = "Amarelo"
+
+[node name="TerminalDIRRoxo" type="Sprite2D" parent="VBoxContainerESQ" unique_id=693774358]
+position = Vector2(40, 135)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("13_tdg2u")
+script = ExtResource("17_oqki8")
+cor_id = "Roxo"
+
+[node name="TerminalDIRLaranja" type="Sprite2D" parent="VBoxContainerESQ" unique_id=1301708485]
+position = Vector2(40, 185)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("5_a74g3")
+script = ExtResource("18_lyuin")
+cor_id = "Laranja"
+
+[node name="TerminalDIRAzul" type="Sprite2D" parent="VBoxContainerESQ" unique_id=580300299]
+position = Vector2(40, 236)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("3_q8qml")
+script = ExtResource("19_34uwj")
+cor_id = "Azul"
+
+[node name="TerminalDIRVerde" type="Sprite2D" parent="VBoxContainerESQ" unique_id=1634702922]
+position = Vector2(40, 290)
+scale = Vector2(0.096205965, 0.096205965)
+texture = ExtResource("7_dv60c")
+script = ExtResource("20_qu1qi")
+cor_id = "Verde"
