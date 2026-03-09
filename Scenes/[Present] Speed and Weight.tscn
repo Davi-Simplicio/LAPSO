@@ -1,8 +1,15 @@
-[gd_scene format=3 uid="uid://dgnlads3el40h"]
+[gd_scene load_steps=6 format=3 uid="uid://dgnlads3el40h"]
 
 [ext_resource type="Texture2D" uid="uid://dtpxa80jo3vkd" path="res://assets/PhysicWorkstation/background.png" id="1_mfal6"]
+[ext_resource type="Texture2D" uid="uid://c3cs2dtumcqlu" path="res://assets/PhysicWorkstation/claw.png" id="2_hla2s"]
+[ext_resource type="Texture2D" uid="uid://cw12shfsfumxx" path="res://assets/PhysicWorkstation/support.png" id="3_5vbjs"]
+[ext_resource type="Texture2D" uid="uid://cpcefseoua4ro" path="res://assets/PhysicWorkstation/balança.png" id="4_1jd66"]
 
-[node name="Node2D" type="Control" unique_id=884504952]
+[sub_resource type="AtlasTexture" id="AtlasTexture_arwvn"]
+atlas = ExtResource("2_hla2s")
+region = Rect2(67.654816, 81.18704, 420.18634, 604.34216)
+
+[node name="Node2D" type="Control"]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -13,7 +20,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1346705417]
+[node name="TextureRect" type="TextureRect" parent="."]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -23,3 +30,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_mfal6")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 261.0
+offset_right = 827.99976
+offset_bottom = 865.0
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_arwvn")
+
+[node name="Support" type="Sprite2D" parent="."]
+position = Vector2(383.00003, 365)
+scale = Vector2(0.33444944, 0.49283853)
+texture = ExtResource("3_5vbjs")
+
+[node name="Balança" type="Sprite2D" parent="."]
+position = Vector2(884.00006, 393.99997)
+scale = Vector2(0.34523812, 0.38020834)
+texture = ExtResource("4_1jd66")
