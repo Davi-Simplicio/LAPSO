@@ -1,13 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgnlads3el40h"]
+[gd_scene load_steps=14 format=3 uid="uid://dgnlads3el40h"]
 
 [ext_resource type="Texture2D" uid="uid://dtpxa80jo3vkd" path="res://assets/PhysicWorkstation/background.png" id="1_mfal6"]
-[ext_resource type="Texture2D" uid="uid://c3cs2dtumcqlu" path="res://assets/PhysicWorkstation/claw.png" id="2_hla2s"]
+[ext_resource type="Texture2D" uid="uid://8hokifpyqdvh" path="res://assets/PhysicWorkstation/claw.png" id="2_hla2s"]
 [ext_resource type="Texture2D" uid="uid://cw12shfsfumxx" path="res://assets/PhysicWorkstation/support.png" id="3_5vbjs"]
-[ext_resource type="Texture2D" uid="uid://cpcefseoua4ro" path="res://assets/PhysicWorkstation/balança.png" id="4_1jd66"]
+[ext_resource type="Texture2D" uid="uid://jccraoggl6bf" path="res://assets/PhysicWorkstation/balança.png" id="4_1jd66"]
+[ext_resource type="Texture2D" uid="uid://0khqds8l2sqj" path="res://assets/PhysicWorkstation/stick-note.png" id="5_arwvn"]
+[ext_resource type="Texture2D" uid="uid://dt2ebcku8l60w" path="res://assets/PhysicWorkstation/stick-note-open.png" id="6_alcv7"]
+[ext_resource type="Script" uid="uid://dy5ddbxpv2faj" path="res://Scenes/open_stick_note.gd" id="6_hhvvv"]
+[ext_resource type="FontFile" uid="uid://cwfahrx6v0wu3" path="res://assets/PhysicWorkstation/Banda Note.ttf" id="7_2ljqr"]
+[ext_resource type="Texture2D" uid="uid://jwecdfbjqfpw" path="res://assets/PhysicWorkstation/x.png" id="8_2ljqr"]
+[ext_resource type="Script" uid="uid://bni2dm72qiqcr" path="res://Scenes/close-stick-note.gd" id="9_hhvvv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_arwvn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hla2s"]
 atlas = ExtResource("2_hla2s")
-region = Rect2(67.654816, 81.18704, 420.18634, 604.34216)
+region = Rect2(146.74731, 328.45624, 526.31415, 769.80695)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2vsv"]
+atlas = ExtResource("5_arwvn")
+region = Rect2(124.58942, 180.2486, 341.5073, 126.04724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfal6"]
+atlas = ExtResource("8_2ljqr")
+region = Rect2(314.84146, 288.10986, 279.35617, 279.24036)
 
 [node name="Node2D" type="Control"]
 clip_contents = true
@@ -33,19 +47,110 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 358.0
-offset_top = 261.0
-offset_right = 827.99976
-offset_bottom = 865.0
+offset_left = 422.0
+offset_top = 188.0
+offset_right = 948.0
+offset_bottom = 957.0
 scale = Vector2(0.1, 0.1)
-texture = SubResource("AtlasTexture_arwvn")
+texture = SubResource("AtlasTexture_hla2s")
 
 [node name="Support" type="Sprite2D" parent="."]
-position = Vector2(383.00003, 365)
-scale = Vector2(0.33444944, 0.49283853)
+position = Vector2(442, 322.99997)
+scale = Vector2(0.20585324, 0.24333225)
 texture = ExtResource("3_5vbjs")
 
 [node name="Balança" type="Sprite2D" parent="."]
-position = Vector2(884.00006, 393.99997)
-scale = Vector2(0.34523812, 0.38020834)
+position = Vector2(959, 392)
+scale = Vector2(0.23119122, 0.23956297)
 texture = ExtResource("4_1jd66")
+
+[node name="OpenStickNote" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 454.0
+offset_right = 608.0
+offset_bottom = 580.0
+scale = Vector2(0.2586312, 0.31953633)
+texture_normal = SubResource("AtlasTexture_p2vsv")
+script = ExtResource("6_hhvvv")
+
+[node name="StickNote" type="Node2D" parent="."]
+visible = false
+position = Vector2(119.99999, 159.00002)
+
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote"]
+scale = Vector2(0.44592643, 0.44800982)
+texture = ExtResource("6_alcv7")
+
+[node name="Label" type="Label" parent="StickNote"]
+offset_left = -86.99999
+offset_top = -125.000015
+offset_right = 132.0
+offset_bottom = -24.000015
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 20
+text = "Potência:
+Quão rápido a energia está sendo transferida.
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="StickNote/Label"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 92.0
+offset_right = 220.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 20
+text = "Potência="
+autowrap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StickNote/Label/Label2"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 41.0
+theme_override_colors/default_color = Color(0.33256748, 0.32850763, 9.62615e-08, 1)
+theme_override_fonts/normal_font = ExtResource("7_2ljqr")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[u] Peso X Altura [/u]"
+
+[node name="Label" type="Label" parent="StickNote/Label/Label2"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 30.0
+offset_right = 211.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 20
+text = "Tempo de Queda​"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="StickNote/Label"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 158.0
+offset_right = 221.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 16
+text = "*Altura =  1 metro"
+autowrap_mode = 2
+
+[node name="CloseStickNote" type="TextureButton" parent="StickNote"]
+offset_left = 109.0
+offset_top = -137.00002
+offset_right = 388.0
+offset_bottom = 141.99998
+scale = Vector2(0.060649715, 0.060932785)
+texture_normal = SubResource("AtlasTexture_mfal6")
+script = ExtResource("9_hhvvv")
+
+[connection signal="pressed" from="OpenStickNote" to="OpenStickNote" method="_on_pressed"]
+[connection signal="pressed" from="StickNote/CloseStickNote" to="StickNote/CloseStickNote" method="_on_pressed"]

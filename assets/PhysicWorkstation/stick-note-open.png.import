@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jccraoggl6bf"
-path="res://.godot/imported/balança.png-be3e56c89087ae7ba6490bcf4c15d637.ctex"
+uid="uid://dt2ebcku8l60w"
+path="res://.godot/imported/stick-note-open.png-1c39467b57376a05c62cfa5e4d251344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PhysicWorkstation/balança.png"
-dest_files=["res://.godot/imported/balança.png-be3e56c89087ae7ba6490bcf4c15d637.ctex"]
+source_file="res://assets/PhysicWorkstation/stick-note-open.png"
+dest_files=["res://.godot/imported/stick-note-open.png-1c39467b57376a05c62cfa5e4d251344.ctex"]
 
 [params]
 
