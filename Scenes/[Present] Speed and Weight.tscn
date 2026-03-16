@@ -1,15 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgnlads3el40h"]
+[gd_scene format=3 uid="uid://dgnlads3el40h"]
 
 [ext_resource type="Texture2D" uid="uid://dtpxa80jo3vkd" path="res://assets/PhysicWorkstation/background.png" id="1_mfal6"]
 [ext_resource type="Texture2D" uid="uid://8hokifpyqdvh" path="res://assets/PhysicWorkstation/claw.png" id="2_hla2s"]
 [ext_resource type="Texture2D" uid="uid://cw12shfsfumxx" path="res://assets/PhysicWorkstation/support.png" id="3_5vbjs"]
 [ext_resource type="Texture2D" uid="uid://jccraoggl6bf" path="res://assets/PhysicWorkstation/balança.png" id="4_1jd66"]
 [ext_resource type="Texture2D" uid="uid://0khqds8l2sqj" path="res://assets/PhysicWorkstation/stick-note.png" id="5_arwvn"]
+[ext_resource type="Texture2D" uid="uid://cj8cidgek7k3r" path="res://assets/PhysicWorkstation/balança2.png" id="5_dxnad"]
 [ext_resource type="Texture2D" uid="uid://dt2ebcku8l60w" path="res://assets/PhysicWorkstation/stick-note-open.png" id="6_alcv7"]
 [ext_resource type="Script" uid="uid://dy5ddbxpv2faj" path="res://Scenes/open_stick_note.gd" id="6_hhvvv"]
 [ext_resource type="FontFile" uid="uid://cwfahrx6v0wu3" path="res://assets/PhysicWorkstation/Banda Note.ttf" id="7_2ljqr"]
 [ext_resource type="Texture2D" uid="uid://jwecdfbjqfpw" path="res://assets/PhysicWorkstation/x.png" id="8_2ljqr"]
 [ext_resource type="Script" uid="uid://bni2dm72qiqcr" path="res://Scenes/close-stick-note.gd" id="9_hhvvv"]
+[ext_resource type="Script" uid="uid://ctju6fh5hwp1e" path="res://Scenes/weights.gd" id="11_p2vsv"]
+[ext_resource type="Texture2D" uid="uid://cl20drx6is8ea" path="res://assets/PhysicWorkstation/weight.png" id="13_dxnad"]
+[ext_resource type="Texture2D" uid="uid://c53ece2xi3w03" path="res://assets/PhysicWorkstation/cristal.webp" id="13_ry7bl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hla2s"]
 atlas = ExtResource("2_hla2s")
@@ -23,7 +27,23 @@ region = Rect2(124.58942, 180.2486, 341.5073, 126.04724)
 atlas = ExtResource("8_2ljqr")
 region = Rect2(314.84146, 288.10986, 279.35617, 279.24036)
 
-[node name="Node2D" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_idg5v"]
+atlas = ExtResource("13_dxnad")
+region = Rect2(126, 123.5, 247, 253)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fncqo"]
+atlas = ExtResource("13_dxnad")
+region = Rect2(128, 122.5, 244, 269)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2vsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxnad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_idg5v"]
+
+[node name="Node2D" type="Control" unique_id=220373965]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -34,7 +54,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1620157870]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -45,7 +65,7 @@ grow_vertical = 2
 texture = ExtResource("1_mfal6")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1866632501]
 layout_mode = 0
 offset_left = 422.0
 offset_top = 188.0
@@ -54,17 +74,29 @@ offset_bottom = 957.0
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_hla2s")
 
-[node name="Support" type="Sprite2D" parent="."]
+[node name="Support" type="Sprite2D" parent="." unique_id=1766473213]
 position = Vector2(442, 322.99997)
 scale = Vector2(0.20585324, 0.24333225)
 texture = ExtResource("3_5vbjs")
 
-[node name="Balança" type="Sprite2D" parent="."]
+[node name="Balança" type="Sprite2D" parent="." unique_id=1435682894]
 position = Vector2(959, 392)
 scale = Vector2(0.23119122, 0.23956297)
 texture = ExtResource("4_1jd66")
 
-[node name="OpenStickNote" type="TextureButton" parent="."]
+[node name="Balança-Direita" type="Sprite2D" parent="." unique_id=960780983]
+visible = false
+position = Vector2(959, 397)
+scale = Vector2(0.18397611, 0.18427922)
+texture = ExtResource("5_dxnad")
+
+[node name="Balança-Esquerda" type="Sprite2D" parent="." unique_id=138692842]
+visible = false
+position = Vector2(961.99994, 397.00003)
+scale = Vector2(-0.184, 0.184)
+texture = ExtResource("5_dxnad")
+
+[node name="OpenStickNote" type="TextureButton" parent="." unique_id=575124830]
 layout_mode = 0
 offset_left = 267.0
 offset_top = 454.0
@@ -74,15 +106,15 @@ scale = Vector2(0.2586312, 0.31953633)
 texture_normal = SubResource("AtlasTexture_p2vsv")
 script = ExtResource("6_hhvvv")
 
-[node name="StickNote" type="Node2D" parent="."]
+[node name="StickNote" type="Node2D" parent="." unique_id=264697872]
 visible = false
 position = Vector2(119.99999, 159.00002)
 
-[node name="StickNoteOpen" type="Sprite2D" parent="StickNote"]
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote" unique_id=801014576]
 scale = Vector2(0.44592643, 0.44800982)
 texture = ExtResource("6_alcv7")
 
-[node name="Label" type="Label" parent="StickNote"]
+[node name="Label" type="Label" parent="StickNote" unique_id=317264359]
 offset_left = -86.99999
 offset_top = -125.000015
 offset_right = 132.0
@@ -95,7 +127,7 @@ Quão rápido a energia está sendo transferida.
 "
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="StickNote/Label"]
+[node name="Label2" type="Label" parent="StickNote/Label" unique_id=576424523]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 92.0
@@ -107,7 +139,7 @@ theme_override_font_sizes/font_size = 20
 text = "Potência="
 autowrap_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StickNote/Label/Label2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="StickNote/Label/Label2" unique_id=974438024]
 layout_mode = 0
 offset_left = 87.0
 offset_top = 9.0
@@ -119,7 +151,7 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[u] Peso X Altura [/u]"
 
-[node name="Label" type="Label" parent="StickNote/Label/Label2"]
+[node name="Label" type="Label" parent="StickNote/Label/Label2" unique_id=591408520]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 30.0
@@ -131,7 +163,7 @@ theme_override_font_sizes/font_size = 20
 text = "Tempo de Queda​"
 autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="StickNote/Label"]
+[node name="Label3" type="Label" parent="StickNote/Label" unique_id=224613563]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 158.0
@@ -143,7 +175,18 @@ theme_override_font_sizes/font_size = 16
 text = "*Altura =  1 metro"
 autowrap_mode = 2
 
-[node name="CloseStickNote" type="TextureButton" parent="StickNote"]
+[node name="Label3" type="Label" parent="StickNote/Label/Label3" unique_id=745613178]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 219.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 16
+text = "*Menor Peso =  5Kg"
+autowrap_mode = 2
+
+[node name="CloseStickNote" type="TextureButton" parent="StickNote" unique_id=1950085095]
 offset_left = 109.0
 offset_top = -137.00002
 offset_right = 388.0
@@ -152,5 +195,212 @@ scale = Vector2(0.060649715, 0.060932785)
 texture_normal = SubResource("AtlasTexture_mfal6")
 script = ExtResource("9_hhvvv")
 
+[node name="Control" type="Control" parent="." unique_id=833990562]
+anchors_preset = 0
+offset_left = 697.0
+offset_top = 279.0
+offset_right = 746.99994
+offset_bottom = 329.0
+scale = Vector2(8.651391, 4.547874)
+script = ExtResource("11_p2vsv")
+
+[node name="1_5-1" type="TextureButton" parent="Control" unique_id=1740873774]
+layout_mode = 0
+offset_left = -4.161181
+offset_top = 39.798817
+offset_right = 242.83882
+offset_bottom = 312.79883
+scale = Vector2(0.007, 0.014)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_5-1" type="TextureButton" parent="Control" unique_id=1406440300]
+layout_mode = 0
+offset_left = -2.3117635
+offset_top = 42.87718
+offset_right = 244.68823
+offset_bottom = 315.87717
+scale = Vector2(0.007, 0.014)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_10-1" type="TextureButton" parent="Control" unique_id=691898405]
+layout_mode = 0
+offset_top = 38.699707
+offset_right = 247.0
+offset_bottom = 311.6997
+scale = Vector2(0.01, 0.02)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_10-1" type="TextureButton" parent="Control" unique_id=179154080]
+layout_mode = 0
+offset_left = 2.6582031
+offset_top = 41.559082
+offset_right = 249.6582
+offset_bottom = 314.55908
+scale = Vector2(0.01, 0.02)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_15-1" type="TextureButton" parent="Control" unique_id=1485070130]
+layout_mode = 0
+offset_left = 9.709473
+offset_top = 39.578125
+offset_right = 256.70947
+offset_bottom = 312.57813
+scale = Vector2(0.015, 0.03)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_15-1" type="TextureButton" parent="Control" unique_id=2100005214]
+layout_mode = 0
+offset_left = 6.126465
+offset_top = 36.28076
+offset_right = 253.12646
+offset_bottom = 309.28076
+scale = Vector2(0.015, 0.03)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="GetCristal" type="Button" parent="Control" unique_id=1814814135]
+layout_mode = 0
+offset_left = 35.254448
+offset_top = 16.491222
+offset_right = 43.254448
+offset_bottom = 24.491222
+scale = Vector2(1.6564686, 3.0780451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2vsv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dxnad")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_idg5v")
+
+[node name="Cristal" type="Sprite2D" parent="Control" unique_id=925919633]
+position = Vector2(-15, 40)
+scale = Vector2(0.008889197, 0.017597243)
+texture = ExtResource("13_ry7bl")
+
+[node name="WeightGroup" type="Control" parent="Control" unique_id=632268157]
+anchors_preset = 0
+offset_left = 13.408249
+offset_top = 23.967243
+offset_right = 53.40825
+offset_bottom = 63.967247
+scale = Vector2(0.25004965, 0.260044)
+
+[node name="1_15-2" type="TextureButton" parent="Control/WeightGroup" unique_id=707859611]
+visible = false
+layout_mode = 0
+offset_left = 17.798723
+offset_top = -5.9189167
+offset_right = 264.79874
+offset_bottom = 267.0811
+scale = Vector2(0.056340877, 0.119610175)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_15-2" type="TextureButton" parent="Control/WeightGroup" unique_id=1944334767]
+visible = false
+layout_mode = 0
+offset_left = 8.320707
+offset_top = -4.2277975
+offset_right = 255.32071
+offset_bottom = 268.77222
+scale = Vector2(0.056340877, 0.119610175)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_5-2" type="TextureButton" parent="Control/WeightGroup" unique_id=1663610683]
+visible = false
+layout_mode = 0
+offset_left = 27.735683
+offset_top = 15.220099
+offset_right = 274.7357
+offset_bottom = 288.2201
+scale = Vector2(0.02629241, 0.05581809)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_5-2" type="TextureButton" parent="Control/WeightGroup" unique_id=473061828]
+visible = false
+layout_mode = 0
+offset_left = 24.037588
+offset_top = 16.911205
+offset_right = 271.03763
+offset_bottom = 289.9112
+scale = Vector2(0.02629277, 0.05581809)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_10-2" type="TextureButton" parent="Control/WeightGroup" unique_id=383125374]
+visible = false
+layout_mode = 0
+offset_left = 7.8584514
+offset_top = 9.301163
+offset_right = 254.85844
+offset_bottom = 282.30115
+scale = Vector2(0.037560586, 0.07974012)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_10-2" type="TextureButton" parent="Control/WeightGroup" unique_id=1716548434]
+visible = false
+layout_mode = 0
+offset_left = 14.330109
+offset_top = 10.992297
+offset_right = 261.33014
+offset_bottom = 283.9923
+scale = Vector2(0.037560586, 0.07974012)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
 [connection signal="pressed" from="OpenStickNote" to="OpenStickNote" method="_on_pressed"]
 [connection signal="pressed" from="StickNote/CloseStickNote" to="StickNote/CloseStickNote" method="_on_pressed"]
+[connection signal="pressed" from="Control/GetCristal" to="Control" method="_on_get_cristal_pressed"]
