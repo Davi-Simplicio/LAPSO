@@ -17,12 +17,18 @@ func _ready():
 
 func _process(_delta):
 	if player_body != null and Input.is_action_just_pressed("interact"):
-		teleport_player()
+		open_door()
 
-func teleport_player():
-	if destination_point:
-		player_body.global_position = destination_point.global_position
-
+func open_door():
+	var tween = create_tween()
+	# Moves the door up by 32 pixels (one tile) smoothly
+	tween.tween_property(self, "position:y", position.y - 32, 0.4).set_trans(Tween.TRANS_QUINT)
+	# Disable collision so the player can walk through
+	$CollisionShape2D.set_deferred("disabled", true)
+	# Hide the "Press E" label
+	interaction_label.visible = false
+	# Stop processing so they can't "open" it twice
+	set_process(false)
 # --- Signal Connections ---
 
 func _on_body_entered(body):
