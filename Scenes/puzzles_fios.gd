@@ -1,56 +1,115 @@
 extends Node2D
+
 var active_wire: Line2D = null
-var start_terminal = null
-var hovered_terminal = null
+var current_cor_id: String = ""
+var start_pos: Vector2 = Vector2.ZERO
 
 func _ready():
-	# Conecte os sinais de todos os terminais para detectar o mouse
-	for t in get_tree().get_nodes_in_group("Terminals"):
-		t.input_event.connect(_on_terminal_input.bind(t))
-		t.mouse_entered.connect(func(): hovered_terminal = t)
-		t.mouse_exited.connect(func(): hovered_terminal = null)
-
-func _on_terminal_input(_viewport, event, _shape_idx, terminal):
-	# INÍCIO DO ARRASTE
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if terminal.is_left:
-			print("DEBUG: Iniciando fio a partir de: ", terminal.name, " (Cor: ", terminal.color_id, ")")
-			start_terminal = terminal
-			_create_wire(terminal)
-		else:
-			print("DEBUG: Clique ignorado. Terminal ", terminal.name, " é de destino (lado direito).")
+	print("DEBUG: Sistema de Puzzles iniciado.")
+	# Conectamos o sinal de clique de todos os Area2D que estão nos containers
+	# Certifique-se de que seus terminais estão no grupo "terminals"
+	for terminal in get_tree().get_nodes_in_group("terminals"):
+		terminal.input_event.connect(_on_terminal_input.bind(terminal))
+		print("DEBUG: Terminal conectado: ", terminal.name)
 
 func _process(_delta):
-	# ARRASTANDO O FIO
-	if active_wire:
+	# Se existir um fio sendo arrastado, o segundo ponto segue o mouse
+	if active_wire != null:
 		active_wire.set_point_position(1, get_local_mouse_position())
 		
-		# FINALIZAR O ARRASTE
-		if Input.is_action_just_released("ui_accept") or not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			_finish_wire()
+		# Se soltar o botão do mouse, tentamos finalizar a conexão
+		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			_finalizar_conexao()
 
-func _create_wire(terminal):
+func _on_terminal_input(_viewport, event, _shape_idx, terminal):
+	# VERIFICAÇÃO DE SEGURANÇA: O nó clicado tem a variável necessária?
+	if not "cor_id" in terminal:
+		print("ERRO: O nó ", terminal.name, " não tem a variável 'color_id'. Verifique o script!")
+		return
+
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if terminal.is_left:
+			print("DEBUG: Iniciando fio da cor: ", terminal.cor_id)
+			_criar_novo_fio(terminal)
+		else:
+			print("DEBUG: Clique ignorado. Comece pelo lado esquerdo.")
+
+func _criar_novo_fio(terminal):
 	active_wire = Line2D.new()
+	
+	# Configurações Visuais do Line2D
 	active_wire.width = 10
-	active_wire.default_color = Color.WHITE # Você pode pegar a cor do terminal aqui
+	active_wire.default_color = _obter_cor_pelo_id(terminal.cor_id)
+	active_wire.joint_mode = Line2D.LINE_JOINT_ROUND
+	active_wire.begin_cap_mode = Line2D.LINE_CAP_ROUND
+	active_wire.end_cap_mode = Line2D.LINE_CAP_ROUND
+	
+	# Guardamos a cor para validar depois
+	current_cor_id = terminal.cor_id
+	start_pos = terminal.global_position
+	
+	# Adiciona os dois pontos iniciais (origem e mouse)
 	active_wire.add_point(terminal.global_position)
-	active_wire.add_point(terminal.global_position) # Ponto inicial e final iguais
-	active_wire.set_meta("color_id", terminal.color_id) # "Guarda a cor no Line2D"
+	active_wire.add_point(get_local_mouse_position())
+	
 	add_child(active_wire)
 
-func _finish_wire():
-	# VALIDAÇÃO LÓGICA
-	if hovered_terminal and not hovered_terminal.is_left:
-		if hovered_terminal.color_id == active_wire.get_meta("color_id"):
-			# Conexão correta!
-			active_wire.set_point_position(1, hovered_terminal.global_position)
-			print("DEBUG: Soltou fio sobre: ", hovered_terminal.name)
-			print("Conexão validada!")
+var conexoes_corretas: int = 0
+var total_conexoes_necessarias: int = 6 # Altere conforme o número de pares
+
+func _finalizar_conexao():
+	var terminal_destino = _obter_terminal_sob_mouse()
+	
+	if terminal_destino != null and not terminal_destino.is_left:
+		# Verifica se o terminal já está conectado para evitar trapaça
+		if terminal_destino.has_meta("conectado") and terminal_destino.get_meta("conectado"):
+			print("DEBUG: Este terminal já possui um fio!")
+			active_wire.queue_free()
+		elif terminal_destino.cor_id == current_cor_id:
+			print("SUCESSO: Cores batem!")
+			active_wire.set_point_position(1, terminal_destino.global_position)
+			
+			# MARCAR COMO CONECTADO
+			terminal_destino.set_meta("conectado", true)
+			conexoes_corretas += 1
+			_verificar_vitoria()
 		else:
-			# Cor errada
+			print("ERRO: Cor errada!")
 			active_wire.queue_free()
 	else:
-		# Soltou no vazio
 		active_wire.queue_free()
 	
 	active_wire = null
+
+func _verificar_vitoria():
+	print("Progresso: ", conexoes_corretas, "/", total_conexoes_necessarias)
+	if conexoes_corretas >= total_conexoes_necessarias:
+		print("VITÓRIA! Todos os fios foram conectados.")
+		_disparar_efeito_vitoria()
+
+func _disparar_efeito_vitoria():
+	# Exemplo: Abrir o Dijuntor ou tocar um som
+	$Dijuntor.play("abrir") # Se for um AnimatedSprite
+	# Ou mudar a cor de fundo
+	# RenderingServer.set_default_clear_color(Color.DARK_GREEN)
+
+# Função auxiliar para detectar qual terminal o mouse está em cima ao soltar
+func _obter_terminal_sob_mouse():
+	for terminal in get_tree().get_nodes_in_group("terminals"):
+		# Verifica se o mouse está na área
+		if terminal.get_node("CollisionShape2D").get_shape().get_rect().has_point(terminal.get_local_mouse_position()):
+			# SÓ RETORNA SE TIVER A VARIÁVEL
+			if "cor_id" in terminal:
+				return terminal
+	return null
+
+# Função para converter o nome da cor em uma cor real do Godot
+func _obter_cor_pelo_id(id: String) -> Color:
+	match id.to_lower():
+		"azul": return Color.BLUE
+		"laranja": return Color.ORANGE
+		"verde": return Color.GREEN
+		"amarelo": return Color.YELLOW
+		"rosa": return Color.HOT_PINK
+		"roxo": return Color.PURPLE
+		_: return Color.WHITE
