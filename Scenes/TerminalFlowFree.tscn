@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://uultotgt3q2u"]
+
+[ext_resource type="Script" uid="uid://cdf7yavljuat" path="res://Scenes/terminal.gd" id="1_ycbjj"]
+
+[sub_resource type="Gradient" id="Gradient_2sdti"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sd3hx"]
+gradient = SubResource("Gradient_2sdti")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.90000004, 0.2)
+metadata/_snap_enabled = true
+
+[node name="TerminalFlowFree" type="Node2D"]
+script = ExtResource("1_ycbjj")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_sd3hx")

@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://i4uee5s6rc8c"]
+[gd_scene load_steps=7 format=3 uid="uid://i4uee5s6rc8c"]
 
 [ext_resource type="Texture2D" uid="uid://b8nwl5vqg5xm6" path="res://assets/PuzzleFios/dijuntor.png" id="1_prv6e"]
 [ext_resource type="Texture2D" uid="uid://byewca2c18f8g" path="res://assets/PuzzleFios/White_background.png" id="2_wuo5g"]
 [ext_resource type="Script" uid="uid://d1n7cttaa3gcn" path="res://Scenes/grid.gd" id="3_qw6qn"]
+[ext_resource type="PackedScene" uid="uid://uultotgt3q2u" path="res://Scenes/TerminalFlowFree.tscn" id="4_wuo5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cogqg"]
 texture = ExtResource("2_wuo5g")
+margins = Vector2i(1, 1)
+texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -163,6 +166,7 @@ scale = Vector2(0.85714287, 0.8437499)
 texture = ExtResource("1_prv6e")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(470, 200)
+position = Vector2(460, 200)
 tile_set = SubResource("TileSet_4778w")
 script = ExtResource("3_qw6qn")
+terminal_scene = ExtResource("4_wuo5g")
