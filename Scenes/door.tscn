@@ -7,7 +7,7 @@
 size = Vector2(26, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
-size = Vector2(33, 53)
+size = Vector2(33, 62)
 
 [node name="PortalDoor" type="StaticBody2D"]
 z_index = 3
@@ -41,5 +41,5 @@ vertical_alignment = 1
 [node name="InteractionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-1.5, -2.5)
+position = Vector2(-1.5, -7)
 shape = SubResource("RectangleShape2D_p0e35")
