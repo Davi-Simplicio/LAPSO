@@ -1375,15 +1375,15 @@ tile_set = SubResource("TileSet_tbd83")
 tile_map_data = PackedByteArray("AAAEAPz/AAAGAAAAAAAFAPz/AAAHAAAAAAAFAPf/AAAHAAAAAAAEAPf/AAAGAAAAAAA=")
 tile_set = SubResource("TileSet_tbd83")
 
-[node name="Door_hall_door_1" parent="hotel_doors" node_paths=PackedStringArray("destination_point") instance=ExtResource("8_ltv3l")]
+[node name="Door_hall_door_1" parent="hotel_doors" instance=ExtResource("8_ltv3l")]
 z_index = 1
 position = Vector2(81, -47)
 collision_layer = 3
-destination_point = NodePath("../Room_1")
 
-[node name="Door_room_1" parent="hotel_doors" node_paths=PackedStringArray("destination_point") instance=ExtResource("8_ltv3l")]
+[node name="Door_room_1" parent="hotel_doors" instance=ExtResource("8_ltv3l")]
+z_index = 1
 position = Vector2(81, -128)
-destination_point = NodePath("../hall_door_1")
+collision_layer = 3
 
 [node name="Room_1" type="Marker2D" parent="hotel_doors"]
 position = Vector2(73, -86)
