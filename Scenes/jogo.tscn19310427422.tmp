@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://0dm5722t1ls7"]
+
+[ext_resource type="PackedScene" uid="uid://d0q1r27wv2wcg" path="res://Scenes/mapa.tscn" id="1_evvns"]
+[ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://Scenes/player.tscn" id="2_yq54j"]
+[ext_resource type="PackedScene" uid="uid://6foeujt16n08" path="res://Scenes/dialogueBox.tscn" id="5_qn35j"]
+[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Morgan/Documents/PostIt_Morgan.tres" id="8_t8pok"]
+[ext_resource type="PackedScene" uid="uid://bky3fyxawu28k" path="res://Scenes/DocumentsMenu.tscn" id="9_t8pok"]
+[ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="10_mtw28"]
+
+[node name="jogo" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(215, 295)
+
+[node name="Mapa" parent="." instance=ExtResource("1_evvns")]
+
+[node name="Player" parent="." instance=ExtResource("2_yq54j")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(38, 10)
+
+[node name="DialogueBox" parent="." groups=["dialogue_ui"] instance=ExtResource("5_qn35j")]
+
+[node name="DocumentsMenu" parent="." instance=ExtResource("9_t8pok")]
+all_documents_list = Array[ExtResource("10_mtw28")]([ExtResource("8_t8pok")])
