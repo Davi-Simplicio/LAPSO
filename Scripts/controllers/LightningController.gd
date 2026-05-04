@@ -2,7 +2,7 @@ extends CanvasModulate
 
 # 1. SETTINGS
 # Your normal "Night" color (Copy the hex code you are currently using!)
-@export var dark_color: Color = Color("#1a1c3a") 
+@export var dark_color: Color = Color("25284dff") 
 
 # The color of the lightning (Usually a bright, desaturated blue-white)
 @export var lightning_color: Color = Color("#b0b0d0") 

@@ -8,10 +8,18 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Lapso"
+<<<<<<< HEAD
 run/main_scene="uid://dgstix6dhasd"
+=======
+run/main_scene="uid://c78f7un8omk5s"
+>>>>>>> 0797b732168a31d18e941b7093aabd14b4bcbc83
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -23,7 +31,9 @@ DocumentViewer="*res://Scenes/DocumentViewer.tscn"
 
 [display]
 
+window/size/borderless=true
 window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [editor_plugins]
 
