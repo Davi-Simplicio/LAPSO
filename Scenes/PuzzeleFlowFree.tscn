@@ -8,7 +8,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cogqg"]
 texture = ExtResource("2_wuo5g")
 margins = Vector2i(1, 1)
-texture_region_size = Vector2i(32, 32)
+texture_region_size = Vector2i(64, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -170,3 +170,6 @@ position = Vector2(460, 200)
 tile_set = SubResource("TileSet_4778w")
 script = ExtResource("3_qw6qn")
 terminal_scene = ExtResource("4_wuo5g")
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
