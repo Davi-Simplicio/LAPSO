@@ -155,6 +155,7 @@ texture_region_size = Vector2i(20, 20)
 11:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4778w"]
+tile_size = Vector2i(32, 32)
 uv_clipping = true
 sources/0 = SubResource("TileSetAtlasSource_cogqg")
 
