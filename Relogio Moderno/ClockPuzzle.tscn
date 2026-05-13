@@ -1,0 +1,160 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgstix6dhasd"]
+
+[ext_resource type="Script" uid="uid://cyqnhyr4yv5ru" path="res://Relogio Moderno/ClockPuzzle.gd" id="1_7r4b0"]
+[ext_resource type="Texture2D" uid="uid://b3wlw2uoexgue" path="res://assets/Clock Digital/display_bg.png" id="1_vwiub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.22, 0.24, 0.3, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.55, 0.57, 0.62, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+bg_color = Color(0.14, 0.15, 0.2, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3, 0.32, 0.4, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(0.3, 0.32, 0.4, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7, 0.72, 0.8, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ClockPuzzle" type="Node2D"]
+position = Vector2(-77, 6)
+script = ExtResource("1_7r4b0")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 152.0
+offset_top = 43.0
+offset_right = 1168.0
+offset_bottom = 615.0
+color = Color(0.835, 0.773, 0.671, 1)
+
+[node name="DisplaySprite" type="Sprite2D" parent="."]
+position = Vector2(658, 330.49997)
+scale = Vector2(0.7514881, 0.73567706)
+texture = ExtResource("1_vwiub")
+
+[node name="LabelTitulo" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 84.0
+offset_right = 1297.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.25, 0.22, 0.18, 1)
+theme_override_font_sizes/font_size = 28
+text = "CLOCK PUZZLE"
+horizontal_alignment = 1
+
+[node name="LabelAlvo" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 126.0
+offset_right = 1306.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0.55, 0.35, 0.05, 1)
+theme_override_font_sizes/font_size = 19
+text = "Acerte: 12:30"
+horizontal_alignment = 1
+
+[node name="LabelHorario" type="Label" parent="."]
+offset_left = 310.0
+offset_top = 169.0
+offset_right = 1028.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0.15, 0.95, 0.45, 1)
+theme_override_font_sizes/font_size = 160
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoHora" type="VBoxContainer" parent="."]
+offset_left = 182.0
+offset_top = 247.0
+offset_right = 362.0
+offset_bottom = 371.0
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="BtnHoraMais" type="Button" parent="BotaoHora"]
+custom_minimum_size = Vector2(170, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "▲  HR
+Hora"
+
+[node name="BtnHoraMenos" type="Button" parent="BotaoHora"]
+custom_minimum_size = Vector2(170, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "▼  HR
+Hora"
+
+[node name="BotaoMinuto" type="VBoxContainer" parent="."]
+offset_left = 967.0
+offset_top = 247.0
+offset_right = 1147.0
+offset_bottom = 371.0
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="BtnMinMais" type="Button" parent="BotaoMinuto"]
+custom_minimum_size = Vector2(170, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "▲  MIN
+Minuto"
+
+[node name="BtnMinMenos" type="Button" parent="BotaoMinuto"]
+custom_minimum_size = Vector2(170, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "▼  MIN
+Minuto"
+
+[node name="LabelSucesso" type="Label" parent="."]
+visible = false
+offset_left = 25.0
+offset_top = 543.0
+offset_right = 1305.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0.1, 0.6, 0.2, 1)
+theme_override_font_sizes/font_size = 34
+text = "✅ PUZZLE RESOLVIDO!"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
