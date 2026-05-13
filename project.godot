@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Lapso"
-run/main_scene="uid://g8ab7ge23gtn"
+run/main_scene="uid://dgnlads3el40h"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -27,7 +27,9 @@ DocumentViewer="*res://Scenes/DocumentViewer.tscn"
 
 [display]
 
+window/size/borderless=true
 window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [editor_plugins]
 

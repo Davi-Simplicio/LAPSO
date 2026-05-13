@@ -1,0 +1,513 @@
+[gd_scene load_steps=30 format=3 uid="uid://dgnlads3el40h"]
+
+[ext_resource type="Texture2D" uid="uid://dtpxa80jo3vkd" path="res://assets/PhysicWorkstation/background.png" id="1_mfal6"]
+[ext_resource type="Texture2D" uid="uid://8hokifpyqdvh" path="res://assets/PhysicWorkstation/claw.png" id="2_hla2s"]
+[ext_resource type="Texture2D" uid="uid://cw12shfsfumxx" path="res://assets/PhysicWorkstation/support.png" id="3_5vbjs"]
+[ext_resource type="Texture2D" uid="uid://jccraoggl6bf" path="res://assets/PhysicWorkstation/balança.png" id="4_1jd66"]
+[ext_resource type="Texture2D" uid="uid://0khqds8l2sqj" path="res://assets/PhysicWorkstation/stick-note.png" id="5_arwvn"]
+[ext_resource type="Texture2D" uid="uid://cj8cidgek7k3r" path="res://assets/PhysicWorkstation/balança2.png" id="5_dxnad"]
+[ext_resource type="Texture2D" uid="uid://dt2ebcku8l60w" path="res://assets/PhysicWorkstation/stick-note-open.png" id="6_alcv7"]
+[ext_resource type="Script" uid="uid://dy5ddbxpv2faj" path="res://Scenes/open_stick_note.gd" id="6_hhvvv"]
+[ext_resource type="FontFile" uid="uid://cwfahrx6v0wu3" path="res://assets/PhysicWorkstation/Banda Note.ttf" id="7_2ljqr"]
+[ext_resource type="Texture2D" uid="uid://jwecdfbjqfpw" path="res://assets/PhysicWorkstation/x.png" id="8_2ljqr"]
+[ext_resource type="Script" uid="uid://bni2dm72qiqcr" path="res://Scenes/close-stick-note.gd" id="9_hhvvv"]
+[ext_resource type="Script" uid="uid://ctju6fh5hwp1e" path="res://Scenes/weights.gd" id="11_p2vsv"]
+[ext_resource type="Texture2D" uid="uid://cl20drx6is8ea" path="res://assets/PhysicWorkstation/weight.png" id="13_dxnad"]
+[ext_resource type="Texture2D" uid="uid://c53ece2xi3w03" path="res://assets/PhysicWorkstation/cristal.webp" id="13_ry7bl"]
+[ext_resource type="FontFile" uid="uid://c2obxgqiagppp" path="res://assets/ChemicalWorkstation/Font.ttf" id="15_cllkv"]
+[ext_resource type="Texture2D" uid="uid://ctkkg56t2vbx" path="res://assets/PhysicWorkstation/botão.png" id="15_idg5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2vsv"]
+atlas = ExtResource("5_arwvn")
+region = Rect2(124.58942, 180.2486, 341.5073, 126.04724)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfal6"]
+atlas = ExtResource("8_2ljqr")
+region = Rect2(314.84146, 288.10986, 279.35617, 279.24036)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idg5v"]
+atlas = ExtResource("13_dxnad")
+region = Rect2(126, 123.5, 247, 253)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fncqo"]
+atlas = ExtResource("13_dxnad")
+region = Rect2(128, 122.5, 244, 269)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxnad"]
+atlas = ExtResource("2_hla2s")
+region = Rect2(145.7983, 327.35083, 530.93005, 770.8688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hla2s"]
+atlas = ExtResource("2_hla2s")
+region = Rect2(1998.9, 337.00006, 524.5853, 760.81464)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2vsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxnad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_idg5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cllkv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fncqo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cllkv"]
+atlas = ExtResource("15_idg5v")
+region = Rect2(55.101433, 17.306969, 151.52203, 120.42017)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ph7y"]
+atlas = ExtResource("15_idg5v")
+region = Rect2(55.411934, 156.88554, 151.14874, 113.49663)
+
+[node name="Node2D" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mfal6")
+expand_mode = 1
+
+[node name="Support" type="Sprite2D" parent="."]
+position = Vector2(442, 322.99997)
+scale = Vector2(0.20585324, 0.24333225)
+texture = ExtResource("3_5vbjs")
+
+[node name="Balança" type="Sprite2D" parent="."]
+position = Vector2(959, 392)
+scale = Vector2(0.23119122, 0.23956297)
+texture = ExtResource("4_1jd66")
+
+[node name="Balança-Direita" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(959, 397)
+scale = Vector2(0.18397611, 0.18427922)
+texture = ExtResource("5_dxnad")
+
+[node name="Balança-Esquerda" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961.99994, 397.00003)
+scale = Vector2(-0.184, 0.184)
+texture = ExtResource("5_dxnad")
+
+[node name="OpenStickNote" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 454.0
+offset_right = 608.0
+offset_bottom = 580.0
+scale = Vector2(0.2586312, 0.31953633)
+texture_normal = SubResource("AtlasTexture_p2vsv")
+script = ExtResource("6_hhvvv")
+
+[node name="StickNote" type="Node2D" parent="."]
+visible = false
+position = Vector2(119.99999, 159.00002)
+
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote"]
+scale = Vector2(0.44592643, 0.44800982)
+texture = ExtResource("6_alcv7")
+
+[node name="Label" type="Label" parent="StickNote"]
+offset_left = -86.99999
+offset_top = -125.000015
+offset_right = 132.0
+offset_bottom = -24.000015
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 20
+text = "Potência:
+Quão rápido a energia está sendo transferida.
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="StickNote/Label"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 92.0
+offset_right = 220.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 20
+text = "Potência="
+autowrap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StickNote/Label/Label2"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 41.0
+theme_override_colors/default_color = Color(0.33256748, 0.32850763, 9.62615e-08, 1)
+theme_override_fonts/normal_font = ExtResource("7_2ljqr")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[u] Peso X Altura [/u]"
+
+[node name="Label" type="Label" parent="StickNote/Label/Label2"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 30.0
+offset_right = 211.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 20
+text = "Tempo de Queda​"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="StickNote/Label"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 158.0
+offset_right = 221.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 16
+text = "*Altura =  1 metro"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="StickNote/Label/Label3"]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 219.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("7_2ljqr")
+theme_override_font_sizes/font_size = 16
+text = "*Menor Peso =  5Kg"
+autowrap_mode = 2
+
+[node name="CloseStickNote" type="TextureButton" parent="StickNote"]
+offset_left = 109.0
+offset_top = -137.00002
+offset_right = 388.0
+offset_bottom = 141.99998
+scale = Vector2(0.060649715, 0.060932785)
+texture_normal = SubResource("AtlasTexture_mfal6")
+script = ExtResource("9_hhvvv")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 697.0
+offset_top = 279.0
+offset_right = 746.99994
+offset_bottom = 329.0
+scale = Vector2(8.651391, 4.547874)
+script = ExtResource("11_p2vsv")
+
+[node name="1_5-1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -4.161181
+offset_top = 39.798817
+offset_right = 242.83882
+offset_bottom = 312.79883
+scale = Vector2(0.007, 0.014)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_5-1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -2.3117635
+offset_top = 42.87718
+offset_right = 244.68823
+offset_bottom = 315.87717
+scale = Vector2(0.007, 0.014)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_10-1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_top = 38.699707
+offset_right = 247.0
+offset_bottom = 311.6997
+scale = Vector2(0.01, 0.02)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_10-1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 2.6582031
+offset_top = 41.559082
+offset_right = 249.6582
+offset_bottom = 314.55908
+scale = Vector2(0.01, 0.02)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_15-1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 9.709473
+offset_top = 39.578125
+offset_right = 256.70947
+offset_bottom = 312.57813
+scale = Vector2(0.015, 0.03)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_15-1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 6.126465
+offset_top = 36.28076
+offset_right = 253.12646
+offset_bottom = 309.28076
+scale = Vector2(0.015, 0.03)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="ClawClosed" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.201
+anchor_right = -0.18
+anchor_bottom = 0.064
+offset_left = -21.967983
+offset_top = -18.909935
+offset_right = 502.98203
+offset_bottom = 940.7807
+scale = Vector2(0.009690373, 0.013701431)
+texture = SubResource("AtlasTexture_dxnad")
+
+[node name="ClawOpen" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.201
+anchor_bottom = 0.224
+offset_left = -21.967983
+offset_top = -18.909935
+offset_right = 493.98203
+offset_bottom = 932.7807
+scale = Vector2(0.009690373, 0.013701431)
+texture = SubResource("AtlasTexture_hla2s")
+
+[node name="CristalWeight" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 35.254448
+offset_top = 16.491222
+offset_right = 43.254448
+offset_bottom = 24.491222
+scale = Vector2(1.6564686, 3.0780451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2vsv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dxnad")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_idg5v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cllkv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fncqo")
+
+[node name="CristalClaw" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.033
+anchor_bottom = 0.05
+offset_left = -31.986214
+offset_top = -19.569582
+offset_right = 431.20804
+offset_bottom = 255.2196
+scale = Vector2(0.017719897, 0.050594453)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2vsv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dxnad")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_idg5v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cllkv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fncqo")
+
+[node name="WeightGroup" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 13.408249
+offset_top = 23.967243
+offset_right = 53.40825
+offset_bottom = 63.967247
+scale = Vector2(0.25004965, 0.260044)
+
+[node name="1_15-2" type="TextureButton" parent="Control/WeightGroup"]
+visible = false
+layout_mode = 0
+offset_left = 17.798723
+offset_top = -5.9189167
+offset_right = 264.79874
+offset_bottom = 267.0811
+scale = Vector2(0.056340877, 0.119610175)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_15-2" type="TextureButton" parent="Control/WeightGroup"]
+visible = false
+layout_mode = 0
+offset_left = 8.320707
+offset_top = -4.2277975
+offset_right = 255.32071
+offset_bottom = 268.77222
+scale = Vector2(0.056340877, 0.119610175)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_5-2" type="TextureButton" parent="Control/WeightGroup"]
+visible = false
+layout_mode = 0
+offset_left = 27.735683
+offset_top = 15.220099
+offset_right = 274.7357
+offset_bottom = 288.2201
+scale = Vector2(0.02629241, 0.05581809)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_5-2" type="TextureButton" parent="Control/WeightGroup"]
+visible = false
+layout_mode = 0
+offset_left = 24.037588
+offset_top = 16.911205
+offset_right = 271.03763
+offset_bottom = 289.9112
+scale = Vector2(0.02629277, 0.05581809)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="1_10-2" type="TextureButton" parent="Control/WeightGroup"]
+visible = false
+layout_mode = 0
+offset_left = 7.8584514
+offset_top = 9.301163
+offset_right = 254.85844
+offset_bottom = 282.30115
+scale = Vector2(0.037560586, 0.07974012)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="2_10-2" type="TextureButton" parent="Control/WeightGroup"]
+visible = false
+layout_mode = 0
+offset_left = 14.330109
+offset_top = 10.992297
+offset_right = 261.33014
+offset_bottom = 283.9923
+scale = Vector2(0.037560586, 0.07974012)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_idg5v")
+texture_hover = SubResource("AtlasTexture_fncqo")
+stretch_mode = 0
+
+[node name="Cron" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -33.40503
+offset_top = 36.28064
+offset_right = 117.59497
+offset_bottom = 158.0958
+scale = Vector2(0.051559933, 0.07603565)
+texture = SubResource("AtlasTexture_cllkv")
+
+[node name="CronOn" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = -33.40503
+offset_top = 36.28064
+offset_right = 117.59497
+offset_bottom = 158.0958
+scale = Vector2(0.050326575, 0.07603565)
+texture = SubResource("AtlasTexture_4ph7y")
+
+[node name="CronText" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -33.289368
+offset_top = 40.018677
+offset_right = 85.710625
+offset_bottom = 76.01868
+scale = Vector2(0.0669166, 0.12278494)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("15_cllkv")
+theme_override_font_sizes/font_size = 40
+text = "0.000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CronChange" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.033
+anchor_bottom = 0.05
+offset_left = -33.951214
+offset_top = 34.08186
+offset_right = 429.24304
+offset_bottom = 308.87103
+scale = Vector2(0.024560204, 0.04718876)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2vsv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dxnad")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_idg5v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cllkv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fncqo")
+
+[node name="Cristal" type="Sprite2D" parent="Control"]
+position = Vector2(-15, 40.000004)
+scale = Vector2(0.008889198, 0.017597243)
+texture = ExtResource("13_ry7bl")
+
+[connection signal="pressed" from="OpenStickNote" to="OpenStickNote" method="_on_pressed"]
+[connection signal="pressed" from="StickNote/CloseStickNote" to="StickNote/CloseStickNote" method="_on_pressed"]
+[connection signal="pressed" from="Control/CristalWeight" to="Control" method="_on_get_cristal_pressed"]
+[connection signal="pressed" from="Control/CristalClaw" to="Control" method="_on_get_cristal_claw_pressed"]
+[connection signal="pressed" from="Control/CronChange" to="Control" method="_on_cron_change_pressed"]

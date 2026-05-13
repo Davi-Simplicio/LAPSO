@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://bky3fyxawu28k"]
+[gd_scene load_steps=4 format=3 uid="uid://bky3fyxawu28k"]
 
 [ext_resource type="Script" uid="uid://i80u5m26yb5b" path="res://Scripts/documents_menu.gd" id="1_ddm2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.15, 0.15, 0.2, 0.95)
+border_color = Color(0.8, 0.6, 0.2, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scroll"]
+bg_color = Color(0.1, 0.1, 0.12, 0.5)
+border_color = Color(0.4, 0.4, 0.4, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 32
+font_color = Color(0.8, 0.6, 0.2, 1)
 
 [node name="DocumentsMenu" type="CanvasLayer"]
 script = ExtResource("1_ddm2j")
@@ -11,31 +35,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 163.0
-offset_bottom = 28.0
-text = "Evidence Collected"
+[node name="Background" type="ColorRect" parent="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+mouse_filter = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
-layout_mode = 0
-offset_top = 37.0
-offset_right = 1152.0
-offset_bottom = 592.0
+[node name="MenuContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -250.0
+offset_right = -50.0
+offset_bottom = 250.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="Grid" type="GridContainer" parent="Panel/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MenuContainer"]
 layout_mode = 2
-columns = 4
+custom_minimum_size = Vector2(1000, 500)
+theme_override_constants/separation = 15
 
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 1034.0
-offset_top = 603.0
-offset_right = 1143.0
-offset_bottom = 634.0
+[node name="Title" type="HBoxContainer" parent="Panel/MenuContainer/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+
+[node name="Label" type="Label" parent="Panel/MenuContainer/VBoxContainer/Title"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Evidence Collected"
+label_settings = SubResource("LabelSettings_title")
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MenuContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_scroll")
+
+[node name="Grid" type="GridContainer" parent="Panel/MenuContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+columns = 5
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Panel/MenuContainer/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="Panel/MenuContainer/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
 text = "Close"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
-[connection signal="pressed" from="Panel/Button" to="." method="close_menu"]
+[connection signal="pressed" from="Panel/MenuContainer/VBoxContainer/ButtonContainer/CloseButton" to="." method="close_menu"]

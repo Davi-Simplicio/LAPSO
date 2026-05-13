@@ -1,0 +1,186 @@
+[gd_scene load_steps=18 format=3 uid="uid://c78f7un8omk5s"]
+
+[ext_resource type="Texture2D" uid="uid://cnyrqdb63eq3" path="res://assets/ChemicalWorkstation/Background.png" id="1_efr58"]
+[ext_resource type="Texture2D" uid="uid://bri0ugqx3ot3h" path="res://assets/ChemicalWorkstation/blue.png" id="2_b88rs"]
+[ext_resource type="Texture2D" uid="uid://bl35f4iq43pgv" path="res://assets/ChemicalWorkstation/empty.png" id="2_qagd5"]
+[ext_resource type="Script" uid="uid://bt7n1geyvbea4" path="res://Scenes/test_tube.gd" id="3_bpp4y"]
+[ext_resource type="Texture2D" uid="uid://dxdjd8okjwvc" path="res://assets/ChemicalWorkstation/red.png" id="4_qagd5"]
+[ext_resource type="Texture2D" uid="uid://duivw57drurhg" path="res://assets/ChemicalWorkstation/yellow.png" id="5_bpp4y"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_h8vul"]
+script = ExtResource("3_bpp4y")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b88rs"]
+atlas = ExtResource("2_b88rs")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b88rs"]
+load_path = "res://.godot/imported/blue.png-af3f398ba5dc43e4e9eb58367632a39f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8vul"]
+atlas = SubResource("CompressedTexture2D_b88rs")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8scc6"]
+atlas = ExtResource("4_qagd5")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpp4y"]
+atlas = ExtResource("4_qagd5")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p6fg"]
+atlas = ExtResource("5_bpp4y")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mxqy"]
+atlas = ExtResource("5_bpp4y")
+region = Rect2(3.962963, 4.962963, 35.555553, 99.25926)
+margin = Rect2(0, 0, 0, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okl0j"]
+atlas = ExtResource("2_qagd5")
+region = Rect2(24.892107, 24.870865, 35.84999, 98.5169)
+margin = Rect2(0, 20, 0, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_flg45"]
+load_path = "res://.godot/imported/empty.png-506757313be3a3e6525bfc6a7420f7e1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxgy5"]
+atlas = SubResource("CompressedTexture2D_flg45")
+region = Rect2(24.892107, 24.870865, 35.84999, 98.5169)
+margin = Rect2(0, 0, 0, 20)
+
+[node name="Node2D" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_efr58")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 9
+script = ExtResource("3_bpp4y")
+
+[node name="Space" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space2" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BlueTestTube" type="TextureButton" parent="GridContainer/Space2"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 216.0
+offset_right = 63.0
+offset_bottom = 335.0
+scale = Vector2(2, 2)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_b88rs")
+texture_hover = SubResource("AtlasTexture_h8vul")
+stretch_mode = 0
+
+[node name="Space3" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RedTestTube" type="TextureButton" parent="GridContainer/Space3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 215.0
+offset_right = 59.0
+offset_bottom = 334.0
+scale = Vector2(2, 2)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_8scc6")
+texture_hover = SubResource("AtlasTexture_bpp4y")
+stretch_mode = 0
+
+[node name="Space4" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="YellowTestTube" type="TextureButton" parent="GridContainer/Space4"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 215.0
+offset_right = 58.0
+offset_bottom = 334.0
+scale = Vector2(2, 2)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_4p6fg")
+texture_hover = SubResource("AtlasTexture_4mxqy")
+stretch_mode = 0
+
+[node name="Space5" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space6" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space7" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Space8" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestTube" type="TextureButton" parent="GridContainer/Space8"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 236.0
+offset_right = 78.0
+offset_bottom = 355.0
+scale = Vector2(2, 2)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_h8vul")
+texture_normal = SubResource("AtlasTexture_okl0j")
+texture_hover = SubResource("AtlasTexture_qxgy5")
+stretch_mode = 0
+
+[connection signal="pressed" from="GridContainer/Space2/BlueTestTube" to="GridContainer/Space2/BlueTestTube" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Space3/RedTestTube" to="GridContainer/Space3/RedTestTube" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Space4/YellowTestTube" to="GridContainer/Space4/YellowTestTube" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Space8/TestTube" to="GridContainer/Space8/TestTube" method="_on_pressed"]

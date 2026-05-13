@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://7aoftr3p3flb"]
+[gd_scene load_steps=11 format=3 uid="uid://7aoftr3p3flb"]
 
 [ext_resource type="Script" uid="uid://tlbl5uofbi8q" path="res://Scripts/npc.gd" id="1_xxcha"]
-[ext_resource type="Texture2D" uid="uid://dxyaetpd740g8" path="res://assets/NPC's/Free Character Sprites - Fantasy Dreamland/16x16/Char_001_Idle.png" id="2_xxcha"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 4.0
@@ -127,13 +126,11 @@ size = Vector2(43.5, 44.625)
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_xxcha")
-dialogue_text = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1, -14.000001)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_xxcha")
+scale = Vector2(1.2, 1.2)
 hframes = 4
 vframes = 4
 region_rect = Rect2(0, 0, 26.072441, 27.049385)
@@ -141,7 +138,7 @@ region_rect = Rect2(0, 0, 26.072441, 27.049385)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
 y_sort_enabled = true
-position = Vector2(-1, 2)
+position = Vector2(-1, -1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_onrkg")
 
@@ -165,7 +162,7 @@ vertical_alignment = 1
 [node name="InteractionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -7)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_xxcha")
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
