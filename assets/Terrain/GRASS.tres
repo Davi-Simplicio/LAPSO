@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b4x2lm03ci5kv"]
+[gd_resource type="TileSet" format=3 uid="uid://b4x2lm03ci5kv"]
 
 [ext_resource type="Texture2D" uid="uid://cyneag2cq7yql" path="res://assets/Terrain/Tilemap_color1.png" id="1_c7hwr"]
 
