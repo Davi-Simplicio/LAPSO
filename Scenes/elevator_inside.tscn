@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjrihji3y368k"]
+
+[ext_resource type="Texture2D" uid="uid://dj5mevp0r7p76" path="res://assets/elevator_inside.png" id="1_i85ie"]
+[ext_resource type="Script" uid="uid://gj2lvmhi5dlw" path="res://Scenes/elevator_inside.gd" id="1_p7ogc"]
+[ext_resource type="FontFile" uid="uid://c2obxgqiagppp" path="res://assets/ChemicalWorkstation/Font.ttf" id="3_btdoi"]
+
+[node name="ElevatorInside" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p7ogc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ElevatorInside" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i85ie")
+expand_mode = 2
+
+[node name="DisplayLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 3.0
+offset_right = 697.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(0.71666026, 0, 0.10525227, 1)
+theme_override_fonts/normal_font = ExtResource("3_btdoi")
+theme_override_font_sizes/normal_font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Floor3Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 168.0
+offset_right = 659.0
+offset_bottom = 262.0
+
+[node name="Floor2Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 274.0
+offset_right = 662.0
+offset_bottom = 375.0
+
+[node name="Floor1Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 378.0
+offset_right = 660.0
+offset_bottom = 476.0
+
+[node name="HallButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 484.0
+offset_right = 662.0
+offset_bottom = 584.0

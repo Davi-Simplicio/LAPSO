@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://chynhh6jwvsyl"]
+
+[ext_resource type="Script" uid="uid://b20hrh5tajft6" path="res://Meu Relogio/clock_model.gd" id="1_n05pn"]
+[ext_resource type="Texture2D" uid="uid://bjwgla5tcky8g" path="res://assets/house_assets/TopDownHouse_FurnitureState1.png" id="2_n05pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(26, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
+size = Vector2(33, 62)
+
+[node name="Clock Model" type="StaticBody2D"]
+z_index = 3
+y_sort_enabled = true
+script = ExtResource("1_n05pn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="Door" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
+position = Vector2(-1, -6)
+scale = Vector2(1, 1.043)
+texture = ExtResource("2_n05pn")
+region_enabled = true
+region_rect = Rect2(69, 112.5, 24, 46)
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 118.0
+offset_bottom = 9.0
+scale = Vector2(0.3, 0.3)
+text = "Press E to Open"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1.5, -7)
+shape = SubResource("RectangleShape2D_p0e35")
