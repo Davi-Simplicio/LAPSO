@@ -1,4 +1,5 @@
 extends Control
+signal elevator_closed
 
 # A dictionary tracking the functional state of each floor
 # Key: floor number (int), Value: working or not (bool)
@@ -46,3 +47,7 @@ func repair_floor(floor_number: int):
 	if floor_states.has(floor_number):
 		floor_states[floor_number] = true
 		update_display("FLOOR " + str(floor_number) + " READY")
+
+
+func _on_elevator_closed() -> void:
+	pass # Replace with function body.
