@@ -64,3 +64,5 @@ offset_left = 498.0
 offset_top = 484.0
 offset_right = 662.0
 offset_bottom = 584.0
+
+[connection signal="elevator_closed" from="." to="." method="_on_elevator_closed"]
