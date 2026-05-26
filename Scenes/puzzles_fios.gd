@@ -49,7 +49,7 @@ func _criar_novo_fio(terminal):
 	start_pos = terminal.global_position
 	
 	# Adiciona os dois pontos iniciais (origem e mouse)
-	active_wire.add_point(terminal.global_position+10)
+	active_wire.add_point(terminal.global_position)
 	active_wire.add_point(get_local_mouse_position())
 	
 	add_child(active_wire)
