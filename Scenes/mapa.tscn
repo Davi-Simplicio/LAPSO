@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://d0q1r27wv2wcg"]
+[gd_scene load_steps=46 format=4 uid="uid://d0q1r27wv2wcg"]
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Resource" uid="uid://074rqejp10c7" path="res://Resources/Times/Past.tres" id="2_5xr4q"]
@@ -19,7 +19,10 @@
 [ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Morgan/NPC_Morgan.tres" id="12_00yci"]
 [ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Jane/NPC_Jane.tres" id="13_tbd83"]
 [ext_resource type="Resource" uid="uid://c7ajy5m4wcsli" path="res://Resources/Times/time_travel.tres" id="16_aj1jk"]
+[ext_resource type="PackedScene" uid="uid://chynhh6jwvsyl" path="res://Meu Relogio/Clock Model.tscn" id="17_5xr4q"]
+[ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
+[ext_resource type="Script" uid="uid://dlar5874wvefi" path="res://Scenes/elavator_door.gd" id="21_4yu56"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1275,6 +1278,10 @@ y_sort_enabled = true
 position = Vector2(-9, -168)
 npc_data = ExtResource("13_tbd83")
 
+[node name="Relogio Puzzle" parent="Past" instance=ExtResource("17_5xr4q")]
+z_index = 1
+position = Vector2(-231, -216)
+
 [node name="Present" type="Node2D" parent="."]
 visible = false
 
@@ -1333,6 +1340,10 @@ y_sort_enabled = true
 position = Vector2(-9, -168)
 npc_data = ExtResource("13_tbd83")
 
+[node name="Clock Model" parent="Present" instance=ExtResource("18_qguc3")]
+z_index = 1
+position = Vector2(-225, -206)
+
 [node name="Future" type="Node2D" parent="."]
 visible = false
 
@@ -1381,9 +1392,10 @@ tile_set = SubResource("TileSet_tbd83")
 tile_map_data = PackedByteArray("AAAEAPz/AAAGAAAAAAAFAPz/AAAHAAAAAAAFAPf/AAAHAAAAAAAEAPf/AAAGAAAAAADx//f/AAAGAAAAAADy//f/AAAHAAAAAADx//z/AAAGAAAAAADy//z/AAAHAAAAAAA=")
 tile_set = SubResource("TileSet_tbd83")
 
-[node name="PortalDoor" parent="hotel_doors" instance=ExtResource("20_5xr4q")]
+[node name="Elevator" parent="hotel_doors" instance=ExtResource("20_5xr4q")]
 z_index = 1
 position = Vector2(220, -125)
+script = ExtResource("21_4yu56")
 
 [node name="Door_hall_door_3" parent="hotel_doors" instance=ExtResource("8_ltv3l")]
 z_index = 1
