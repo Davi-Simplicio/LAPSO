@@ -1,19 +1,19 @@
-[gd_scene load_steps=28 format=3 uid="uid://g8ab7ge23gtn"]
+[gd_scene format=3 uid="uid://g8ab7ge23gtn"]
 
-[ext_resource type="Script" uid="uid://bw1jyhwua6f31" path="res://Scenes/puzzles_fios.gd" id="1_60mjs"]
+[ext_resource type="Script" uid="uid://bw1jyhwua6f31" path="res://Scripts/PuzzlesFios/puzzles_fios.gd" id="1_60mjs"]
 [ext_resource type="Texture2D" uid="uid://b8nwl5vqg5xm6" path="res://assets/PuzzleFios/dijuntor.png" id="1_dvkci"]
-[ext_resource type="Script" uid="uid://blojcge8h117j" path="res://Scenes/area_2d.gd" id="3_27k5r"]
+[ext_resource type="Script" uid="uid://cgoqhmdeqbnb2" path="res://Scripts/PuzzlesFios/area_2d.gd" id="3_2phwm"]
 [ext_resource type="Texture2D" uid="uid://btg4c4hnhmagg" path="res://assets/PuzzleFios/Ativo 4ci.png" id="3_q8qml"]
-[ext_resource type="Texture2D" uid="uid://dsqdfkoopst6r" path="res://assets/New Piskel (1).png" id="4_qfxcr"]
+[ext_resource type="Texture2D" uid="uid://cqqvom2jbg2io" path="res://assets/PuzzleFios/terminalAzul.png" id="4_6u0up"]
 [ext_resource type="Texture2D" uid="uid://cfhfc6bhk22dt" path="res://assets/PuzzleFios/Ativo 5ci.png" id="5_a74g3"]
-[ext_resource type="Script" uid="uid://cf0yw4vgrfao4" path="res://Scenes/area_2d_2.gd" id="5_qfxcr"]
+[ext_resource type="Texture2D" uid="uid://34qyorhda115" path="res://assets/PuzzleFios/TerminalLaranja.png" id="5_gibks"]
+[ext_resource type="Texture2D" uid="uid://dayl8ke2pvvkm" path="res://assets/PuzzleFios/TerminalVerde.png" id="6_qfxcr"]
 [ext_resource type="Texture2D" uid="uid://dqib8as2t0i7g" path="res://assets/PuzzleFios/Ativo 6ci.png" id="7_dv60c"]
-[ext_resource type="Script" uid="uid://dm6jkikk8lrvw" path="res://Scenes/area_2d_3.gd" id="7_g4fqv"]
+[ext_resource type="Texture2D" uid="uid://c0p1w2wjxeqcy" path="res://assets/PuzzleFios/TerminalAmarelo.png" id="7_g4fqv"]
+[ext_resource type="Texture2D" uid="uid://187j1qquaduf" path="res://assets/PuzzleFios/TerminalRosa.png" id="8_mj2bk"]
 [ext_resource type="Texture2D" uid="uid://di8525rr0n8bi" path="res://assets/PuzzleFios/Ativo 7ci.png" id="9_5k3q4"]
-[ext_resource type="Script" uid="uid://bophwchswbyvt" path="res://Scenes/area_2d_4.gd" id="9_mj2bk"]
-[ext_resource type="Script" uid="uid://smldgo5hftqg" path="res://Scenes/area_2d_5.gd" id="11_oxocd"]
+[ext_resource type="Texture2D" uid="uid://div6dajwu3wj0" path="res://assets/PuzzleFios/TerminalRoxo.png" id="9_oxocd"]
 [ext_resource type="Texture2D" uid="uid://cq2acjpg2a37r" path="res://assets/PuzzleFios/Ativo 2ci.png" id="11_tn3ub"]
-[ext_resource type="Script" uid="uid://cy2c7lmthdxxt" path="res://Scenes/area_2d_6.gd" id="13_kq8se"]
 [ext_resource type="Texture2D" uid="uid://sv2y82ola4vj" path="res://assets/PuzzleFios/Ativo 3ci.png" id="13_tdg2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60mjs"]
@@ -52,202 +52,216 @@ size = Vector2(26, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdg2u"]
 size = Vector2(26, 27)
 
-[node name="PuzzlesFios" type="Node2D"]
+[node name="PuzzlesFios" type="Node2D" unique_id=995794910]
 script = ExtResource("1_60mjs")
 
-[node name="Dijuntor" type="Sprite2D" parent="."]
+[node name="Dijuntor" type="Sprite2D" parent="." unique_id=108110581]
 position = Vector2(576.0599, 324)
 scale = Vector2(0.8570537, 0.84375)
 texture = ExtResource("1_dvkci")
 
-[node name="VBoxContainerEsq" type="VBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2023500190]
+offset_left = 276.0
+offset_top = -1.0
+offset_right = 893.0
+offset_bottom = 112.0
+color = Color(0.047058824, 0.047058824, 0.047058824, 0.7607843)
+
+[node name="Label" type="Label" parent="." unique_id=811419624]
+offset_left = 306.0
+offset_top = 58.0
+offset_right = 861.0
+offset_bottom = 81.0
+text = "Ligue todos os fios da direita as suas respectivas cores correspondentes"
+
+[node name="VBoxContainerEsq" type="VBoxContainer" parent="." unique_id=1972324022]
 offset_left = 309.0
 offset_top = 160.0
 offset_right = 381.0
 offset_bottom = 498.0
 mouse_filter = 2
 
-[node name="Area2D" type="Area2D" parent="VBoxContainerEsq" groups=["terminals"]]
+[node name="Area2D" type="Area2D" parent="VBoxContainerEsq" unique_id=1268067500 groups=["terminals"]]
 position = Vector2(40, 41)
 scale = Vector2(0.096205965, 0.096205965)
-script = ExtResource("3_27k5r")
+script = ExtResource("3_2phwm")
 cor_id = "Azul"
 is_left = true
 
-[node name="TerminalAzul" type="Sprite2D" parent="VBoxContainerEsq/Area2D"]
+[node name="TerminalAzul" type="Sprite2D" parent="VBoxContainerEsq/Area2D" unique_id=1595494113]
 position = Vector2(-9.918213e-05, -9.918213e-05)
 scale = Vector2(2.111357, 2.111357)
-texture = ExtResource("4_qfxcr")
+texture = ExtResource("4_6u0up")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D" unique_id=974283596]
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_60mjs")
 
-[node name="Area2D2" type="Area2D" parent="VBoxContainerEsq" groups=["terminals"]]
+[node name="Area2D2" type="Area2D" parent="VBoxContainerEsq" unique_id=1914939981 groups=["terminals"]]
 position = Vector2(40, 90)
-script = ExtResource("5_qfxcr")
+script = ExtResource("3_2phwm")
 cor_id = "Laranja"
 is_left = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D2" unique_id=2006194984]
 position = Vector2(-0.15649414, -0.10839844)
 shape = SubResource("RectangleShape2D_q8qml")
 
-[node name="TerminalLaranja" type="Sprite2D" parent="VBoxContainerEsq/Area2D2"]
-position = Vector2(-43.156494, -90.10839)
-scale = Vector2(0.096205965, 0.096205965)
-texture = ExtResource("5_a74g3")
+[node name="TerminalLaranja" type="Sprite2D" parent="VBoxContainerEsq/Area2D2" unique_id=938811012]
+position = Vector2(-91.41573, -191.24928)
+scale = Vector2(0.20435296, 0.2043529)
+texture = ExtResource("5_gibks")
 offset = Vector2(446.95776, 935.4929)
 
-[node name="Area2D3" type="Area2D" parent="VBoxContainerEsq" groups=["terminals"]]
+[node name="Area2D3" type="Area2D" parent="VBoxContainerEsq" unique_id=1307812154 groups=["terminals"]]
 position = Vector2(40, 135)
-script = ExtResource("7_g4fqv")
+script = ExtResource("3_2phwm")
 cor_id = "Verde"
 is_left = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D3" unique_id=720703765]
 position = Vector2(-0.10839844, -0.15649414)
 shape = SubResource("RectangleShape2D_m3qa0")
 
-[node name="TerminalVerde" type="Sprite2D" parent="VBoxContainerEsq/Area2D3"]
-position = Vector2(-0.10839844, -0.15649414)
-scale = Vector2(0.096205965, 0.096205965)
-texture = ExtResource("7_dv60c")
+[node name="TerminalVerde" type="Sprite2D" parent="VBoxContainerEsq/Area2D3" unique_id=1562460736]
+position = Vector2(-0.07859564, -0.078584194)
+scale = Vector2(0.2043529, 0.20435308)
+texture = ExtResource("6_qfxcr")
 
-[node name="Area2D4" type="Area2D" parent="VBoxContainerEsq" groups=["terminals"]]
+[node name="Area2D4" type="Area2D" parent="VBoxContainerEsq" unique_id=1392974695 groups=["terminals"]]
 position = Vector2(39.75, 185)
-script = ExtResource("9_mj2bk")
+script = ExtResource("3_2phwm")
 cor_id = "Amarelo"
 is_left = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D4" unique_id=157469318]
 position = Vector2(-0.108428955, -0.10839844)
 shape = SubResource("RectangleShape2D_a74g3")
 
-[node name="TerminalAmarelo" type="Sprite2D" parent="VBoxContainerEsq/Area2D4"]
-position = Vector2(-0.8584404, -1.1083984)
-scale = Vector2(0.096205965, 0.096205965)
-texture = ExtResource("9_5k3q4")
+[node name="TerminalAmarelo" type="Sprite2D" parent="VBoxContainerEsq/Area2D4" unique_id=703225457]
+position = Vector2(-2.5339546, -2.202732)
+scale = Vector2(0.21216534, 0.2043529)
+texture = ExtResource("7_g4fqv")
 offset = Vector2(10.394531, 10.394531)
 
-[node name="Area2D5" type="Area2D" parent="VBoxContainerEsq" groups=["terminals"]]
+[node name="Area2D5" type="Area2D" parent="VBoxContainerEsq" unique_id=1381285000 groups=["terminals"]]
 position = Vector2(40, 236)
-script = ExtResource("11_oxocd")
+script = ExtResource("3_2phwm")
 cor_id = "Rosa"
 is_left = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D5" unique_id=705959789]
 position = Vector2(-0.15649414, -0.108428955)
 shape = SubResource("RectangleShape2D_8ykux")
 
-[node name="TerminalRosa" type="Sprite2D" parent="VBoxContainerEsq/Area2D5"]
-position = Vector2(-0.1564902, -1.1083829)
-scale = Vector2(0.096205965, 0.096205965)
-texture = ExtResource("11_tn3ub")
+[node name="TerminalRosa" type="Sprite2D" parent="VBoxContainerEsq/Area2D5" unique_id=1242396608]
+position = Vector2(-0.07859182, -2.2026749)
+scale = Vector2(0.2043529, 0.20435327)
+texture = ExtResource("8_mj2bk")
 offset = Vector2(0, 10.394043)
 
-[node name="Area2D6" type="Area2D" parent="VBoxContainerEsq" groups=["terminals"]]
+[node name="Area2D6" type="Area2D" parent="VBoxContainerEsq" unique_id=1306831065 groups=["terminals"]]
 position = Vector2(40, 290)
-script = ExtResource("13_kq8se")
+script = ExtResource("3_2phwm")
 cor_id = "Roxo"
 is_left = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerEsq/Area2D6" unique_id=1344516056]
 position = Vector2(-0.15649414, -0.15652466)
 shape = SubResource("RectangleShape2D_dv60c")
 
-[node name="TerminalRoxo" type="Sprite2D" parent="VBoxContainerEsq/Area2D6"]
-position = Vector2(-0.15649039, -0.15649402)
-scale = Vector2(0.096205965, 0.096205965)
-texture = ExtResource("13_tdg2u")
+[node name="TerminalRoxo" type="Sprite2D" parent="VBoxContainerEsq/Area2D6" unique_id=42488379]
+position = Vector2(-0.07859182, -0.07857227)
+scale = Vector2(0.2043529, 0.20435327)
+texture = ExtResource("9_oxocd")
 
-[node name="VBoxContainerDir" type="VBoxContainer" parent="."]
+[node name="VBoxContainerDir" type="VBoxContainer" parent="." unique_id=1187831832]
 offset_left = 769.0
 offset_top = 162.0
 offset_right = 841.0
 offset_bottom = 500.0
 mouse_filter = 2
 
-[node name="Area2D" type="Area2D" parent="VBoxContainerDir" groups=["terminals"]]
+[node name="Area2D" type="Area2D" parent="VBoxContainerDir" unique_id=332859435 groups=["terminals"]]
 position = Vector2(40, 41)
-script = ExtResource("3_27k5r")
+script = ExtResource("3_2phwm")
 cor_id = "Rosa"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D" unique_id=611181921]
 position = Vector2(-0.15649414, -0.10839844)
 shape = SubResource("RectangleShape2D_kf63c")
 
-[node name="TerminalDIRRosa" type="Sprite2D" parent="VBoxContainerDir/Area2D"]
+[node name="TerminalDIRRosa" type="Sprite2D" parent="VBoxContainerDir/Area2D" unique_id=919500190]
 position = Vector2(-0.15649033, -0.10839462)
 scale = Vector2(0.096205965, 0.096205965)
 texture = ExtResource("11_tn3ub")
 
-[node name="Area2D2" type="Area2D" parent="VBoxContainerDir" groups=["terminals"]]
+[node name="Area2D2" type="Area2D" parent="VBoxContainerDir" unique_id=1074260366 groups=["terminals"]]
 position = Vector2(40, 90)
-script = ExtResource("5_qfxcr")
+script = ExtResource("3_2phwm")
 cor_id = "Amarelo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D2" unique_id=1606719738]
 position = Vector2(-0.10839844, -0.10839844)
 shape = SubResource("RectangleShape2D_5k3q4")
 
-[node name="TerminalDIRAmarelo" type="Sprite2D" parent="VBoxContainerDir/Area2D2"]
+[node name="TerminalDIRAmarelo" type="Sprite2D" parent="VBoxContainerDir/Area2D2" unique_id=1074917598]
 position = Vector2(-0.10839462, -0.10839081)
 scale = Vector2(0.096205965, 0.096205965)
 texture = ExtResource("9_5k3q4")
 
-[node name="Area2D3" type="Area2D" parent="VBoxContainerDir" groups=["terminals"]]
+[node name="Area2D3" type="Area2D" parent="VBoxContainerDir" unique_id=1593719159 groups=["terminals"]]
 position = Vector2(40, 135)
-script = ExtResource("7_g4fqv")
+script = ExtResource("3_2phwm")
 cor_id = "Roxo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D3" unique_id=608753823]
 position = Vector2(-0.15649414, -0.15649414)
 shape = SubResource("RectangleShape2D_wgqg5")
 
-[node name="TerminalDIRRoxo" type="Sprite2D" parent="VBoxContainerDir/Area2D3"]
+[node name="TerminalDIRRoxo" type="Sprite2D" parent="VBoxContainerDir/Area2D3" unique_id=1808219368]
 position = Vector2(-0.15625, -0.15649414)
 scale = Vector2(0.096205965, 0.096205965)
 texture = ExtResource("13_tdg2u")
 
-[node name="Area2D4" type="Area2D" parent="VBoxContainerDir" groups=["terminals"]]
+[node name="Area2D4" type="Area2D" parent="VBoxContainerDir" unique_id=1722220547 groups=["terminals"]]
 position = Vector2(40, 185)
-script = ExtResource("9_mj2bk")
+script = ExtResource("3_2phwm")
 cor_id = "Laranja"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D4" unique_id=1093051621]
 position = Vector2(0.34350586, -0.10839844)
 shape = SubResource("RectangleShape2D_tn3ub")
 
-[node name="TerminalDIRLaranja" type="Sprite2D" parent="VBoxContainerDir/Area2D4"]
+[node name="TerminalDIRLaranja" type="Sprite2D" parent="VBoxContainerDir/Area2D4" unique_id=14081141]
 position = Vector2(-0.15625, -0.10839844)
 scale = Vector2(0.096205965, 0.096205965)
 texture = ExtResource("5_a74g3")
 
-[node name="Area2D5" type="Area2D" parent="VBoxContainerDir" groups=["terminals"]]
+[node name="Area2D5" type="Area2D" parent="VBoxContainerDir" unique_id=1560980035 groups=["terminals"]]
 position = Vector2(40, 236)
-script = ExtResource("11_oxocd")
+script = ExtResource("3_2phwm")
 cor_id = "Azul"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D5" unique_id=1525118078]
 position = Vector2(-0.15649414, -0.15649414)
 shape = SubResource("RectangleShape2D_lrfxd")
 
-[node name="TerminalDIRAzul" type="Sprite2D" parent="VBoxContainerDir/Area2D5"]
+[node name="TerminalDIRAzul" type="Sprite2D" parent="VBoxContainerDir/Area2D5" unique_id=1988564428]
 position = Vector2(-0.15648985, -0.15647793)
 scale = Vector2(0.096205965, 0.096205965)
 texture = ExtResource("3_q8qml")
 
-[node name="Area2D6" type="Area2D" parent="VBoxContainerDir" groups=["terminals"]]
+[node name="Area2D6" type="Area2D" parent="VBoxContainerDir" unique_id=1222618798 groups=["terminals"]]
 position = Vector2(40, 289.5)
-script = ExtResource("13_kq8se")
+script = ExtResource("3_2phwm")
 cor_id = "Verde"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainerDir/Area2D6" unique_id=1744943018]
 position = Vector2(-0.10839844, -0.15652466)
 shape = SubResource("RectangleShape2D_tdg2u")
 
-[node name="TerminalDIRVerde" type="Sprite2D" parent="VBoxContainerDir/Area2D6"]
+[node name="TerminalDIRVerde" type="Sprite2D" parent="VBoxContainerDir/Area2D6" unique_id=1663864606]
 position = Vector2(-0.10839462, 0.34350634)
 scale = Vector2(0.096205965, 0.096205965)
 texture = ExtResource("7_dv60c")
