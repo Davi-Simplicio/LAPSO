@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://djjrqpphradnv" path="res://Scenes/PuzzleFios_Model.tscn" id="18_4yu56"]
 [ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
+[ext_resource type="PackedScene" uid="uid://c1v3lsovdhq28" path="res://Scenes/PuzzleFlowFree_Model.tscn" id="20_r8djo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1234,6 +1235,7 @@ tile_map_data = PackedByteArray("AAD+//3/AAARAAQAAAD+//z/AAARAAQAAAD+//v/AAARAAQ
 tile_set = SubResource("TileSet_2eut3")
 
 [node name="Past" type="Node2D" parent="." unique_id=1828207068]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Past" unique_id=720441232]
 y_sort_enabled = true
@@ -1281,11 +1283,7 @@ npc_data = ExtResource("13_tbd83")
 z_index = 1
 position = Vector2(-231, -216)
 
-[node name="PuzzleFiosModel" parent="Past" unique_id=994114313 instance=ExtResource("18_4yu56")]
-position = Vector2(-139, -228)
-
 [node name="Present" type="Node2D" parent="." unique_id=764011153]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Present" unique_id=1511154430]
 y_sort_enabled = true
@@ -1346,6 +1344,12 @@ npc_data = ExtResource("13_tbd83")
 z_index = 1
 position = Vector2(-225, -206)
 
+[node name="PuzzleFiosModel" parent="Present" unique_id=994114313 instance=ExtResource("18_4yu56")]
+position = Vector2(-137, -233)
+
+[node name="PuzzleFlowFreeModel" parent="Present" unique_id=536616555 instance=ExtResource("20_r8djo")]
+position = Vector2(-176, -234)
+
 [node name="Future" type="Node2D" parent="." unique_id=1101941549]
 visible = false
 
@@ -1386,6 +1390,9 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(-9, -168)
 npc_data = ExtResource("13_tbd83")
+
+[node name="PuzzleFlowFreeModel" parent="Future" unique_id=1256268295 instance=ExtResource("20_r8djo")]
+position = Vector2(98, -233)
 
 [node name="hotel_doors" type="TileMapLayer" parent="." unique_id=153847236]
 tile_set = SubResource("TileSet_tbd83")
