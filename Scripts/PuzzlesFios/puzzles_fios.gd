@@ -106,10 +106,10 @@ func _obter_terminal_sob_mouse():
 # Função para converter o nome da cor em uma cor real do Godot
 func _obter_cor_pelo_id(id: String) -> Color:
 	match id.to_lower():
-		"azul": return Color.BLUE
-		"laranja": return Color.ORANGE
-		"verde": return Color.GREEN
-		"amarelo": return Color.YELLOW
-		"rosa": return Color.HOT_PINK
-		"roxo": return Color.PURPLE
+		"azul": return Color.from_string("28C5FF",Color.WHITE)
+		"laranja": return Color.from_string("F92300",Color.WHITE)
+		"verde": return Color.from_string("00F306",Color.WHITE)
+		"amarelo": return Color.from_string("FFFF00",Color.WHITE)
+		"rosa": return Color.from_string("FF03F4",Color.WHITE)
+		"roxo": return Color.from_string("5600EB",Color.WHITE)
 		_: return Color.WHITE

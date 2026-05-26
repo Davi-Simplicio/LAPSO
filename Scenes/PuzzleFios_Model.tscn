@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://djjrqpphradnv"]
+
+[node name="PuzzleFiosModel" type="Node2D" unique_id=1021067855]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=289758404]
