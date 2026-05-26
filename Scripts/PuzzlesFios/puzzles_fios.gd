@@ -4,6 +4,12 @@ var active_wire: Line2D = null
 var current_cor_id: String = ""
 var start_pos: Vector2 = Vector2.ZERO
 
+signal puzzle_fechado
+
+# Exemplo de função quando o jogador clica no botão "Sair" ou resolve o puzzle:
+func _on_botao_sair_pressed():
+	puzzle_fechado.emit()
+	
 func _ready():
 	print("DEBUG: Sistema de Puzzles iniciado.")
 	# Conectamos o sinal de clique de todos os Area2D que estão nos containers
@@ -85,13 +91,11 @@ func _verificar_vitoria():
 	print("Progresso: ", conexoes_corretas, "/", total_conexoes_necessarias)
 	if conexoes_corretas >= total_conexoes_necessarias:
 		print("VITÓRIA! Todos os fios foram conectados.")
-		_disparar_efeito_vitoria()
+		GameState.puzzle_fios_resolvido = true
+		puzzle_fechado.emit()
+		#_disparar_efeito_vitoria()
 
-func _disparar_efeito_vitoria():
-	# Exemplo: Abrir o Dijuntor ou tocar um som
-	$Dijuntor.play("abrir") # Se for um AnimatedSprite
-	# Ou mudar a cor de fundo
-	# RenderingServer.set_default_clear_color(Color.DARK_GREEN)
+
 
 # Função auxiliar para detectar qual terminal o mouse está em cima ao soltar
 func _obter_terminal_sob_mouse():

@@ -60,6 +60,20 @@ position = Vector2(576.0599, 324)
 scale = Vector2(0.8570537, 0.84375)
 texture = ExtResource("1_dvkci")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2023500190]
+offset_left = 276.0
+offset_top = -1.0
+offset_right = 893.0
+offset_bottom = 112.0
+color = Color(0.047058824, 0.047058824, 0.047058824, 0.7607843)
+
+[node name="Label" type="Label" parent="." unique_id=811419624]
+offset_left = 306.0
+offset_top = 58.0
+offset_right = 861.0
+offset_bottom = 81.0
+text = "Ligue todos os fios da direita as suas respectivas cores correspondentes"
+
 [node name="VBoxContainerEsq" type="VBoxContainer" parent="." unique_id=1972324022]
 offset_left = 309.0
 offset_top = 160.0
