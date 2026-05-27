@@ -1,0 +1,45 @@
+[gd_scene load_steps=0 format=3 uid="uid://djjrqpphradnv"]
+
+[ext_resource type="Script" uid="uid://1ku5ca3jabwl" path="res://Scenes/puzzle_fios_model.gd" id="1_hoqsa"]
+[ext_resource type="Texture2D" uid="uid://dj03ry5qal7kq" path="res://assets/PuzzleFios/tire_o_fundo_e_deixe_202605252322.png" id="1_m87ut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoqsa"]
+size = Vector2(20, 21.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg7hl"]
+size = Vector2(37, 39)
+
+[node name="PuzzleFiosModel" type="StaticBody2D" unique_id=994114313]
+position = Vector2(12, -11)
+script = ExtResource("1_hoqsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=271687869]
+position = Vector2(-12, 6.75)
+shape = SubResource("RectangleShape2D_hoqsa")
+
+[node name="Door" type="Node2D" parent="." unique_id=58889955]
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1976984207]
+position = Vector2(-12.178408, 5.5728474)
+scale = Vector2(0.04238435, 0.040060032)
+texture = ExtResource("1_m87ut")
+region_enabled = true
+region_rect = Rect2(30.225037, 1101.1597, 442.15836, 428.98145)
+
+[node name="Label" type="Label" parent="." unique_id=1998064351]
+z_index = 10
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 103.0
+offset_bottom = 15.0
+scale = Vector2(0.3, 0.3)
+text = "Press E to Open"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=94194282]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=920695359]
+position = Vector2(-11.5, 12.5)
+shape = SubResource("RectangleShape2D_tg7hl")

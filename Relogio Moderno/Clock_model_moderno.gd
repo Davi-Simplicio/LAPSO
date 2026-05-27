@@ -1,8 +1,8 @@
 extends StaticBody2D
 
-@onready var interaction_label = $Label
-@onready var sprite = $Door/Sprite2D
-@onready var collision = $CollisionShape2D
+@onready var interaction_label = $LabelModern
+@onready var sprite = $Door/Sprite2DModern
+@onready var collision = $CollisionShape2DModern
 
 var player_nearby = false
 var puzzle_aberto = false

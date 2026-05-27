@@ -9,25 +9,25 @@ size = Vector2(26, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
 size = Vector2(33, 62)
 
-[node name="Clock Model" type="StaticBody2D"]
+[node name="Clock Model Old" type="StaticBody2D"]
 z_index = 3
 y_sort_enabled = true
 script = ExtResource("1_n05pn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2DOld" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_v6xrn")
 
-[node name="Door" type="Node2D" parent="."]
+[node name="DoorOld" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
+[node name="Sprite2DOld" type="Sprite2D" parent="DoorOld"]
 position = Vector2(-1, -6)
 scale = Vector2(1, 1.043)
 texture = ExtResource("2_n05pn")
 region_enabled = true
 region_rect = Rect2(69, 112.5, 24, 46)
 
-[node name="Label" type="Label" parent="."]
+[node name="LabelOld" type="Label" parent="."]
 z_index = 10
 offset_left = -3.0
 offset_top = -14.0

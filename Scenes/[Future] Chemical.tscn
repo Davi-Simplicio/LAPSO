@@ -1,6 +1,7 @@
-[gd_scene load_steps=42 format=3 uid="uid://c78f7un8omk5s"]
+[gd_scene load_steps=43 format=3 uid="uid://c78f7un8omk5s"]
 
 [ext_resource type="Texture2D" uid="uid://cnyrqdb63eq3" path="res://assets/ChemicalWorkstation/Background.png" id="1_efr58"]
+[ext_resource type="Script" uid="uid://dgpn3tpluy6ji" path="res://Scenes/[future]_chemical.gd" id="1_qxgy5"]
 [ext_resource type="Texture2D" uid="uid://bri0ugqx3ot3h" path="res://assets/ChemicalWorkstation/blue.png" id="2_b88rs"]
 [ext_resource type="Texture2D" uid="uid://bl35f4iq43pgv" path="res://assets/ChemicalWorkstation/empty.png" id="2_qagd5"]
 [ext_resource type="Script" uid="uid://bt7n1geyvbea4" path="res://Scenes/test_tube.gd" id="3_bpp4y"]
@@ -157,6 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_qxgy5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 clip_contents = true

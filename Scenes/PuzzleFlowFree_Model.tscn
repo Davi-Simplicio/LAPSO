@@ -1,0 +1,44 @@
+[gd_scene load_steps=0 format=3 uid="uid://c1v3lsovdhq28"]
+
+[ext_resource type="Script" uid="uid://bonqqxildv883" path="res://Scenes/puzzle_flow_free_model.gd" id="1_e40h8"]
+[ext_resource type="Texture2D" uid="uid://55gmj305jn0a" path="res://assets/PuzzleFios/SemFundoFuturo.png" id="2_rilr0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixdsf"]
+size = Vector2(20, 21.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2s87"]
+size = Vector2(37, 39)
+
+[node name="PuzzleFlowFreeModel" type="StaticBody2D" unique_id=536616555]
+script = ExtResource("1_e40h8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1398195096]
+position = Vector2(-12, 6.75)
+shape = SubResource("RectangleShape2D_ixdsf")
+
+[node name="Door" type="Node2D" parent="." unique_id=1569277667]
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=2043771374]
+position = Vector2(-12.178408, 5.5728474)
+scale = Vector2(0.04238435, 0.040060032)
+texture = ExtResource("2_rilr0")
+region_enabled = true
+region_rect = Rect2(514.5948, 1099.3715, 386.52258, 436.44836)
+
+[node name="Label" type="Label" parent="." unique_id=1757566221]
+z_index = 10
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 103.0
+offset_bottom = 15.0
+scale = Vector2(0.3, 0.3)
+text = "Press E to Open"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=353496777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1371428506]
+position = Vector2(-11.5, 12.5)
+shape = SubResource("RectangleShape2D_e2s87")

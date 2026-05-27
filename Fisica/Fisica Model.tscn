@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhakxastttoej"]
+
+[ext_resource type="Script" uid="uid://covhdcinqxlnt" path="res://Fisica/fisica_model.gd" id="1_e544l"]
+[ext_resource type="Texture2D" uid="uid://67rqbmf7towf" path="res://assets/fisica.png" id="2_hjwmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(26, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
+size = Vector2(33, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocpos"]
+atlas = ExtResource("2_hjwmw")
+region = Rect2(105.405525, 156.26276, 1867.5947, 969.3826)
+
+[node name="Fisica Model" type="StaticBody2D"]
+z_index = 3
+y_sort_enabled = true
+script = ExtResource("1_e544l")
+
+[node name="CollisionShape2DFisica" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(2.0970302, 0.6220277)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="DoorFisica" type="Node2D" parent="."]
+
+[node name="LabelFisica" type="Label" parent="."]
+z_index = 10
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 118.0
+offset_bottom = 9.0
+scale = Vector2(0.3, 0.3)
+text = "Press E to Open"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionAreaFisica" type="Area2D" parent="."]
+
+[node name="CollisionShape2DFisica" type="CollisionShape2D" parent="InteractionAreaFisica"]
+position = Vector2(-1.5, -7)
+scale = Vector2(2.2458625, 0.7423551)
+shape = SubResource("RectangleShape2D_p0e35")
+
+[node name="Sprite2DFisica" type="Sprite2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(0.029215956, 0.03137054)
+texture = SubResource("AtlasTexture_ocpos")
+region_enabled = true
+region_rect = Rect2(-8.376099, -7.77861, 1874.4994, 975.7668)

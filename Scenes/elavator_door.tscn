@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dut4j31uaowtb"]
 
-[ext_resource type="Script" uid="uid://sexn7r33ldum" path="res://Scripts/portal_door.gd" id="1_ncaln"]
+[ext_resource type="Script" uid="uid://dlar5874wvefi" path="res://Scenes/elavator_door.gd" id="1_ncaln"]
 [ext_resource type="Texture2D" uid="uid://cq5ul75bmv4qd" path="res://assets/elevator_door.png" id="2_ncaln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
@@ -9,7 +9,7 @@ size = Vector2(43, 43)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
 size = Vector2(47, 62)
 
-[node name="PortalDoor" type="StaticBody2D"]
+[node name="elevator_door" type="StaticBody2D"]
 z_index = 3
 y_sort_enabled = true
 script = ExtResource("1_ncaln")
