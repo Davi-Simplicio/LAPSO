@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cej532aj3q877"]
+[gd_scene load_steps=44 format=4 uid="uid://cej532aj3q877"]
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://Scripts/controllers/LightningController.gd" id="2_ltv3l"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://chynhh6jwvsyl" path="res://Meu Relogio/Clock Model.tscn" id="17_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
+[ext_resource type="PackedScene" uid="uid://beijvxr4tdjfg" path="res://TimeMachine/TimeMachine.tscn" id="21_qguc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1228,7 +1229,6 @@ tile_map_data = PackedByteArray("AAD+//3/AAARAAQAAAD+//z/AAARAAQAAAD+//v/AAARAAQ
 tile_set = SubResource("TileSet_2eut3")
 
 [node name="Past" type="Node2D" parent="."]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Past"]
 y_sort_enabled = true
@@ -1283,6 +1283,10 @@ position = Vector2(-147, -134)
 [node name="Fisica Model" parent="Past" instance=ExtResource("15_5xr4q")]
 z_index = 1
 position = Vector2(-176, -194)
+
+[node name="Time Machine" parent="Past" instance=ExtResource("21_qguc3")]
+z_index = 1
+position = Vector2(-71, -128)
 
 [node name="Present" type="Node2D" parent="."]
 visible = false

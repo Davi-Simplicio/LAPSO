@@ -22,6 +22,15 @@ func _ready():
 	
 	update_labels()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		sair_do_puzzle()
+		return
+	pass
+	
+func sair_do_puzzle():
+	queue_free()
+
 func change_digit(index: int, amount: int):
 	digits[index] = (digits[index] + amount + 10) % 10
 	update_labels()
