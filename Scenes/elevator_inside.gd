@@ -1,6 +1,6 @@
 extends Control
 signal elevator_closed
-signal time_changed(floor_number: int)
+signal elevator_action_triggered(action_data)
 
 # A dictionary tracking the functional state of each floor
 # Key: floor number (int), Value: working or not (bool)
@@ -40,16 +40,16 @@ func _on_floor_pressed(floor_number: int):
 	match floor_number:
 		0: 
 			update_display("HALL")
-			time_changed.emit(0)
+			elevator_action_triggered.emit(0)
 		1: 
 			update_display("1st FLOOR")
-			time_changed.emit(1)
+			elevator_action_triggered.emit(1)
 		2: 
 			update_display("2nd FLOOR")
-			time_changed.emit(2)
+			elevator_action_triggered.emit(2)
 		3: 
 			update_display("3rd FLOOR")
-			time_changed.emit(3)
+			elevator_action_triggered.emit(3)
 	
 	# Add your scene transition or elevator movement logic here
 

@@ -1,4 +1,8 @@
 extends StaticBody2D
+
+# 1. Crie o sinal que o Mapa Geral vai escutar
+signal map_update_requested(action_data)
+
 @onready var interaction_label = $Label 
 @onready var sprite = $Door/Sprite2D
 @onready var collision = $CollisionShape2D
@@ -12,7 +16,6 @@ func _ready():
 	if interaction_label:
 		interaction_label.visible = false
 	
-	# Get reference to TimeManager (adjust the path if needed)
 	time_manager = get_tree().root.get_node_or_null("TimeManager")
 	if not time_manager:
 		time_manager = get_node_or_null("/root/TimeManager")
@@ -49,15 +52,21 @@ func abrir_elevator():
 	elevator_instance = ELEVATOR_SCENE.instantiate()
 	canvas.add_child(elevator_instance)
 	
-	# Conecta os sinais do elevador
 	if elevator_instance:
-		# Sinal para fechar o elevador
 		if elevator_instance.has_signal("elevator_closed"):
 			elevator_instance.elevator_closed.connect(_on_elevator_closed)
 		
-		# Sinal para mudar o tempo quando um andar é selecionado
 		if elevator_instance.has_signal("time_changed"):
 			elevator_instance.time_changed.connect(_on_time_changed)
+			
+		# 2. Conecte o sinal que vem de dentro do elevador
+		if elevator_instance.has_signal("elevator_action_triggered"):
+			elevator_instance.elevator_action_triggered.connect(_on_elevator_action_triggered)
+
+# 3. Função que recebe o sinal do elevador interno e repassa para fora (para o mapa)
+func _on_elevator_action_triggered(action_data: int):
+	map_update_requested.emit(action_data)
+
 
 func _on_elevator_closed():
 	elevator_aberto = false

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://djjrqpphradnv"]
+[gd_scene load_steps=0 format=3 uid="uid://djjrqpphradnv"]
 
 [ext_resource type="Script" uid="uid://1ku5ca3jabwl" path="res://Scenes/puzzle_fios_model.gd" id="1_hoqsa"]
 [ext_resource type="Texture2D" uid="uid://dj03ry5qal7kq" path="res://assets/PuzzleFios/tire_o_fundo_e_deixe_202605252322.png" id="1_m87ut"]

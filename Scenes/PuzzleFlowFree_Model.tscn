@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c1v3lsovdhq28"]
+[gd_scene load_steps=0 format=3 uid="uid://c1v3lsovdhq28"]
 
 [ext_resource type="Script" uid="uid://bonqqxildv883" path="res://Scenes/puzzle_flow_free_model.gd" id="1_e40h8"]
 [ext_resource type="Texture2D" uid="uid://55gmj305jn0a" path="res://assets/PuzzleFios/SemFundoFuturo.png" id="2_rilr0"]
