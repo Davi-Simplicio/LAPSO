@@ -38,8 +38,8 @@ text = "Press E to Open"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractionAreaOld" type="Area2D" parent="."]
+[node name="InteractionAreaRelogio" type="Area2D" parent="."]
 
-[node name="CollisionShape2DOld" type="CollisionShape2D" parent="InteractionAreaOld"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaRelogio"]
 position = Vector2(-1.5, -7)
 shape = SubResource("RectangleShape2D_p0e35")

@@ -14,8 +14,8 @@ func _ready():
 	if interaction_label:
 		interaction_label.visible = false
 	
-	$InteractionAreaOld.body_entered.connect(_on_interaction_area_body_entered)
-	$InteractionAreaOld.body_exited.connect(_on_interaction_area_body_exited)
+	$InteractionAreaRelogio.body_entered.connect(_on_interaction_area_body_entered)
+	$InteractionAreaRelogio.body_exited.connect(_on_interaction_area_body_exited)
 
 func _process(_delta):
 	if puzzle_aberto:
