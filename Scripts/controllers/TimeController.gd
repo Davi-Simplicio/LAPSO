@@ -43,3 +43,16 @@ func toggle_era(node: Node2D, is_active: bool):
 	for layer in tilemaps:
 		layer.collision_enabled = is_active
 		layer.enabled = is_active
+
+func change_time_by_floor(floor_number: int):
+	match floor_number:
+		0:  # Hall = Present (index 1)
+			current_index = 1
+		1:  # 1st Floor = Past (index 0)
+			current_index = 0
+		2:  # 2nd Floor = Future (index 2)
+			current_index = 2
+		3:  # 3rd Floor = Present (index 1)
+			current_index = 1
+			
+	apply_state_by_index(current_index)

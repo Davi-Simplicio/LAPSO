@@ -1,6 +1,4 @@
-
-[gd_scene format=4 uid="uid://d0q1r27wv2wcg"]
-[gd_scene load_steps=46 format=4 uid="uid://d0q1r27wv2wcg"]
+[gd_scene load_steps=45 format=4 uid="uid://d0q1r27wv2wcg"]
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Resource" uid="uid://074rqejp10c7" path="res://Resources/Times/Past.tres" id="2_5xr4q"]
@@ -25,8 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://djjrqpphradnv" path="res://Scenes/PuzzleFios_Model.tscn" id="18_4yu56"]
 [ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
-[ext_resource type="PackedScene" uid="uid://c1v3lsovdhq28" path="res://Scenes/PuzzleFlowFree_Model.tscn" id="20_r8djo"]
-[ext_resource type="Script" uid="uid://dlar5874wvefi" path="res://Scenes/elavator_door.gd" id="21_4yu56"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1408,7 +1404,6 @@ tile_set = SubResource("TileSet_tbd83")
 [node name="Elevator" parent="hotel_doors" instance=ExtResource("20_5xr4q")]
 z_index = 1
 position = Vector2(220, -125)
-script = ExtResource("21_4yu56")
 
 [node name="Door_hall_door_3" parent="hotel_doors" unique_id=918355902 instance=ExtResource("8_ltv3l")]
 z_index = 1
