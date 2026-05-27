@@ -9,23 +9,23 @@ size = Vector2(26, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
 size = Vector2(33, 62)
 
-[node name="Clock Model" type="StaticBody2D"]
+[node name="Clock ModelModern" type="StaticBody2D"]
 z_index = 3
 y_sort_enabled = true
 script = ExtResource("1_lhkfk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2DModern" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -10)
 shape = SubResource("RectangleShape2D_v6xrn")
 
-[node name="Door" type="Node2D" parent="."]
+[node name="DoorModern" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
+[node name="Sprite2DModern" type="Sprite2D" parent="DoorModern"]
 position = Vector2(-1.0555335, -9.779886)
 scale = Vector2(0.10778935, 0.12450465)
 texture = ExtResource("2_lhkfk")
 
-[node name="Label" type="Label" parent="."]
+[node name="LabelModern" type="Label" parent="."]
 z_index = 10
 offset_left = -3.0
 offset_top = -14.0
@@ -36,8 +36,8 @@ text = "Press E to Open"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractionArea" type="Area2D" parent="."]
+[node name="InteractionAreaModern" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+[node name="CollisionShape2DModern" type="CollisionShape2D" parent="InteractionAreaModern"]
 position = Vector2(-1.5, -7)
 shape = SubResource("RectangleShape2D_p0e35")

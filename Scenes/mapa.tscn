@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cej532aj3q877"]
+[gd_scene load_steps=43 format=4 uid="uid://cej532aj3q877"]
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://Scripts/controllers/LightningController.gd" id="2_ltv3l"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://Scenes/npc.tscn" id="11_6fw57"]
 [ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Morgan/NPC_Morgan.tres" id="12_00yci"]
 [ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Jane/NPC_Jane.tres" id="13_tbd83"]
-[ext_resource type="Resource" uid="uid://c7ajy5m4wcsli" path="res://Resources/Times/time_travel.tres" id="16_aj1jk"]
+[ext_resource type="PackedScene" uid="uid://bhakxastttoej" path="res://Fisica/Fisica Model.tscn" id="15_5xr4q"]
+[ext_resource type="PackedScene" uid="uid://c5k01ygtp4ohb" path="res://Quimica/Quimica Model.tscn" id="15_qguc3"]
 [ext_resource type="PackedScene" uid="uid://chynhh6jwvsyl" path="res://Meu Relogio/Clock Model.tscn" id="17_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
@@ -1227,6 +1228,7 @@ tile_map_data = PackedByteArray("AAD+//3/AAARAAQAAAD+//z/AAARAAQAAAD+//v/AAARAAQ
 tile_set = SubResource("TileSet_2eut3")
 
 [node name="Past" type="Node2D" parent="."]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Past"]
 y_sort_enabled = true
@@ -1273,6 +1275,14 @@ npc_data = ExtResource("13_tbd83")
 [node name="Relogio Puzzle" parent="Past" instance=ExtResource("17_5xr4q")]
 z_index = 1
 position = Vector2(-231, -216)
+
+[node name="Quimica Model" parent="Past" instance=ExtResource("15_qguc3")]
+z_index = 1
+position = Vector2(-147, -134)
+
+[node name="Fisica Model" parent="Past" instance=ExtResource("15_5xr4q")]
+z_index = 1
+position = Vector2(-176, -194)
 
 [node name="Present" type="Node2D" parent="."]
 visible = false
@@ -1413,7 +1423,3 @@ position = Vector2(73, -124)
 z_index = 1
 position = Vector2(-223, -128)
 collision_layer = 3
-
-[node name="time_travel" parent="." instance=ExtResource("9_2eut3")]
-position = Vector2(-128, -54)
-doc_data = ExtResource("16_aj1jk")

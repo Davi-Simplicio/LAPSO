@@ -1,32 +1,30 @@
 extends StaticBody2D
 
-@onready var interaction_label = $LabelOld
-@onready var sprite = $Door/Sprite2DOld
-@onready var collision = $CollisionShape2DOld
+@onready var interaction_label = $LabelQuimica
+@onready var sprite = $Door/Sprite2DQuimica
+@onready var collision = $CollisionShape2DQuimica
 
 var player_nearby = false
 var puzzle_aberto = false
 var puzzle_instance = null
 
-const PUZZLE_CENA = preload("res://Meu Relogio/Clock.tscn")
+const PUZZLE_CENA = preload("res://Scenes/[Future] Chemical.tscn")
 
 func _ready():
 	if interaction_label:
 		interaction_label.visible = false
 	
-	$InteractionAreaOld.body_entered.connect(_on_interaction_area_body_entered)
-	$InteractionAreaOld.body_exited.connect(_on_interaction_area_body_exited)
+	$InteractionAreaQuimica.body_entered.connect(_on_interaction_area_body_entered)
+	$InteractionAreaQuimica.body_exited.connect(_on_interaction_area_body_exited)
 
 func _process(_delta):
 	if puzzle_aberto:
-		var canvas = get_tree().root.get_node_or_null("PuzzleLayer")
-		if not canvas or not is_instance_valid(canvas):
+		# Verifica a validade do puzzle instanciado diretamente
+		if not is_instance_valid(puzzle_instance):
 			_on_puzzle_fechado()
 			return
 	
-	var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_resolvido
-	
-	if player_nearby and not puzzle_aberto and not ja_resolvido and Input.is_action_just_pressed("interact"):
+	if player_nearby and not puzzle_aberto and Input.is_action_just_pressed("interact"):
 		abrir_puzzle()
 
 func abrir_puzzle():
@@ -59,15 +57,13 @@ func _on_puzzle_fechado():
 		canvas.queue_free()
 	
 	# Só mostra label se não foi resolvido
-	var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_resolvido
-	if player_nearby and not ja_resolvido:
+	if player_nearby:
 		interaction_label.visible = true
 
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player" or body.is_in_group("player"):
 		player_nearby = true
-		var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_resolvido
-		if not puzzle_aberto and not ja_resolvido:
+		if not puzzle_aberto:
 			interaction_label.visible = true
 		
 func _on_interaction_area_body_exited(body):
