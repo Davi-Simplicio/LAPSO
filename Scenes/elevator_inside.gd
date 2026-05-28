@@ -6,9 +6,9 @@ signal elevator_action_triggered(action_data)
 # Key: floor number (int), Value: working or not (bool)
 var floor_states: Dictionary = {
 	0: false,   # Hall starts working
-	1: true,  # 1st Floor is broken
-	2: true,  # 2nd Floor is broken
-	3: true   # 3rd Floor is broken
+	1: false,  # 1st Floor is broken
+	2: false,  # 2nd Floor is broken
+	3: false   # 3rd Floor is broken
 }
 
 @onready var display = $DisplayLabel
@@ -24,6 +24,11 @@ func _ready():
 	$HallButton.pressed.connect(_on_floor_pressed.bind(0))
 
 func _process(_delta):
+	
+	floor_states[1] = get_node("/root/GameState").puzzle_fios_resolvido
+	floor_states[2] = get_node("/root/GameState").puzzle_fios_resolvido
+	floor_states[3] = get_node("/root/GameState").puzzle_fios_resolvido
+	
 	# Verifica se ESC foi pressionado para fechar o elevador
 	if Input.is_action_just_pressed("ui_cancel"):
 		fechar_elevator()

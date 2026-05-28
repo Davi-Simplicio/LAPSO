@@ -70,6 +70,9 @@ func abrir_puzzle():
 func _on_puzzle_fechado():
 	puzzle_aberto = false
 	puzzle_instance = null
+	get_parent().get_node("CanvasModulate").visible = false
+
+	
 	
 	var canvas = get_tree().root.get_node_or_null("PuzzleLayerFios")
 	if canvas and is_instance_valid(canvas):
