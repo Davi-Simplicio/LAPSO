@@ -17,4 +17,7 @@ func _on_map_update_requested(action_data: int):
 	Past.visible = action_data == 1
 	Present.visible = action_data == 2
 	Future.visible = action_data == 3
-		
+	
+	Past.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 1 else Node.PROCESS_MODE_DISABLED
+	Present.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 2 else Node.PROCESS_MODE_DISABLED
+	Future.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 3 else Node.PROCESS_MODE_DISABLED

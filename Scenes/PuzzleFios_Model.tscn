@@ -1,6 +1,6 @@
-[gd_scene load_steps=0 format=3 uid="uid://djjrqpphradnv"]
+[gd_scene load_steps=5 format=3 uid="uid://d1vmdhqm2vhtt"]
 
-[ext_resource type="Script" uid="uid://1ku5ca3jabwl" path="res://Scenes/puzzle_fios_model.gd" id="1_hoqsa"]
+[ext_resource type="Script" path="res://Scenes/puzzle_fios_model.gd" id="1_hoqsa"]
 [ext_resource type="Texture2D" uid="uid://dj03ry5qal7kq" path="res://assets/PuzzleFios/tire_o_fundo_e_deixe_202605252322.png" id="1_m87ut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoqsa"]
@@ -9,24 +9,24 @@ size = Vector2(20, 21.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg7hl"]
 size = Vector2(37, 39)
 
-[node name="PuzzleFiosModel" type="StaticBody2D" unique_id=994114313]
+[node name="PuzzleFiosModel" type="StaticBody2D"]
 position = Vector2(12, -11)
 script = ExtResource("1_hoqsa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=271687869]
+[node name="CollisionShape2DFiosModel" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 6.75)
 shape = SubResource("RectangleShape2D_hoqsa")
 
-[node name="Door" type="Node2D" parent="." unique_id=58889955]
+[node name="DoorFiosModel" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1976984207]
+[node name="Sprite2DFiosModel" type="Sprite2D" parent="DoorFiosModel"]
 position = Vector2(-12.178408, 5.5728474)
 scale = Vector2(0.04238435, 0.040060032)
 texture = ExtResource("1_m87ut")
 region_enabled = true
 region_rect = Rect2(30.225037, 1101.1597, 442.15836, 428.98145)
 
-[node name="Label" type="Label" parent="." unique_id=1998064351]
+[node name="LabelFiosModel" type="Label" parent="."]
 z_index = 10
 offset_left = -19.0
 offset_top = -8.0
@@ -38,8 +38,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="InteractionArea" type="Area2D" parent="." unique_id=94194282]
+[node name="InteractionAreaFiosModel" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=920695359]
+[node name="CollisionShape2DFiosModel" type="CollisionShape2D" parent="InteractionAreaFiosModel"]
 position = Vector2(-11.5, 12.5)
 shape = SubResource("RectangleShape2D_tg7hl")

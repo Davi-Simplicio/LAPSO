@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://i4uee5s6rc8c"]
+[gd_scene load_steps=7 format=3 uid="uid://i4uee5s6rc8c"]
 
 [ext_resource type="Texture2D" uid="uid://b8nwl5vqg5xm6" path="res://assets/PuzzleFios/dijuntor.png" id="1_prv6e"]
 [ext_resource type="Texture2D" uid="uid://byewca2c18f8g" path="res://assets/PuzzleFios/White_background.png" id="2_wuo5g"]
@@ -159,30 +159,30 @@ tile_size = Vector2i(32, 32)
 uv_clipping = true
 sources/0 = SubResource("TileSetAtlasSource_cogqg")
 
-[node name="PuzzeleFlowFree" type="Node2D" unique_id=112813946]
+[node name="PuzzeleFlowFree" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=134595218]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 323.99994)
 scale = Vector2(0.85714287, 0.8437499)
 texture = ExtResource("1_prv6e")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=366838897]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(460, 200)
 tile_set = SubResource("TileSet_4778w")
 script = ExtResource("3_qw6qn")
 terminal_scene = ExtResource("4_wuo5g")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1035838202]
+[node name="Node2D" type="Node2D" parent="."]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1894163273]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 304.0
 offset_top = -1.0
 offset_right = 864.0
 offset_bottom = 109.0
 color = Color(0, 0, 0, 0.70980394)
 
-[node name="Label" type="Label" parent="." unique_id=742046609]
+[node name="Label" type="Label" parent="."]
 offset_left = 326.0
 offset_top = 36.0
 offset_right = 839.0

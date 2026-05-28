@@ -8,7 +8,7 @@ var player_nearby = false
 var puzzle_aberto = false
 var puzzle_instance = null
 
-const PUZZLE_CENA = preload("res://Scenes/[Future] Chemical.tscn")
+const PUZZLE_CENA = preload("res://Scenes/[Present] Speed and Weight.tscn")
 
 func _ready():
 	if interaction_label:
@@ -18,14 +18,22 @@ func _ready():
 	$InteractionAreaQuimica.body_exited.connect(_on_interaction_area_body_exited)
 
 func _process(_delta):
+	if not is_visible_in_tree():
+		if interaction_label:
+			interaction_label.visible = false
+		return
+
 	if puzzle_aberto:
-		# Verifica a validade do puzzle instanciado diretamente
 		if not is_instance_valid(puzzle_instance):
 			_on_puzzle_fechado()
 			return
 	
-	if player_nearby and not puzzle_aberto and Input.is_action_just_pressed("interact"):
-		abrir_puzzle()
+	if player_nearby and not puzzle_aberto:
+		interaction_label.visible = true
+		if Input.is_action_just_pressed("interact"):
+			abrir_puzzle()
+	elif not player_nearby:
+		interaction_label.visible = false
 
 func abrir_puzzle():
 	var canvas_antigo = get_tree().root.get_node_or_null("PuzzleLayer")
@@ -56,14 +64,13 @@ func _on_puzzle_fechado():
 	if canvas and is_instance_valid(canvas):
 		canvas.queue_free()
 	
-	# Só mostra label se não foi resolvido
-	if player_nearby:
+	if player_nearby and is_visible_in_tree():
 		interaction_label.visible = true
 
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player" or body.is_in_group("player"):
 		player_nearby = true
-		if not puzzle_aberto:
+		if not puzzle_aberto and is_visible_in_tree():
 			interaction_label.visible = true
 		
 func _on_interaction_area_body_exited(body):
