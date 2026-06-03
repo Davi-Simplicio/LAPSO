@@ -8,7 +8,7 @@ var player_nearby = false
 var puzzle_aberto = false
 var puzzle_instance = null
 
-const PUZZLE_CENA = preload("res://Meu Relogio/Clock.tscn")
+const PUZZLE_CENA = preload("res://Relogio Moderno/ClockPuzzle.tscn")
 
 func _ready():
 	if interaction_label:
@@ -29,7 +29,8 @@ func _process(_delta):
 			_on_puzzle_fechado()
 			return
 	
-	var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_resolvido
+	# CORRIGIDO: Padronizado para 'puzzle_relogio_moderno_resolvido'
+	var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_moderno_resolvido
 	
 	if player_nearby and not puzzle_aberto and not ja_resolvido:
 		interaction_label.visible = true
@@ -44,7 +45,6 @@ func abrir_puzzle():
 		canvas_antigo.queue_free()
 	
 	puzzle_aberto = true
-	puzzle_instance = null
 	interaction_label.visible = false
 	
 	var canvas = CanvasLayer.new()
@@ -55,9 +55,9 @@ func abrir_puzzle():
 	puzzle_instance = PUZZLE_CENA.instantiate()
 	canvas.add_child(puzzle_instance)
 	
-	var gear = puzzle_instance.get_node_or_null("GearControl")
-	if gear and gear.has_signal("puzzle_fechado"):
-		gear.puzzle_fechado.connect(_on_puzzle_fechado)
+	# CORRIGIDO: O puzzle_instance já é o script do puzzle, não precisa dar get_node.
+	if puzzle_instance and puzzle_instance.has_signal("puzzle_fechado"):
+		puzzle_instance.puzzle_fechado.connect(_on_puzzle_fechado)
 
 func _on_puzzle_fechado():
 	puzzle_aberto = false
@@ -67,14 +67,14 @@ func _on_puzzle_fechado():
 	if canvas and is_instance_valid(canvas):
 		canvas.queue_free()
 	
-	var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_resolvido
+	var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_moderno_resolvido
 	if player_nearby and not ja_resolvido and is_visible_in_tree():
 		interaction_label.visible = true
 
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player" or body.is_in_group("player"):
 		player_nearby = true
-		var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_resolvido
+		var ja_resolvido = has_node("/root/GameState") and get_node("/root/GameState").puzzle_relogio_moderno_resolvido
 		if not puzzle_aberto and not ja_resolvido and is_visible_in_tree():
 			interaction_label.visible = true
 		
