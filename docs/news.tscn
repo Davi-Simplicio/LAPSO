@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://ds030cn1bxfdm"]
+[gd_scene load_steps=2 format=3 uid="uid://ds030cn1bxfdm"]
+
+[ext_resource type="Texture2D" uid="uid://uh50ew4s5ayu" path="res://docs/pixil-frame-0 (3).png" id="1_nk8j4"]
 
 [node name="News" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -21.0
+offset_top = -13.0
+offset_right = 79.0
+offset_bottom = 87.0
+texture = ExtResource("1_nk8j4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 23.0
+offset_right = 59.0
+offset_bottom = 63.0
+theme_override_font_sizes/normal_font_size = 12
+text = "Artigo de Pesquisa Médica"

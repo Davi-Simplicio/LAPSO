@@ -8,7 +8,7 @@ var player_nearby = false
 var puzzle_aberto = false
 var puzzle_instance = null
 
-const PUZZLE_CENA = preload("res://Scenes/[Present] Speed and Weight.tscn")
+const PUZZLE_CENA = preload("res://Scenes/[Future] Chemical.tscn")
 
 func _ready():
 	if interaction_label:
