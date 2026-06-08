@@ -878,21 +878,32 @@ texture = ExtResource("7_rugew")
 4:12/size_in_atlas = Vector2i(2, 3)
 4:12/0 = 0
 4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.00988, -23.96314, 15.273209, -23.96314, 15.273209, 18.696518, -15.799873, 18.696518)
-11:12/size_in_atlas = Vector2i(2, 4)
-11:12/0 = 0
-11:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.326534, -30.809752, 16.063206, -31.336414, 15.799873, 31.599745, -4.7399597, 31.599745, -5.003292, 10.533249, -15.799871, 10.533249)
 4:7/size_in_atlas = Vector2i(2, 3)
 4:7/0 = 0
 4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.269917, -23.699808, 11.323242, -24.489801, 10.006584, 21.593159, -8.163269, 22.11982)
-6:12/size_in_atlas = Vector2i(5, 3)
-6:12/0 = 0
-6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.32541, -23.903679, 40.09649, -23.132591, 39.710953, 18.506073, -40.482033, 18.506073)
 6:4/size_in_atlas = Vector2i(1, 3)
 6:4/0 = 0
 7:4/size_in_atlas = Vector2i(1, 3)
 7:4/0 = 0
 8:4/size_in_atlas = Vector2i(1, 3)
 8:4/0 = 0
+6:12/size_in_atlas = Vector2i(1, 3)
+6:12/0 = 0
+6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.338135, -22.578949, 7.902649, -22.578953, 9.031586, 19.192112, -7.9026184, 19.192112)
+7:12/size_in_atlas = Vector2i(1, 3)
+7:12/0 = 0
+8:12/size_in_atlas = Vector2i(1, 3)
+8:12/0 = 0
+9:12/size_in_atlas = Vector2i(1, 3)
+9:12/0 = 0
+10:12/size_in_atlas = Vector2i(1, 3)
+10:12/0 = 0
+11:12/size_in_atlas = Vector2i(1, 3)
+11:12/0 = 0
+11:15/0 = 0
+12:12/size_in_atlas = Vector2i(1, 3)
+12:12/0 = 0
+12:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke6xc"]
 texture = ExtResource("8_o68h1")
@@ -956,8 +967,6 @@ texture = ExtResource("8_o68h1")
 8:3/0 = 0
 5:4/size_in_atlas = Vector2i(1, 3)
 5:4/0 = 0
-6:4/size_in_atlas = Vector2i(3, 3)
-6:4/0 = 0
 9:4/size_in_atlas = Vector2i(1, 3)
 9:4/0 = 0
 10:4/size_in_atlas = Vector2i(3, 3)
@@ -970,8 +979,6 @@ texture = ExtResource("8_o68h1")
 4:7/0 = 0
 6:7/size_in_atlas = Vector2i(1, 3)
 6:7/0 = 0
-7:7/size_in_atlas = Vector2i(2, 3)
-7:7/0 = 0
 9:7/size_in_atlas = Vector2i(2, 3)
 9:7/0 = 0
 11:7/size_in_atlas = Vector2i(2, 3)
@@ -979,8 +986,6 @@ texture = ExtResource("8_o68h1")
 1:10/size_in_atlas = Vector2i(4, 2)
 1:10/0 = 0
 1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.928234, -27.52393, 3.2655487, -22.39235, 5.1315804, 27.057426, -14.461727, 27.523933)
-5:10/size_in_atlas = Vector2i(4, 2)
-5:10/0 = 0
 9:10/size_in_atlas = Vector2i(2, 2)
 9:10/0 = 0
 11:10/size_in_atlas = Vector2i(2, 2)
@@ -1029,6 +1034,22 @@ texture = ExtResource("8_o68h1")
 1:3/0 = 0
 2:2/0 = 0
 2:3/0 = 0
+7:9/size_in_atlas = Vector2i(2, 1)
+7:9/0 = 0
+7:8/size_in_atlas = Vector2i(2, 1)
+7:8/0 = 0
+7:7/size_in_atlas = Vector2i(2, 1)
+7:7/0 = 0
+6:4/size_in_atlas = Vector2i(1, 3)
+6:4/0 = 0
+7:4/size_in_atlas = Vector2i(1, 3)
+7:4/0 = 0
+8:4/size_in_atlas = Vector2i(1, 3)
+8:4/0 = 0
+5:10/size_in_atlas = Vector2i(4, 1)
+5:10/0 = 0
+5:11/size_in_atlas = Vector2i(4, 1)
+5:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4701"]
 texture = ExtResource("9_6fw57")
@@ -1127,6 +1148,8 @@ texture = ExtResource("8_o68h1")
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.4749146, -5.935337, 8, -5.3957615, 7.01449, 14.3887005, -6.6547728, 14.748415)
 6:0/size_in_atlas = Vector2i(1, 2)
 6:0/0 = 0
+5:0/size_in_atlas = Vector2i(1, 2)
+5:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wan0n"]
 physics_layer_0/collision_layer = 1
@@ -1235,7 +1258,6 @@ tile_map_data = PackedByteArray("AAD+//3/AAARAAQAAAD+//z/AAARAAQAAAD+//v/AAARAAQ
 tile_set = SubResource("TileSet_2eut3")
 
 [node name="Past" type="Node2D" parent="."]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Past"]
 visible = false
@@ -1254,12 +1276,13 @@ texture = SubResource("GradientTexture2D_2eut3")
 [node name="hotel_decoration" type="TileMapLayer" parent="Past"]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///3/AAACAAQAAAAEAP7/AAAIAAMAAAAIAP7/AAALAAAAAAD///L/AAAGAAQAAAAFAPL/AAAEAAcAAAACAPP/AAAJAAoAAAAIAPP/AAACAAwAAAA=")
+tile_map_data = PackedByteArray("AAD///3/AAACAAQAAAAEAP7/AAAIAAMAAAAIAP7/AAALAAAAAAAIAPL/AAAGAAwAAAAJAPL/AAAHAAwAAAAKAPL/AAALAAwAAAALAPL/AAAMAAwAAAAKAPT/AAALAA8AAAALAPT/AAAMAA8AAAAJAPb/AQAAAAIAAAAKAPb/AQABAAIAAAAKAPf/AQABAAMAAAALAPb/AQACAAIAAAAJAPf/AQAAAAMAAAALAPf/AQACAAMAAAADAPH/AQAHAAkAAAADAPD/AQAHAAcAAAAEAPX/AQAKAAIAAAADAPf/AQADAAcAAAD///L/AQAGAAQAAAAAAPL/AQAIAAQAAAADAPP/AQAFAAsAAAADAPL/AQAFAAoAAAA=")
 tile_set = SubResource("TileSet_jsu5s")
 
 [node name="hotel_decoration_details" type="TileMapLayer" parent="Past"]
 z_index = 2
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAJAPf/AQAHAAAAAAALAPf/AQAHAAAAAAAIAPb/AQAGAAAAAAAKAPH/AAAFAAQAAAAJAPb/AAACAAQAAAALAPb/AAACAAQAAAA=")
 tile_set = SubResource("TileSet_wan0n")
 
 [node name="PostIt" parent="Past" instance=ExtResource("9_2eut3")]
@@ -1277,7 +1300,7 @@ npc_data = ExtResource("12_00yci")
 [node name="NPC 2" parent="Past" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-9, -168)
+position = Vector2(2, -149)
 npc_data = ExtResource("13_tbd83")
 
 [node name="Relogio Puzzle" parent="Past" instance=ExtResource("17_5xr4q")]
@@ -1294,9 +1317,10 @@ position = Vector2(-176, -194)
 
 [node name="Time Machine" parent="Past" instance=ExtResource("21_qguc3")]
 z_index = 1
-position = Vector2(-71, -128)
+position = Vector2(-109, -92)
 
 [node name="CanvasModulate3" type="CanvasModulate" parent="Past"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.12156863)
 z_index = 999
 y_sort_enabled = true
@@ -1306,9 +1330,9 @@ material = SubResource("CanvasItemMaterial_cjh4u")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -425.0
+offset_left = -942.0
 offset_top = -394.00003
-offset_right = 2575.0
+offset_right = 4035.1265
 offset_bottom = 1727.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1316,6 +1340,7 @@ scale = Vector2(0.26149058, 0.22063893)
 texture = ExtResource("18_r8djo")
 
 [node name="Present" type="Node2D" parent="."]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Present"]
 visible = false
