@@ -1229,6 +1229,7 @@ tile_map_data = PackedByteArray("AAD+//3/AAARAAQAAAD+//z/AAARAAQAAAD+//v/AAARAAQ
 tile_set = SubResource("TileSet_2eut3")
 
 [node name="Past" type="Node2D" parent="."]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Past"]
 y_sort_enabled = true
@@ -1286,10 +1287,33 @@ position = Vector2(-176, -194)
 
 [node name="Time Machine" parent="Past" instance=ExtResource("21_qguc3")]
 z_index = 1
+<<<<<<< Updated upstream
 position = Vector2(-71, -128)
+=======
+position = Vector2(-70, -130)
+
+[node name="CanvasModulate3" type="CanvasModulate" parent="Past"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.12156863)
+z_index = 999
+y_sort_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="Past/CanvasModulate3"]
+material = SubResource("CanvasItemMaterial_cjh4u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -942.0
+offset_top = -394.00003
+offset_right = 4035.1265
+offset_bottom = 1727.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.26149058, 0.22063893)
+texture = ExtResource("18_r8djo")
+>>>>>>> Stashed changes
 
 [node name="Present" type="Node2D" parent="."]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Present"]
 y_sort_enabled = true
