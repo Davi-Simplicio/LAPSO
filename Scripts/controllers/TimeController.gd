@@ -18,6 +18,13 @@ func _on_map_update_requested(action_data: int):
 	Present.visible = action_data == 2
 	Future.visible = action_data == 3
 	
+	Past.get_node("hotel_decoration").collision_enabled = Past.visible == true
+	Present.get_node("hotel_decoration").collision_enabled = Present.visible == true
+	Future.get_node("hotel_decoration").collision_enabled = Future.visible == true
+	Past.get_node("hotel_decoration_details").collision_enabled = Past.visible == true
+	Present.get_node("hotel_decoration_details").collision_enabled = Present.visible == true
+	Future.get_node("hotel_decoration_details").collision_enabled = Future.visible == true
+	
 	Past.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 1 else Node.PROCESS_MODE_DISABLED
 	Present.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 2 else Node.PROCESS_MODE_DISABLED
 	Future.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 3 else Node.PROCESS_MODE_DISABLED
