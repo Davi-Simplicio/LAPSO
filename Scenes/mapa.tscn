@@ -1587,6 +1587,39 @@ position = Vector2(299, -138)
 [node name="Clock ModelModern" parent="Present" instance=ExtResource("18_qguc3")]
 position = Vector2(-231, -216)
 
+[node name="Eduardo Oliveira" parent="Present" instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(57, 6)
+dialogue_text = "Olá!"
+npc_data = ExtResource("31_14j86")
+
+[node name="Ana Beatriz Ribeiro" parent="Present" instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-174, 4)
+npc_data = ExtResource("32_lucgu")
+
+[node name="Camila Ferreira" parent="Present" instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-179, -168)
+dialogue_text = "Oi!"
+npc_data = ExtResource("33_16u37")
+
+[node name="Marina Costa" parent="Present" instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-496, 5)
+dialogue_text = "Eai!"
+npc_data = ExtResource("34_lgxe1")
+
+[node name="Ana Beatriz Ribeiro3" parent="Present" instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-501, -155)
+npc_data = ExtResource("35_g4mab")
+
 [node name="Future" type="Node2D" parent="."]
 visible = false
 
@@ -1700,36 +1733,3 @@ collision_layer = 3
 z_index = 1
 position = Vector2(-447, -128)
 collision_layer = 3
-
-[node name="Eduardo Oliveira" parent="." instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(42, 9)
-dialogue_text = "Olá!"
-npc_data = ExtResource("31_14j86")
-
-[node name="Ana Beatriz Ribeiro" parent="." instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-174, 4)
-npc_data = ExtResource("32_lucgu")
-
-[node name="Camila Ferreira" parent="." instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-179, -168)
-dialogue_text = "Oi!"
-npc_data = ExtResource("33_16u37")
-
-[node name="Marina Costa" parent="." instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-496, 5)
-dialogue_text = "Eai!"
-npc_data = ExtResource("34_lgxe1")
-
-[node name="Ana Beatriz Ribeiro3" parent="." instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-501, -155)
-npc_data = ExtResource("35_g4mab")
