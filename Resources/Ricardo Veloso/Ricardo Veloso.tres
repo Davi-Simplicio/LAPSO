@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://sbdf1noyotdn"]
+
+[ext_resource type="Texture2D" uid="uid://rhbs7uts8lvi" path="res://Resources/Ricardo Veloso/Ricardo Veloso.png" id="1_518lp"]
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_r84bc"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_drwtd"]
+[ext_resource type="Texture2D" uid="uid://bk3qqcqvvc1ma" path="res://Resources/Ricardo Veloso/15.png" id="3_wdhg4"]
+
+[sub_resource type="Resource" id="Resource_dy3nx"]
+script = ExtResource("2_drwtd")
+lines = Array[String](["José: Eae", "Ricardo Veloso: E aí? Não te conheço. Está perdido? Aquela explosão de ontem foi um evento e tanto. A história está sempre cheia de momentos assim, onde o futuro muda em um único instante."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_r84bc")
+npc_name = "Ricardo Veloso"
+portrait = ExtResource("1_518lp")
+greeting_text = "Olá."
+topics = Array[ExtResource("2_drwtd")]([SubResource("Resource_dy3nx")])
+sprite_sheet = ExtResource("3_wdhg4")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

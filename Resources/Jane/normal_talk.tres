@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_1vluy")
 button_label = "Talk"
-lines = Array[String](["José: Hello", "Jane: Are you okay?"])
+lines = Array[String](["José: Olá!", "Sérgio Duarte: E aí, cara, 'cê tá perdido? É que eu ouvi um barulhão ontem e fiquei no escuro a noite inteira. O pessoal tá comentando que o cientista do apê 4 sumiu. A galera aqui chamava ele de 'João Tempo'. Ele falava que a vida é curta e que precisava de mais tempo pra tocar os projetos dele. Sei lá. Coisa de doido."])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"

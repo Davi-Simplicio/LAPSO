@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coriasp6s7cql"
-path="res://.godot/imported/13.png-ae64d555b021ab379a1e6bc7bb5492c1.ctex"
+uid="uid://dgs0colb2f1iq"
+path="res://.godot/imported/Márcio Albuquerque.png-9d30429c5e175580a9834c812895d520.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NPC's/pack/13.png"
-dest_files=["res://.godot/imported/13.png-ae64d555b021ab379a1e6bc7bb5492c1.ctex"]
+source_file="res://Resources/Márcio Albuquerque/Márcio Albuquerque.png"
+dest_files=["res://.godot/imported/Márcio Albuquerque.png-9d30429c5e175580a9834c812895d520.ctex"]
 
 [params]
 

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://c76d1vcvxqcah"]
+
+[ext_resource type="Texture2D" uid="uid://dkhfw2qgvc8m7" path="res://Resources/Sérgio Duarte/Sérgio Duarte.png" id="1_4pmqr"]
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="2_wkq2k"]
+[ext_resource type="Texture2D" uid="uid://csumm24paepf8" path="res://Resources/Sérgio Duarte/5.png" id="3_060u0"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="4_eygrj"]
+
+[sub_resource type="Resource" id="Resource_o81h4"]
+script = ExtResource("4_eygrj")
+button_label = "Olá"
+lines = Array[String](["José: Olá!", "Sérgio Duarte: E aí, cara, 'cê tá perdido?", "José: Acabei de chegar por aqui.", "Sérgio Duarte: É que eu ouvi um barulhão ontem e fiquei no escuro a noite inteira. O pessoal tá comentando que o cientista do apê 4 sumiu. A galera aqui chamava ele de 'João Tempo'. Ele falava que a vida é curta e que precisava de mais tempo pra tocar os projetos dele. Sei lá. Coisa de doido."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("2_wkq2k")
+npc_name = "Sérgio Duarte"
+portrait = ExtResource("1_4pmqr")
+greeting_text = "Olá!"
+topics = Array[ExtResource("4_eygrj")]([SubResource("Resource_o81h4")])
+sprite_sheet = ExtResource("3_060u0")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

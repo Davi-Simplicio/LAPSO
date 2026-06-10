@@ -6,5 +6,5 @@
 script = ExtResource("1_ufonm")
 button_label = "Ask about the toad Draw"
 required_fact_id = "found_post_it"
-lines = Array[String](["José: I found This note that is assigned with your name, what this means?", "Morgan: Oh, this a long history..."])
+lines = Array[String](["José: I found This note that is assigned with your name, what this means?", "Eduarda Faria: Oh, this a long history..."])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"

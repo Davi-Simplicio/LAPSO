@@ -55,6 +55,7 @@ offset_bottom = 182.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Teste
 "
+horizontal_alignment = 2
 
 [node name="LeftPortrait" type="TextureRect" parent="Panel"]
 layout_mode = 0

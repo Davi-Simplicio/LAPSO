@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gdgswpiyusfo"
-path="res://.godot/imported/6.png-edc2aedfbfeafe9e4d44c59666314cb1.ctex"
+uid="uid://rhbs7uts8lvi"
+path="res://.godot/imported/Ricardo Veloso.png-a3dde31827e92638bd93194e4b3ad6b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NPC's/pack/6.png"
-dest_files=["res://.godot/imported/6.png-edc2aedfbfeafe9e4d44c59666314cb1.ctex"]
+source_file="res://Resources/Ricardo Veloso/Ricardo Veloso.png"
+dest_files=["res://.godot/imported/Ricardo Veloso.png-a3dde31827e92638bd93194e4b3ad6b8.ctex"]
 
 [params]
 
