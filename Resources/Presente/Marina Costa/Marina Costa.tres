@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://dl0hx8xb5rqyw"]
+
+[ext_resource type="Texture2D" uid="uid://b0ejbgid8n42q" path="res://Resources/Presente/Marina Costa/Marina Costa.png" id="1_mtcjn"]
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_yw004"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_1mb63"]
+[ext_resource type="Texture2D" uid="uid://b4y5onqp0tx05" path="res://Resources/Presente/Marina Costa/8.png" id="3_g0xo3"]
+
+[sub_resource type="Resource" id="Resource_ir0dm"]
+script = ExtResource("2_1mb63")
+lines = Array[String](["José: Eai", "Marina Costa: Salve "])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_yw004")
+npc_name = "Marina Costa"
+portrait = ExtResource("1_mtcjn")
+greeting_text = "oi."
+topics = Array[ExtResource("2_1mb63")]([SubResource("Resource_ir0dm")])
+sprite_sheet = ExtResource("3_g0xo3")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

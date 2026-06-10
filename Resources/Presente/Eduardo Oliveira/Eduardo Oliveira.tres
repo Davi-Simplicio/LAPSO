@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://cftleug0br0cm"]
+
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_5vrjr"]
+[ext_resource type="Texture2D" uid="uid://bs5sio8p84iu4" path="res://Resources/Presente/Eduardo Oliveira/Eduardo Oliveira.png" id="1_ta03v"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_7wi5c"]
+[ext_resource type="Texture2D" uid="uid://blgpdq0ryjyq1" path="res://Resources/Presente/Eduardo Oliveira/12.png" id="3_scrrq"]
+
+[sub_resource type="Resource" id="Resource_buhdn"]
+script = ExtResource("2_7wi5c")
+lines = Array[String](["José: Oi", "Eduardo Oliveira: ..."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_5vrjr")
+npc_name = "Eduardo Oliveira"
+portrait = ExtResource("1_ta03v")
+greeting_text = "Olá."
+topics = Array[ExtResource("2_7wi5c")]([SubResource("Resource_buhdn")])
+sprite_sheet = ExtResource("3_scrrq")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

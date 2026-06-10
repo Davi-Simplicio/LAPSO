@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://cej532aj3q877"]
+[gd_scene load_steps=59 format=4 uid="uid://cej532aj3q877"]
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://Scripts/controllers/LightningController.gd" id="2_ltv3l"]
@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://y8085ey8cpbd" path="res://assets/house_assets/TopDownHouse_FurnitureState2.png" id="8_o68h1"]
 [ext_resource type="PackedScene" uid="uid://ccnncabq2mige" path="res://Scenes/DocumentPickup.tscn" id="9_2eut3"]
 [ext_resource type="Texture2D" uid="uid://hwd37sicfg6x" path="res://assets/house_assets/TopDownHouse_SmallItems.png" id="9_6fw57"]
-[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Eduarda Faria/Documents/PostIt_Morgan.tres" id="10_rugew"]
+[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Passado/Eduarda Faria/Documents/PostIt_Morgan.tres" id="10_rugew"]
 [ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://Scenes/npc.tscn" id="11_6fw57"]
-[ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Eduarda Faria/Eduarda Faria.tres" id="12_00yci"]
-[ext_resource type="Resource" uid="uid://sbdf1noyotdn" path="res://Resources/Ricardo Veloso/Ricardo Veloso.tres" id="13_0drt5"]
-[ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Jane/NPC_Jane.tres" id="13_tbd83"]
+[ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Passado/Eduarda Faria/Eduarda Faria.tres" id="12_00yci"]
+[ext_resource type="Resource" uid="uid://sbdf1noyotdn" path="res://Resources/Passado/Ricardo Veloso/Ricardo Veloso.tres" id="13_0drt5"]
+[ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Passado/Jane/NPC_Jane.tres" id="13_tbd83"]
 [ext_resource type="PackedScene" uid="uid://bhakxastttoej" path="res://Fisica/Fisica Model.tscn" id="15_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://c5k01ygtp4ohb" path="res://Quimica/Quimica Model.tscn" id="15_qguc3"]
 [ext_resource type="PackedScene" uid="uid://chynhh6jwvsyl" path="res://Meu Relogio/Clock Model.tscn" id="17_5xr4q"]
@@ -24,11 +24,17 @@
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://beijvxr4tdjfg" path="res://TimeMachine/TimeMachine.tscn" id="21_qguc3"]
 [ext_resource type="PackedScene" uid="uid://d1vmdhqm2vhtt" path="res://Scenes/PuzzleFios_Model.tscn" id="22_4yu56"]
+[ext_resource type="Resource" uid="uid://dceg5xxhj20mk" path="res://Resources/Presente/Thiago Mendes/Thiago Mendes.tres" id="23_fqiy1"]
 [ext_resource type="PackedScene" uid="uid://cagadspykx25t" path="res://Scenes/PuzzleFlowFree_Model.tscn" id="23_r8djo"]
-[ext_resource type="Resource" uid="uid://j6n8fvm81i7k" path="res://Resources/Márcio Albuquerque/Márcio Albuquerque.tres" id="25_anodm"]
-[ext_resource type="Resource" uid="uid://c76d1vcvxqcah" path="res://Resources/Sérgio Duarte/SergioDuarte.tres" id="25_cjh4u"]
-[ext_resource type="Resource" uid="uid://c54flfhjofhi3" path="res://Resources/Sílvia Nogueira/Sílvia Nogueira.tres" id="27_nnce2"]
-[ext_resource type="Resource" uid="uid://0km6l584lj43" path="res://Resources/Vera Lúcia/Vera Lúcia.tres" id="28_ahe3a"]
+[ext_resource type="Resource" uid="uid://j6n8fvm81i7k" path="res://Resources/Passado/Márcio Albuquerque/Márcio Albuquerque.tres" id="25_anodm"]
+[ext_resource type="Resource" uid="uid://c76d1vcvxqcah" path="res://Resources/Passado/Sérgio Duarte/SergioDuarte.tres" id="25_cjh4u"]
+[ext_resource type="Resource" uid="uid://c54flfhjofhi3" path="res://Resources/Passado/Sílvia Nogueira/Sílvia Nogueira.tres" id="27_nnce2"]
+[ext_resource type="Resource" uid="uid://0km6l584lj43" path="res://Resources/Passado/Vera Lúcia/Vera Lúcia.tres" id="28_ahe3a"]
+[ext_resource type="Resource" uid="uid://cftleug0br0cm" path="res://Resources/Presente/Eduardo Oliveira/Eduardo Oliveira.tres" id="31_14j86"]
+[ext_resource type="Resource" uid="uid://4afmc3x8uv0p" path="res://Resources/Presente/Ana Beatriz Ribeiro/Ana Beatriz Ribeiro.tres" id="32_lucgu"]
+[ext_resource type="Resource" uid="uid://dq761e7xhx1oc" path="res://Resources/Presente/Camila Ferreira/Camila Ferreira.tres" id="33_16u37"]
+[ext_resource type="Resource" uid="uid://dl0hx8xb5rqyw" path="res://Resources/Presente/Marina Costa/Marina Costa.tres" id="34_lgxe1"]
+[ext_resource type="Resource" uid="uid://um81tk0ad6rh" path="res://Resources/Presente/Diego Alves/Diego Alves.tres" id="35_g4mab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1568,19 +1574,12 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAPD/AAAFAAEAAAAKAPL/AAAFAAQAAAALAPP/AAADAAUAAAALAPL/AAAEAAcAAAAJAPb/AAACAAQAAAALAPb/AAACAAQAAAAJAPf/AQAHAAAAAAALAPf/AQAHAAAAAAD8//X/AQABABAAAAD8//b/AQABABEAAAD9//X/AQACABAAAAD9//b/AQACABEAAAD8/wAAAQABABAAAAD8/wEAAQABABEAAAD9/wAAAQACABAAAAD9/wEAAQACABEAAADr/wIAAQAHAAAAAADt/wIAAQAHAAAAAADt/wEAAAAFAAYAAADt//3/AAAFAAQAAADp//3/AAAGAAQAAADo//H/AAAHAAUAAADu//H/AAAHAAUAAAD0//v/AAABAAEAAAD0//D/AAABAAEAAADn//v/AAABAAEAAADf//H/AAABAAEAAADZ//3/AAABAAAAAADZ//X/AAABAAAAAAD9//L/AAABAAAAAAD9//3/AAABAAAAAAD2/wMAAAAAAAIAAADp/wIAAAAFAAcAAADn//f/AAAEAAcAAAAKAAIAAAADAAQAAADn/wIAAAADAAQAAADu//f/AAADAAQAAADx//7/AQAIAAMAAADy//7/AQAJAAMAAADs/wAAAQAIAAIAAADt/wAAAQAJAAIAAADr//T/AQAIAAIAAADs//T/AQAJAAIAAADm//T/AQAIAAIAAADn//T/AQAJAAIAAAA=")
 tile_set = SubResource("TileSet_wan0n")
 
-[node name="NPC 1" parent="Present" instance=ExtResource("11_6fw57")]
+[node name="Thiago Mendes" parent="Present" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(45, 11)
-dialogue_text = "Teste
-"
-npc_data = ExtResource("12_00yci")
-
-[node name="NPC 2" parent="Present" instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(37, -164)
-npc_data = ExtResource("13_tbd83")
+position = Vector2(8, -170)
+dialogue_text = "Olá!"
+npc_data = ExtResource("23_fqiy1")
 
 [node name="PuzzleFiosModel" parent="Present" instance=ExtResource("22_4yu56")]
 position = Vector2(299, -138)
@@ -1701,3 +1700,36 @@ collision_layer = 3
 z_index = 1
 position = Vector2(-447, -128)
 collision_layer = 3
+
+[node name="Eduardo Oliveira" parent="." instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(42, 9)
+dialogue_text = "Olá!"
+npc_data = ExtResource("31_14j86")
+
+[node name="Ana Beatriz Ribeiro" parent="." instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-174, 4)
+npc_data = ExtResource("32_lucgu")
+
+[node name="Camila Ferreira" parent="." instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-179, -168)
+dialogue_text = "Oi!"
+npc_data = ExtResource("33_16u37")
+
+[node name="Marina Costa" parent="." instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-496, 5)
+dialogue_text = "Eai!"
+npc_data = ExtResource("34_lgxe1")
+
+[node name="Ana Beatriz Ribeiro3" parent="." instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-501, -155)
+npc_data = ExtResource("35_g4mab")

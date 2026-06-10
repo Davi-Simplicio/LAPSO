@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://0dm5722t1ls7"]
 
-[ext_resource type="PackedScene" path="res://Scenes/mapa.tscn" id="1_evvns"]
+[ext_resource type="PackedScene" uid="uid://cej532aj3q877" path="res://Scenes/mapa.tscn" id="1_evvns"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://Scenes/player.tscn" id="2_yq54j"]
 [ext_resource type="PackedScene" uid="uid://6foeujt16n08" path="res://Scenes/dialogueBox.tscn" id="5_qn35j"]
-[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Eduarda Faria/Documents/PostIt_Morgan.tres" id="8_t8pok"]
+[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Passado/Eduarda Faria/Documents/PostIt_Morgan.tres" id="8_t8pok"]
 [ext_resource type="PackedScene" uid="uid://bky3fyxawu28k" path="res://Scenes/DocumentsMenu.tscn" id="9_t8pok"]
 [ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="10_mtw28"]
 

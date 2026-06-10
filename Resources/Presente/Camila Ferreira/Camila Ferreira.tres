@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://dq761e7xhx1oc"]
+
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_frsrw"]
+[ext_resource type="Texture2D" uid="uid://c7pxmq5fcqnju" path="res://Resources/Presente/Camila Ferreira/Camila Ferreira.png" id="1_mdg6q"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_w332s"]
+[ext_resource type="Texture2D" uid="uid://cqtpqj8k65xm6" path="res://Resources/Presente/Camila Ferreira/9.png" id="3_y300l"]
+
+[sub_resource type="Resource" id="Resource_caglb"]
+script = ExtResource("2_w332s")
+lines = Array[String](["José: ...", "Camila Ferreira: Esse vizinho nosso, o Paulo... ele era tão fechado, né? Acho que ele se sentia culpado por alguma coisa que o pai dele fez. Ele passava a vida tentando refazer os cálculos do pai. Dizia que 'o passado tinha um erro que precisava ser consertado'. "])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_frsrw")
+npc_name = "Camila Ferreira"
+portrait = ExtResource("1_mdg6q")
+topics = Array[ExtResource("2_w332s")]([SubResource("Resource_caglb")])
+sprite_sheet = ExtResource("3_y300l")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"
