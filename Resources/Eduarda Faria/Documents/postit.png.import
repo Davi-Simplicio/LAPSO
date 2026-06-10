@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbgulg76315qo"
-path="res://.godot/imported/Captura de tela 2025-11-27 105753.png-22bc1323fd46a4440e750532cd202d76.ctex"
+uid="uid://bngcwufu2uukq"
+path="res://.godot/imported/postit.png-f9f47d9951faa46cf6b3f46acf407e62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Morgan/Documents/Captura de tela 2025-11-27 105753.png"
-dest_files=["res://.godot/imported/Captura de tela 2025-11-27 105753.png-22bc1323fd46a4440e750532cd202d76.ctex"]
+source_file="res://Resources/Eduarda Faria/Documents/postit.png"
+dest_files=["res://.godot/imported/postit.png-f9f47d9951faa46cf6b3f46acf407e62.ctex"]
 
 [params]
 

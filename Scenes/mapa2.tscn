@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://cej532aj3q877"]
+[gd_scene load_steps=48 format=4 uid="uid://b5vghrkaqvuf"]
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://Scripts/controllers/LightningController.gd" id="2_ltv3l"]
@@ -11,11 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://y8085ey8cpbd" path="res://assets/house_assets/TopDownHouse_FurnitureState2.png" id="8_o68h1"]
 [ext_resource type="PackedScene" uid="uid://ccnncabq2mige" path="res://Scenes/DocumentPickup.tscn" id="9_2eut3"]
 [ext_resource type="Texture2D" uid="uid://hwd37sicfg6x" path="res://assets/house_assets/TopDownHouse_SmallItems.png" id="9_6fw57"]
-[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Eduarda Faria/Documents/PostIt_Morgan.tres" id="10_rugew"]
 [ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://Scenes/npc.tscn" id="11_6fw57"]
-[ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Eduarda Faria/Eduarda Faria.tres" id="12_00yci"]
-[ext_resource type="Resource" uid="uid://sbdf1noyotdn" path="res://Resources/Ricardo Veloso/Ricardo Veloso.tres" id="13_0drt5"]
+[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Eduarda Faria/Documents/PostIt_Morgan.tres" id="11_k317p"]
 [ext_resource type="Resource" uid="uid://bbeqjlkyofnun" path="res://Resources/Jane/NPC_Jane.tres" id="13_tbd83"]
+[ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Eduarda Faria/Eduarda Faria.tres" id="13_wo73w"]
 [ext_resource type="PackedScene" uid="uid://bhakxastttoej" path="res://Fisica/Fisica Model.tscn" id="15_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://c5k01ygtp4ohb" path="res://Quimica/Quimica Model.tscn" id="15_qguc3"]
 [ext_resource type="PackedScene" uid="uid://chynhh6jwvsyl" path="res://Meu Relogio/Clock Model.tscn" id="17_5xr4q"]
@@ -25,10 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://beijvxr4tdjfg" path="res://TimeMachine/TimeMachine.tscn" id="21_qguc3"]
 [ext_resource type="PackedScene" uid="uid://d1vmdhqm2vhtt" path="res://Scenes/PuzzleFios_Model.tscn" id="22_4yu56"]
 [ext_resource type="PackedScene" uid="uid://cagadspykx25t" path="res://Scenes/PuzzleFlowFree_Model.tscn" id="23_r8djo"]
-[ext_resource type="Resource" uid="uid://j6n8fvm81i7k" path="res://Resources/Márcio Albuquerque/Márcio Albuquerque.tres" id="25_anodm"]
-[ext_resource type="Resource" uid="uid://c76d1vcvxqcah" path="res://Resources/Sérgio Duarte/SergioDuarte.tres" id="25_cjh4u"]
-[ext_resource type="Resource" uid="uid://c54flfhjofhi3" path="res://Resources/Sílvia Nogueira/Sílvia Nogueira.tres" id="27_nnce2"]
-[ext_resource type="Resource" uid="uid://0km6l584lj43" path="res://Resources/Vera Lúcia/Vera Lúcia.tres" id="28_ahe3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1468,15 +1463,21 @@ tile_set = SubResource("TileSet_wan0n")
 
 [node name="PostIt" parent="Past" instance=ExtResource("9_2eut3")]
 position = Vector2(-24, -123)
-doc_data = ExtResource("10_rugew")
+doc_data = ExtResource("11_k317p")
 
 [node name="Eduarda Faria" parent="Past" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(32, 8)
-dialogue_text = "Olá
+position = Vector2(-10, -6)
+dialogue_text = "Teste
 "
-npc_data = ExtResource("12_00yci")
+npc_data = ExtResource("13_wo73w")
+
+[node name="NPC 2" parent="Past" instance=ExtResource("11_6fw57")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(2, -149)
+npc_data = ExtResource("13_tbd83")
 
 [node name="Relogio Puzzle" parent="Past" instance=ExtResource("17_5xr4q")]
 z_index = 1
@@ -1493,36 +1494,6 @@ position = Vector2(-736, -165)
 [node name="Time Machine" parent="Past" instance=ExtResource("21_qguc3")]
 z_index = 1
 position = Vector2(-725, -93)
-
-[node name="Márcio Albuquerque" parent="Past" instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(47, -170)
-npc_data = ExtResource("25_anodm")
-
-[node name="Ricardo Veloso" parent="Past" instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-496, -157)
-npc_data = ExtResource("13_0drt5")
-
-[node name="Sérgio duarte" parent="Past" instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-174, -169)
-npc_data = ExtResource("25_cjh4u")
-
-[node name="Silvia Nogueira" parent="Past" instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-182, 5)
-npc_data = ExtResource("27_nnce2")
-
-[node name="Vera Lúcia" parent="Past" instance=ExtResource("11_6fw57")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-494, 8)
-npc_data = ExtResource("28_ahe3a")
 
 [node name="Present" type="Node2D" parent="."]
 
@@ -1571,15 +1542,15 @@ tile_set = SubResource("TileSet_wan0n")
 [node name="NPC 1" parent="Present" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(45, 11)
+position = Vector2(-13, -6)
 dialogue_text = "Teste
 "
-npc_data = ExtResource("12_00yci")
+npc_data = ExtResource("13_wo73w")
 
 [node name="NPC 2" parent="Present" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(37, -164)
+position = Vector2(-9, -168)
 npc_data = ExtResource("13_tbd83")
 
 [node name="PuzzleFiosModel" parent="Present" instance=ExtResource("22_4yu56")]
@@ -1644,7 +1615,7 @@ y_sort_enabled = true
 position = Vector2(-19, -6)
 dialogue_text = "Teste
 "
-npc_data = ExtResource("12_00yci")
+npc_data = ExtResource("13_wo73w")
 
 [node name="NPC 2" parent="Future" instance=ExtResource("11_6fw57")]
 z_index = 1

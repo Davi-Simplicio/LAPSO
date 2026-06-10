@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DocumentResource" load_steps=4 format=3 uid="uid://bamylmneuc8ph"]
 
-[ext_resource type="Texture2D" uid="uid://bngcwufu2uukq" path="res://Resources/Morgan/Documents/postit.png" id="1_ubroh"]
-[ext_resource type="Texture2D" uid="uid://dbgulg76315qo" path="res://Resources/Morgan/Documents/Captura de tela 2025-11-27 105753.png" id="2_ubroh"]
+[ext_resource type="Texture2D" uid="uid://bngcwufu2uukq" path="res://Resources/Eduarda Faria/Documents/postit.png" id="1_ubroh"]
+[ext_resource type="Texture2D" uid="uid://dbgulg76315qo" path="res://Resources/Eduarda Faria/Documents/Captura de tela 2025-11-27 105753.png" id="2_ubroh"]
 [ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="3_ubroh"]
 
 [resource]
