@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://um81tk0ad6rh"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://um81tk0ad6rh"]
 
 [ext_resource type="Texture2D" uid="uid://b0tde1u2pgb1t" path="res://Resources/Presente/Diego Alves/Diego Alves.png" id="1_4aidh"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_ts14x"]

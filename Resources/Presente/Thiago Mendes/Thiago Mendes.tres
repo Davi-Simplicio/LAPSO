@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://dceg5xxhj20mk"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://dceg5xxhj20mk"]
 
 [ext_resource type="Texture2D" uid="uid://cvmcyvo1uskb0" path="res://Resources/Presente/Thiago Mendes/Thiago Mendes.png" id="1_b8j0x"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="2_rtrdc"]
