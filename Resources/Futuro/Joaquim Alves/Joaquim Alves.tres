@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://sslle1o8qqcf"]
+
+[ext_resource type="Texture2D" uid="uid://ffbufedrbd0x" path="res://Resources/Futuro/Joaquim Alves/Joaquim Alves.png" id="1_nnm13"]
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_ub5ef"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_wh10h"]
+[ext_resource type="Texture2D" uid="uid://ddxudmt5ww6tm" path="res://Resources/Futuro/Joaquim Alves/Joaquim Alves Asset_redimensionada.png" id="3_nnm13"]
+
+[sub_resource type="Resource" id="Resource_ma2gw"]
+script = ExtResource("2_wh10h")
+lines = Array[String](["José: Olá!", "Joaquim Alves: A explosão de ontem foi a mais forte de todas! O Hugo, que sumiu, vivia falando que o grande problema dos antepassados dele era que a máquina não entendia a 'linguagem' da emoção. Por isso que eu tô tentando ensinar emoções para essa IA aqui, saca? Para que ela não cometa os mesmos erros que a gente."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_ub5ef")
+npc_name = "Joaquim Alves"
+portrait = ExtResource("1_nnm13")
+greeting_text = "Olá."
+topics = Array[ExtResource("2_wh10h")]([SubResource("Resource_ma2gw")])
+sprite_sheet = ExtResource("3_nnm13")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"
