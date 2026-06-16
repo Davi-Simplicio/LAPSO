@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://dq761e7xhx1oc"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://dq761e7xhx1oc"]
 
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_frsrw"]
 [ext_resource type="Texture2D" uid="uid://c7pxmq5fcqnju" path="res://Resources/Presente/Camila Ferreira/Camila Ferreira.png" id="1_mdg6q"]
