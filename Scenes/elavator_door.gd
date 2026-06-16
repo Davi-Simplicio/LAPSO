@@ -1,18 +1,26 @@
 extends StaticBody2D
 
+# 1. Crie o sinal que o Mapa Geral vai escutar
+signal map_update_requested(action_data)
+
 @onready var interaction_label = $Label 
 @onready var sprite = $Door/Sprite2D
 @onready var collision = $CollisionShape2D
-
 var player_nearby = false
 var elevator_aberto = false
 var elevator_instance = null
-
+var time_manager = null
 const ELEVATOR_SCENE = preload("res://Scenes/elevator_inside.tscn")
 
 func _ready():
 	if interaction_label:
 		interaction_label.visible = false
+	
+	time_manager = get_tree().root.get_node_or_null("TimeManager")
+	if not time_manager:
+		time_manager = get_node_or_null("/root/TimeManager")
+	if not time_manager:
+		push_warning("TimeManager not found!")
 	
 	$InteractionArea.body_entered.connect(_on_interaction_area_body_entered)
 	$InteractionArea.body_exited.connect(_on_interaction_area_body_exited)
@@ -44,9 +52,21 @@ func abrir_elevator():
 	elevator_instance = ELEVATOR_SCENE.instantiate()
 	canvas.add_child(elevator_instance)
 	
-	var gear = elevator_instance.get_node_or_null("GearControl")
-	if gear and gear.has_signal("elevator_closed"):
-		gear.elevator_closed.connect(_on_elevator_closed)
+	if elevator_instance:
+		if elevator_instance.has_signal("elevator_closed"):
+			elevator_instance.elevator_closed.connect(_on_elevator_closed)
+		
+		if elevator_instance.has_signal("time_changed"):
+			elevator_instance.time_changed.connect(_on_time_changed)
+			
+		# 2. Conecte o sinal que vem de dentro do elevador
+		if elevator_instance.has_signal("elevator_action_triggered"):
+			elevator_instance.elevator_action_triggered.connect(_on_elevator_action_triggered)
+
+# 3. Função que recebe o sinal do elevador interno e repassa para fora (para o mapa)
+func _on_elevator_action_triggered(action_data: int):
+	map_update_requested.emit(action_data)
+
 
 func _on_elevator_closed():
 	elevator_aberto = false
@@ -55,7 +75,14 @@ func _on_elevator_closed():
 	var canvas = get_tree().root.get_node_or_null("ElevatorLayer")
 	if canvas and is_instance_valid(canvas):
 		canvas.queue_free()
+	
+	# Mostra o label novamente se o player ainda está perto
+	if player_nearby:
+		interaction_label.visible = true
 
+func _on_time_changed(floor_number: int):
+	if time_manager:
+		time_manager.change_time_by_floor(floor_number)
 
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player" or body.is_in_group("player"):
@@ -67,3 +94,4 @@ func _on_interaction_area_body_exited(body):
 	if body.name == "Player" or body.is_in_group("player"):
 		player_nearby = false
 		interaction_label.visible = false
+		

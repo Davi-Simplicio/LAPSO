@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TimeState" load_steps=2 format=3 uid="uid://boid63v6y5opx"]
+[gd_resource type="Resource" script_class="TimeState" format=3 uid="uid://boid63v6y5opx"]
 
 [ext_resource type="Script" uid="uid://b158uy751xg03" path="res://States/TimeState.gd" id="1_r76gy"]
 

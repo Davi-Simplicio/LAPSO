@@ -37,6 +37,9 @@ var last_pos: Vector2i
 var completed_colors = [] 
 var level_cleared: bool = false # Trava o jogo ao vencer
 
+# 1. SINAL ADICIONADO AQUI
+signal puzzle_fechado
+
 func _ready():
 	setup_lines_container()
 	generate_grid()
@@ -164,7 +167,6 @@ func check_win_condition():
 
 func finalize_level():
 	level_cleared = true
-	print("VITÓRIA: Tudo conectado e preenchido!")
 	
 	# Efeito visual de vitória (Pulso nas linhas)
 	var tween = create_tween().set_parallel(true)
@@ -172,10 +174,17 @@ func finalize_level():
 		tween.tween_property(line, "width", 26.0, 0.4).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		tween.tween_property(line, "modulate", Color(1.5, 1.5, 1.5, 1.0), 0.4) # Brilho leve
 	
-	# Espera 2 segundos e reinicia (ou carrega próxima cena)
-	await get_tree().create_timer(2.0).timeout
-	# get_tree().reload_current_scene() 
+	
+	# 2. ATUALIZA O ESTADO DO JOGO E EMITE O SINAL PARA FECHAR
+	if has_node("/root/GameState"):
+		get_node("/root/GameState").puzzle_flow_free_resolvido = true
+		
+	puzzle_fechado.emit()
 
 func stop_drawing():
 	is_drawing = false
 	current_line = null
+
+# 3. FUNÇÃO ADICIONADA PARA FECHAR MANUALMENTE SE HOUVER BOTÃO "SAIR"
+func _on_botao_sair_pressed():
+	puzzle_fechado.emit()

@@ -1,4 +1,5 @@
 extends Node2D
+
 signal puzzle_fechado
 
 var hora: int = 0
@@ -21,6 +22,12 @@ func _ready() -> void:
 	btn_min_menos.pressed.connect(_on_min_menos_pressed)
 	_atualizar_display()
 	print("=== Clock Puzzle iniciado! Horário alvo: %02d:%02d ===" % [hora_alvo, minuto_alvo])
+
+# INTERRUPTOR DO ESC: Alterado para _input para garantir prioridade de leitura
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and not puzzle_resolvido:
+		emit_signal("puzzle_fechado")
+		get_viewport().set_input_as_handled() # Evita que o ESC clique em algo atrás
 
 func _on_hora_mais_pressed() -> void:
 	hora = (hora + 1) % 24
@@ -52,10 +59,14 @@ func _verificar_puzzle() -> void:
 		puzzle_resolvido = true
 		_set_botoes_ativos(false)
 		print("✅ Puzzle resolvido!")
+		
 		if animacao and animacao.has_animation("sucesso"):
 			animacao.play("sucesso")
+			
 		if has_node("/root/GameState"):
 			get_node("/root/GameState").puzzle_relogio_moderno_resolvido = true
+			
+		# Espera 2 segundos mostrando o acerto e fecha automaticamente
 		await get_tree().create_timer(2.0).timeout
 		emit_signal("puzzle_fechado")
 

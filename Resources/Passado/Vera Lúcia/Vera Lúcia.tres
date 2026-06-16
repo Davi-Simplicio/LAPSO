@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://0km6l584lj43"]
+
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_2cudo"]
+[ext_resource type="Texture2D" uid="uid://c58766yydf2cj" path="res://Resources/Passado/Vera Lúcia/Vera Lúcia.png" id="1_svy1t"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_lby3r"]
+[ext_resource type="Texture2D" uid="uid://coriasp6s7cql" path="res://Resources/Passado/Vera Lúcia/13.png" id="3_trie1"]
+
+[sub_resource type="Resource" id="Resource_c3baj"]
+script = ExtResource("2_lby3r")
+lines = Array[String](["José: Olá senhora!", "Vera Lúcia: Olá. Não te vi por aqui antes. Que bom que você apareceu. A noite de ontem foi... um evento. O som foi muito alto. A Cláudia diz que o tempo rasgou, eu diria que a física foi desafiada, mas os livros não mentem."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_2cudo")
+npc_name = "Vera Lúcia"
+portrait = ExtResource("1_svy1t")
+greeting_text = "Olá."
+topics = Array[ExtResource("2_lby3r")]([SubResource("Resource_c3baj")])
+sprite_sheet = ExtResource("3_trie1")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

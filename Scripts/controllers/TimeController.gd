@@ -1,45 +1,30 @@
 extends Node2D
 
-@export var state_past: TimeState
-@export var state_present: TimeState
-@export var state_future: TimeState
-
-@onready var era_nodes = [$Past, $Present, $Future]
-@onready var timeline_states = [state_past, state_present, state_future]
-
-var current_index = 0
+# Substitua pelo caminho correto até o node da miniatura do elevador no seu mapa
+@onready var miniatura_elevador = $hotel_doors/Elevator
+var Past = null;
+var Present = null;
+var Future = null;
 
 func _ready():
-	apply_state_by_index(current_index)
-
-func _input(event):
-	if event.is_action_pressed("time_travel") and GameState.has_fact("time_travel"):
-		cycle_time()
-
-func cycle_time():
-	current_index += 1
-	if current_index >= timeline_states.size():
-		current_index = 0
+	# Conecta o sinal da miniatura à função local do mapa
+	Past = get_node("Past");
+	Present = get_node("Present");
+	Future = get_node("Future");
+	miniatura_elevador.map_update_requested.connect(_on_map_update_requested)
 	
-	apply_state_by_index(current_index)
-
-func apply_state_by_index(index: int):
-	var active_node = era_nodes[index]
-	for node in era_nodes:
-		if node == active_node:
-			toggle_era(node, true)
-		else:
-			toggle_era(node, false)
-
-func toggle_era(node: Node2D, is_active: bool):
-	node.visible = is_active
-	if is_active:
-		node.process_mode = Node.PROCESS_MODE_INHERIT
-		print("Enabled: ", node.name)
-	else:
-		node.process_mode = Node.PROCESS_MODE_DISABLED
-		print("Disabled: ", node.name)
-	var tilemaps = node.find_children("*", "TileMapLayer", true, false)
-	for layer in tilemaps:
-		layer.collision_enabled = is_active
-		layer.enabled = is_active
+func _on_map_update_requested(action_data: int):
+	Past.visible = action_data == 1
+	Present.visible = action_data == 2
+	Future.visible = action_data == 3
+	
+	Past.get_node("hotel_decoration").collision_enabled = Past.visible == true
+	Present.get_node("hotel_decoration").collision_enabled = Present.visible == true
+	Future.get_node("hotel_decoration").collision_enabled = Future.visible == true
+	Past.get_node("hotel_decoration_details").collision_enabled = Past.visible == true
+	Present.get_node("hotel_decoration_details").collision_enabled = Present.visible == true
+	Future.get_node("hotel_decoration_details").collision_enabled = Future.visible == true
+	
+	Past.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 1 else Node.PROCESS_MODE_DISABLED
+	Present.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 2 else Node.PROCESS_MODE_DISABLED
+	Future.process_mode = Node.PROCESS_MODE_INHERIT if action_data == 3 else Node.PROCESS_MODE_DISABLED

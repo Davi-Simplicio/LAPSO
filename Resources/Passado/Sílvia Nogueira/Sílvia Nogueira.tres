@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://c54flfhjofhi3"]
+
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_0ltct"]
+[ext_resource type="Texture2D" uid="uid://dxqf3y3wsoxfe" path="res://Resources/Passado/Sílvia Nogueira/Sílvia Nogueira.png" id="1_3ajo6"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_wh4ls"]
+[ext_resource type="Texture2D" uid="uid://cq806nxt71mvt" path="res://Resources/Passado/Sílvia Nogueira/14.png" id="3_rtqfx"]
+
+[sub_resource type="Resource" id="Resource_pqv25"]
+script = ExtResource("2_wh4ls")
+lines = Array[String](["José: Olá", "Sílvia Nogueira: Olá! Você é novo, certo? Ainda bem que apareceu! Que noite louca a de ontem, né? Parecia cena de cinema. Você ouviu o estrondo? Me deu um baita susto. Foi tão dramático.", "José: Mas já descobriram oque aconteceu?", "Sílvia Nogueira: Dizem que o senhor do apartamento 4, o cientista, sumiu! O João Paulo, que é jornalista, está louco com isso. Ele acha que é uma grande reportagem, mas eu acho que é mais como um mistério. Imagina só: um cientista desaparece depois de um clarão. É quase poético, se não fosse tão assustador."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_0ltct")
+npc_name = "Sílvia Nogueira"
+portrait = ExtResource("1_3ajo6")
+greeting_text = "Oi."
+topics = Array[ExtResource("2_wh4ls")]([SubResource("Resource_pqv25")])
+sprite_sheet = ExtResource("3_rtqfx")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://beijvxr4tdjfg"]
+
+[ext_resource type="Script" uid="uid://b716y7mocj013" path="res://TimeMachine/time_machine_model.gd" id="1_2w8b8"]
+[ext_resource type="Texture2D" uid="uid://bjwgla5tcky8g" path="res://assets/house_assets/TopDownHouse_FurnitureState1.png" id="2_1p2lc"]
+[ext_resource type="Texture2D" uid="uid://dypyqooo67bow" path="res://TimeMachine/erasebg-transformed (11).png" id="3_p1hjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(26, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
+size = Vector2(33, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ukkr"]
+atlas = ExtResource("2_1p2lc")
+region = Rect2(0.7353306, 31.522507, 46.609497, 30.54998)
+
+[node name="TimeMachine" type="StaticBody2D"]
+z_index = 3
+y_sort_enabled = true
+script = ExtResource("1_2w8b8")
+
+[node name="CollisionShape2DTimeMachine" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(-1.4557205, 0.42650777)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="DoorTimeMachine" type="Node2D" parent="."]
+
+[node name="LabelTimeMachine" type="Label" parent="."]
+z_index = 10
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 118.0
+offset_bottom = 9.0
+scale = Vector2(0.3, 0.3)
+text = "Press E to Open"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionAreaTimeMachine" type="Area2D" parent="."]
+
+[node name="CollisionShape2DTimeMachine" type="CollisionShape2D" parent="InteractionAreaTimeMachine"]
+position = Vector2(-1.5, -7)
+scale = Vector2(1.5842724, 0.53140205)
+shape = SubResource("RectangleShape2D_p0e35")
+
+[node name="Sprite2DTimeMachine2" type="Sprite2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(0.7944274, 0.6833237)
+texture = SubResource("AtlasTexture_1ukkr")
+region_enabled = true
+region_rect = Rect2(-0.25354004, -0.38557768, 46.498737, 31.066841)
+
+[node name="Sprite2DTimeMachine" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-10, -10)
+scale = Vector2(0.021020988, 0.020438895)
+texture = ExtResource("3_p1hjm")
+region_enabled = true
+region_rect = Rect2(512.02606, 325.71808, 865.2316, 500.82104)

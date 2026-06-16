@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://4afmc3x8uv0p"]
+
+[ext_resource type="Texture2D" uid="uid://d4ojcseubf0j" path="res://Resources/Presente/Ana Beatriz Ribeiro/Ana Beatriz Ribeiro.png" id="1_pc302"]
+[ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_t10qq"]
+[ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_6qb1r"]
+[ext_resource type="Texture2D" uid="uid://4lps5tr1p66m" path="res://Resources/Presente/Ana Beatriz Ribeiro/7.png" id="3_j84h1"]
+
+[sub_resource type="Resource" id="Resource_xlc4x"]
+script = ExtResource("2_6qb1r")
+lines = Array[String](["José: Oi!", "Ana Beatriz Ribeiro: Ah, a gente ouviu um barulhão. O Paulo Diaz... ele vivia trancado naquele apartamento. Falava que estava tentando consertar umas coisas do pai dele. Ele nos pediu pra conferir se os dados estavam sendo transmitidos de forma correta, mas a gente não entendia nada..."])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
+[resource]
+script = ExtResource("1_t10qq")
+npc_name = "Ana Beatriz Ribeiro"
+portrait = ExtResource("1_pc302")
+greeting_text = "Olá."
+topics = Array[ExtResource("2_6qb1r")]([SubResource("Resource_xlc4x")])
+sprite_sheet = ExtResource("3_j84h1")
+metadata/_custom_type_script = "uid://bu7jjxyxibyf"

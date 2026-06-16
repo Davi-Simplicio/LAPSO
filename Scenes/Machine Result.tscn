@@ -1,0 +1,336 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0vlhc55rd8f3"]
+
+[ext_resource type="Texture2D" uid="uid://bqeuqay74e1et" path="res://assets/MachineResult/dijuntor.png" id="1_0ajo8"]
+[ext_resource type="Script" uid="uid://bur73sk3hq33" path="res://Scenes/machine_result.gd" id="1_gegmj"]
+[ext_resource type="Texture2D" uid="uid://bttueya1ku081" path="res://assets/MachineResult/fundo-tvb.jpg" id="2_biase"]
+[ext_resource type="FontFile" uid="uid://c2obxgqiagppp" path="res://assets/ChemicalWorkstation/Font.ttf" id="4_t2ie1"]
+[ext_resource type="Texture2D" uid="uid://cuguwlb18qp11" path="res://assets/Terrain/Water Background color.png" id="5_oqkgs"]
+[ext_resource type="Texture2D" uid="uid://d1ah0cpcqlffv" path="res://assets/MachineResult/button.png" id="6_6nh2f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f03d7"]
+atlas = ExtResource("5_oqkgs")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3qkk"]
+atlas = ExtResource("6_6nh2f")
+region = Rect2(172.80191, 74.97397, 153.065, 166.37502)
+
+[node name="Node2D" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_gegmj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0ajo8")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 126.00001
+offset_right = 960.0
+offset_bottom = 593.0
+scale = Vector2(0.79780143, 0.84882855)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_biase")
+
+[node name="Value1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 201.0
+offset_right = 483.0
+offset_bottom = 458.0
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 201.0
+offset_right = 592.0
+offset_bottom = 458.0
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 200.0
+offset_right = 810.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusValue1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 167.00002
+offset_right = 410.0
+offset_bottom = 207.00002
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="PlusValue1"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MinorValue1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 485.99997
+offset_right = 526.0
+offset_bottom = 550.0
+rotation = 3.1402078
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="MinorValue1"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusValue2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 169.0
+offset_right = 544.0
+offset_bottom = 233.0
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="PlusValue2"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MinorValue2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 487.99997
+offset_right = 636.0
+offset_bottom = 552.0
+rotation = 3.1402078
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="MinorValue2"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusValue3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 168.0
+offset_right = 653.0
+offset_bottom = 232.0
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="PlusValue3"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MinorValue3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 486.99997
+offset_right = 745.0
+offset_bottom = 551.0
+rotation = 3.1402078
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="MinorValue3"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusValue4" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 168.0
+offset_right = 763.0
+offset_bottom = 232.0
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="PlusValue4"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MinorValue4" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 486.99997
+offset_right = 855.0
+offset_bottom = 551.0
+rotation = 3.1402078
+scale = Vector2(1.3843244, 0.7468215)
+texture_normal = SubResource("AtlasTexture_f03d7")
+
+[node name="Value1" type="Label" parent="MinorValue4"]
+layout_mode = 0
+offset_left = 54.90042
+offset_top = 6.695013
+offset_right = 167.90042
+offset_bottom = 263.695
+scale = Vector2(-0.51107293, 0.28274035)
+theme_override_colors/font_color = Color(0.88681537, 1, 0.85976356, 1)
+theme_override_colors/font_outline_color = Color(0, 0.40455496, 5.7756904e-07, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_t2ie1")
+theme_override_font_sizes/font_size = 300
+text = "^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Try" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 263.00003
+offset_right = 1180.0
+offset_bottom = 429.00003
+rotation = 3.1402078
+scale = Vector2(0.7073132, -0.72877437)
+texture_normal = SubResource("AtlasTexture_k3qkk")

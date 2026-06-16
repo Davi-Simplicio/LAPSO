@@ -1,10 +1,11 @@
 extends Control
 signal elevator_closed
+signal elevator_action_triggered(action_data)
 
 # A dictionary tracking the functional state of each floor
 # Key: floor number (int), Value: working or not (bool)
 var floor_states: Dictionary = {
-	0: true,   # Hall starts working
+	0: false,   # Hall starts working
 	1: false,  # 1st Floor is broken
 	2: false,  # 2nd Floor is broken
 	3: false   # 3rd Floor is broken
@@ -22,6 +23,16 @@ func _ready():
 	$Floor1Button.pressed.connect(_on_floor_pressed.bind(1))
 	$HallButton.pressed.connect(_on_floor_pressed.bind(0))
 
+func _process(_delta):
+	
+	floor_states[1] = get_node("/root/GameState").puzzle_fios_resolvido
+	floor_states[2] = get_node("/root/GameState").puzzle_fios_resolvido
+	floor_states[3] = get_node("/root/GameState").puzzle_fios_resolvido
+	
+	# Verifica se ESC foi pressionado para fechar o elevador
+	if Input.is_action_just_pressed("ui_cancel"):
+		fechar_elevator()
+
 func _on_floor_pressed(floor_number: int):
 	# Check if the specific pressed floor is functional
 	# safety check: if the floor doesn't exist in our dictionary, default to false
@@ -32,10 +43,18 @@ func _on_floor_pressed(floor_number: int):
 	
 	# If it is functional, handle the floor change
 	match floor_number:
-		0: update_display("HALL") 
-		1: update_display("1st FLOOR")
-		2: update_display("2nd FLOOR")
-		3: update_display("3rd FLOOR")
+		0: 
+			update_display("HALL")
+			elevator_action_triggered.emit(0)
+		1: 
+			update_display("1st FLOOR")
+			elevator_action_triggered.emit(1)
+		2: 
+			update_display("2nd FLOOR")
+			elevator_action_triggered.emit(2)
+		3: 
+			update_display("3rd FLOOR")
+			elevator_action_triggered.emit(3)
 	
 	# Add your scene transition or elevator movement logic here
 
@@ -48,6 +67,12 @@ func repair_floor(floor_number: int):
 		floor_states[floor_number] = true
 		update_display("FLOOR " + str(floor_number) + " READY")
 
+func fechar_elevator() -> void:
+	elevator_closed.emit()
 
 func _on_elevator_closed() -> void:
+	pass # Replace with function body.
+
+
+func _on_time_changed(floor_number: int) -> void:
 	pass # Replace with function body.

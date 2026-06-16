@@ -17,23 +17,23 @@ var current_line_index: int = 0
 var is_typing: bool = false
 var typing_speed: float = 0.02
 
-# You might want a default texture for the player
-# var player_texture = preload("res://path/to/player_face.png")
+# TEXTURA DO JOGADOR (Substitua pelo caminho correto da imagem do José)
+var player_texture = preload("res://assets/NPC's/Gemini_Generated_Image_uho4opuho4opuho4-removebg-preview.png")
 
 func _ready():
 	panel.visible = false
 	choices_container.visible = false
+	
+	# Esconde o lado direito permanentemente na inicialização
+	right_portrait.visible = false
+	right_name.visible = false
 
 func start_dialogue(npc_data):
 	current_npc = npc_data
 	panel.visible = true
 	get_tree().call_group("player", "set_move_state", false)
-	right_portrait.texture = current_npc.portrait
-	# --- SETUP PORTRAITS ---
-	# Right side is always the NPC
 	
-	# Left side is the Player (you can set a static texture here if you want)
-	# left_portrait.texture = player_texture 
+	# REMOVIDO: Não fixamos mais o retrato do NPC na direita aqui.
 	
 	show_choice_menu()
 
@@ -43,7 +43,7 @@ func show_choice_menu():
 	choices_container.visible = true
 	text_field.visible_ratio = 1.0
 	
-	# When in menu, show the NPC greeting and highlight the NPC
+	# Quando está no menu, o NPC é quem está falando
 	update_active_speaker(current_npc.npc_name) 
 	text_field.text = current_npc.greeting_text
 	
@@ -61,7 +61,7 @@ func show_choice_menu():
 		choices_container.add_child(btn)
 
 	var close = Button.new()
-	close.text = "Goodbye"
+	close.text = "Tchau"
 	close.pressed.connect(close_dialogue)
 	choices_container.add_child(close)
 
@@ -94,10 +94,14 @@ func show_next_line():
 	# Typewriter
 	text_field.text = dialogue_text
 	text_field.visible_ratio = 0.0
+	
+	# Opcional: Se quiser alinhar o texto dependendo de quem fala, pode manter.
+	# Caso contrário, pode deixar sempre em 0 (esquerda).
 	if speaker_name != "José":
-		text_field.horizontal_alignment = 2
+		text_field.horizontal_alignment = 0
 	else:
 		text_field.horizontal_alignment = 0
+		
 	is_typing = true
 	var tween = create_tween()
 	tween.tween_property(text_field, "visible_ratio", 1.0, dialogue_text.length() * typing_speed)
@@ -105,29 +109,26 @@ func show_next_line():
 	
 	current_line_index += 1
 
-# --- NEW FUNCTION: Only hides labels, dims portraits ---
+# --- FUNÇÃO ATUALIZADA: Altera a textura na esquerda e esconde a direita ---
 func update_active_speaker(speaker_name):
+	# Garantir que o lado direito fique sempre invisível
+	right_name.visible = false
+	right_portrait.visible = false
 	
-	# Check if the speaker is the NPC
+	# Sempre mostra o nome e retrato da esquerda
+	left_name.visible = true
+	left_portrait.visible = true
+	left_portrait.modulate.a = 1.0 # Opacidade total
+	
+	left_name.text = speaker_name
+	
+	# Altera a foto baseado em quem está falando
 	if speaker_name == current_npc.npc_name:
-		# --- NPC IS TALKING (RIGHT) ---
-		right_name.text = speaker_name
-		right_name.visible = true          # SHOW Name
-		right_portrait.modulate.a = 1.0    # Bright Portrait
-		
-		# --- PLAYER IS LISTENING (LEFT) ---
-		left_name.visible = false          # HIDE Name
-		left_portrait.modulate.a = 0.5     # Dim Portrait (Optional)
-		
+		# Se for o NPC falando, coloca a foto dele na esquerda
+		left_portrait.texture = current_npc.portrait
 	else:
-		# --- PLAYER IS TALKING (LEFT) ---
-		left_name.text = speaker_name
-		left_name.visible = true           # SHOW Name
-		left_portrait.modulate.a = 1.0     # Bright Portrait
-		
-		# --- NPC IS LISTENING (RIGHT) ---
-		right_name.visible = false         # HIDE Name
-		right_portrait.modulate.a = 0.5    # Dim Portrait (Optional)
+		# Se for o jogador (José) falando, coloca a foto do jogador na esquerda
+		left_portrait.texture = player_texture
 
 func _on_advance_pressed():
 	if is_typing:
