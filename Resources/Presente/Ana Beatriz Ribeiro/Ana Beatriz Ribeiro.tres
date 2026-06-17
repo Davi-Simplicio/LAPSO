@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://4afmc3x8uv0p"]
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://4afmc3x8uv0p"]
 
 [ext_resource type="Texture2D" uid="uid://d4ojcseubf0j" path="res://Resources/Presente/Ana Beatriz Ribeiro/Ana Beatriz Ribeiro.png" id="1_pc302"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_t10qq"]

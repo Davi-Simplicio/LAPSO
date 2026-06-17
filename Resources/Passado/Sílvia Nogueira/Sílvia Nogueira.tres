@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://c54flfhjofhi3"]
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://c54flfhjofhi3"]
 
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_0ltct"]
 [ext_resource type="Texture2D" uid="uid://dxqf3y3wsoxfe" path="res://Resources/Passado/Sílvia Nogueira/Sílvia Nogueira.png" id="1_3ajo6"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2vway2h13cru"
-path="res://.godot/imported/4.png-f4ed83437c21d2e65bcf34060f6b5509.ctex"
+uid="uid://d2jk80jhybarc"
+path="res://.godot/imported/Sofia Ribeiro.png-aa8b5f5324a90118afe65ad2802b58c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NPC's/Carlos Henrique Faria/4.png"
-dest_files=["res://.godot/imported/4.png-f4ed83437c21d2e65bcf34060f6b5509.ctex"]
+source_file="res://Resources/Futuro/Sofia Ribeiro/Sofia Ribeiro.png"
+dest_files=["res://.godot/imported/Sofia Ribeiro.png-aa8b5f5324a90118afe65ad2802b58c1.ctex"]
 
 [params]
 
