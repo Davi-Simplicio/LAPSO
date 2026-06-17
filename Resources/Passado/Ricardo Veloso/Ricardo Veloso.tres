@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://sbdf1noyotdn"]
+[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://sbdf1noyotdn"]
 
 [ext_resource type="Texture2D" uid="uid://rhbs7uts8lvi" path="res://Resources/Passado/Ricardo Veloso/Ricardo Veloso.png" id="1_518lp"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_r84bc"]
