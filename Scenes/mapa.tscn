@@ -1033,7 +1033,7 @@ texture = ExtResource("8_o68h1")
 4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.769966, -21.672977, -15.108131, -19.69453, -15.108131, 15.557781, -12.769966, 18.795238, 12.769966, 18.255661, 14.208839, 15.018204, 14.388695, -20.773684, 12.2304, -21.672977)
 5:0/size_in_atlas = Vector2i(1, 2)
 5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.416359, -11.827725, 5.935339, -11.510958, 7.01449, 14.02898, -7.1943493, 14.02898)
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.416359, -11.827725, 3.7770329, -11.870676, 7.01449, 14.02898, -7.1943493, 14.02898)
 6:0/size_in_atlas = Vector2i(1, 2)
 6:0/0 = 0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.273501, -11.510958, -4.6763268, -11.510958, -3.5971746, -2.1583042, 6.2950554, -1.7985859, 6.4749146, 8, 5.3957615, 15.82757, -6.115197, 15.2879925, -8, 1.978447)
@@ -1581,7 +1581,7 @@ tile_map_data = PackedByteArray("AAAKAPP/AQALAAwAAAALAPP/AQAMAAwAAAALAPX/AQAMAA8
 tile_set = SubResource("TileSet_jsu5s")
 
 [node name="hotel_decoration_details" type="TileMapLayer" parent="Present"]
-z_index = 2
+z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAPD/AAAFAAEAAAAKAPL/AAAFAAQAAAALAPP/AAADAAUAAAALAPL/AAAEAAcAAAAJAPb/AAACAAQAAAALAPb/AAACAAQAAAAJAPf/AQAHAAAAAAALAPf/AQAHAAAAAAD8//X/AQABABAAAAD8//b/AQABABEAAAD9//X/AQACABAAAAD9//b/AQACABEAAAD8/wAAAQABABAAAAD8/wEAAQABABEAAAD9/wAAAQACABAAAAD9/wEAAQACABEAAADr/wIAAQAHAAAAAADt/wIAAQAHAAAAAADt/wEAAAAFAAYAAADt//3/AAAFAAQAAADp//3/AAAGAAQAAADo//H/AAAHAAUAAADu//H/AAAHAAUAAAD0//v/AAABAAEAAAD0//D/AAABAAEAAADn//v/AAABAAEAAADf//H/AAABAAEAAADZ//3/AAABAAAAAADZ//X/AAABAAAAAAD9//L/AAABAAAAAAD9//3/AAABAAAAAAD2/wMAAAAAAAIAAADp/wIAAAAFAAcAAADn//f/AAAEAAcAAAAKAAIAAAADAAQAAADn/wIAAAADAAQAAADu//f/AAADAAQAAADx//7/AQAIAAMAAADy//7/AQAJAAMAAADs/wAAAQAIAAIAAADt/wAAAQAJAAIAAADr//T/AQAIAAIAAADs//T/AQAJAAIAAADm//T/AQAIAAIAAADn//T/AQAJAAIAAAA=")
 tile_set = SubResource("TileSet_wan0n")
@@ -1602,7 +1602,7 @@ position = Vector2(-231, -216)
 [node name="Eduardo Oliveira" parent="Present" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(57, 6)
+position = Vector2(8, 1)
 dialogue_text = "Olá!"
 npc_data = ExtResource("31_14j86")
 
