@@ -20,7 +20,7 @@ offset_right = 253.0
 offset_bottom = 146.0
 theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
 theme_override_fonts/font = ExtResource("3_bqtdm")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 24
 text = "A:
        3 * a²
     ----------

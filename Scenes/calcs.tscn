@@ -1,0 +1,153 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7aamsv64qcqn"]
+
+[ext_resource type="PackedScene" uid="uid://duvbp03xo1wnl" path="res://StickNote.tscn" id="1_l468l"]
+[ext_resource type="Script" uid="uid://bm3dg0bqd6rm8" path="res://stick_note.gd" id="2_rg47x"]
+[ext_resource type="Texture2D" uid="uid://dt2ebcku8l60w" path="res://assets/PhysicWorkstation/stick-note-open.png" id="3_s6vmt"]
+[ext_resource type="FontFile" uid="uid://cwfahrx6v0wu3" path="res://assets/PhysicWorkstation/Banda Note.ttf" id="4_rsusq"]
+
+[node name="Calcs" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.999998
+offset_top = -4.0
+offset_right = 19.000002
+offset_bottom = 36.0
+scale = Vector2(29.440079, 16.792185)
+color = Color(0, 0, 0, 0.3254902)
+
+[node name="A" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(112, 101.999985)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "A:
+    3 * DET²
+   ----------
+      CTT
+"
+
+[node name="C" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(574, 59.999985)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "C:
+(5 * (CTD/100)-¹ + MVR)
+"
+
+[node name="B" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(331, 41.999985)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "B:
+     ______
+    √(CTT+4) - 2
+"
+
+[node name="D" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(884, 38)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "D:
+     __________
+    √(PAM) - 7
+   -------------
+         6
+"
+
+[node name="E" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(84.99999, 302.00003)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "E:
+  (QDI² - FDM) * 0,1
+"
+
+[node name="F" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(357, 317)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "F:
+    RHD + PPO
+   ----------
+       5
+"
+
+[node name="G" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(623, 253.99998)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "G:
+          ___
+    3 * ⁴√RAP - 1
+"
+
+[node name="H" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(869, 284)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "H:
+    2PQU + 6
+   ----------
+        3 
+"
+
+[node name="Coeficiente da Máquina" parent="." instance=ExtResource("1_l468l")]
+position = Vector2(539, 464)
+scale = Vector2(0.62068963, 0.6374765)
+texto_grande = "Coeficiente da Máquina:
+
+A + B - C + D - E - F + G + H"
+
+[node name="StickNote" type="Node2D" parent="."]
+position = Vector2(777.00006, 456.99997)
+scale = Vector2(0.76503253, 0.6839544)
+script = ExtResource("2_rg47x")
+metadata/content = ""
+
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote"]
+position = Vector2(119.99999, 159.00002)
+scale = Vector2(0.44592643, 0.44800982)
+texture = ExtResource("3_s6vmt")
+
+[node name="Label" type="Label" parent="StickNote"]
+offset_left = 32.67827
+offset_top = 33.62801
+offset_right = 251.67827
+offset_bottom = 807.628
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("4_rsusq")
+theme_override_font_sizes/font_size = 16
+text = "DET = Danos Estimados na Linha do Tempo
+CTT = Ciclos de Torque Temporal
+CTD = Consumo Total Desviado 
+MVR = Meio Vida da Radiação Residual
+PAM = Pressão Atmosférica Máxima Suportada
+QDI = Quociente de
+Divergência de Indivíduos 
+"
+autowrap_mode = 2
+
+[node name="StickNote2" type="Node2D" parent="."]
+position = Vector2(144.00002, 420.99997)
+scale = Vector2(0.76503253, 0.6839544)
+script = ExtResource("2_rg47x")
+texto_grande = "FDM = Fator de Decaimento da Massa Crítica
+RHD = Ramificações Históricas Descartadas 
+RAP = Resistência à Atração Paradoxal 
+PQU = Parametro de Fluido Químico 
+PPO = Parametro de Potência do Cristal
+"
+metadata/content = ""
+
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote2"]
+position = Vector2(119.99999, 159.00002)
+scale = Vector2(0.44592643, 0.44800982)
+texture = ExtResource("3_s6vmt")
+
+[node name="Label" type="Label" parent="StickNote2"]
+offset_left = 31.371195
+offset_top = 27.779667
+offset_right = 250.3712
+offset_bottom = 801.77966
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("4_rsusq")
+theme_override_font_sizes/font_size = 16
+text = "FDM = Fator de Decaimento da Massa Crítica
+RHD = Ramificações Históricas Descartadas 
+RAP = Resistência à Atração Paradoxal 
+PQU = Parametro de Fluido Químico 
+PPO = Parametro de 
+Potência do Cristal
+"
+autowrap_mode = 2

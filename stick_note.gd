@@ -1,12 +1,21 @@
+@tool
 extends Node2D
-# Variável que receberá o texto gigante de fora
-@export_multiline var texto_grande : String = ""
 
-# Referência para o nó RichTextLabel
-@onready var meu_rich_label : Label = $Label
+# Texto editável no Inspector
+@export_multiline var texto_grande: String = "" :
+	set(value):
+		texto_grande = value
+		_atualizar_texto()
+
+@onready var meu_rich_label: Label = $Label
+
 
 func _ready():
+	_atualizar_texto()
 
-	
-	# Define o texto formatado
-	meu_rich_label.text = texto_grande
+
+func _atualizar_texto():
+	if not is_inside_tree():
+		return
+	if meu_rich_label:
+		meu_rich_label.text = texto_grande
