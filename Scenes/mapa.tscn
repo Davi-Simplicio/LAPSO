@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csuqr0sc7nxm6" path="res://Scripts/controllers/TimeController.gd" id="1_3ehdt"]
 [ext_resource type="Script" uid="uid://hr71jin7y74t" path="res://Scripts/controllers/LightningController.gd" id="2_ltv3l"]
+[ext_resource type="PackedScene" path="res://Scenes/filtro-passado.tscn" id="4_6yv5g"]
 [ext_resource type="Texture2D" uid="uid://dhrj6tjtt7nxs" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="4_tbd83"]
 [ext_resource type="Texture2D" uid="uid://cuakiiis8wl6c" path="res://assets/house_assets/TopDownHouse_DoorsAndWindows.png" id="6_2eut3"]
 [ext_resource type="Texture2D" uid="uid://rhb3rc8uvhpk" path="res://assets/house_assets/TopDownHouse_FloorsAndWalls.png" id="6_wan0n"]
@@ -19,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://c5k01ygtp4ohb" path="res://Quimica/Quimica Model.tscn" id="15_qguc3"]
 [ext_resource type="PackedScene" uid="uid://chynhh6jwvsyl" path="res://Meu Relogio/Clock Model.tscn" id="17_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
-[ext_resource type="Texture2D" uid="uid://v31pbt35po5o" path="res://assets/premium_photo-1667761637876-e704c906927d.jpg" id="18_r8djo"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://beijvxr4tdjfg" path="res://TimeMachine/TimeMachine.tscn" id="21_qguc3"]
 [ext_resource type="PackedScene" uid="uid://d1vmdhqm2vhtt" path="res://Scenes/PuzzleFios_Model.tscn" id="22_4yu56"]
@@ -30,6 +30,7 @@
 [ext_resource type="Resource" uid="uid://c54flfhjofhi3" path="res://Resources/Passado/Sílvia Nogueira/Sílvia Nogueira.tres" id="27_nnce2"]
 [ext_resource type="Resource" uid="uid://0km6l584lj43" path="res://Resources/Passado/Vera Lúcia/Vera Lúcia.tres" id="28_ahe3a"]
 [ext_resource type="Resource" uid="uid://cftleug0br0cm" path="res://Resources/Presente/Eduardo Oliveira/Eduardo Oliveira.tres" id="31_14j86"]
+[ext_resource type="PackedScene" path="res://Scenes/filtro-futuro.tscn" id="31_mirxx"]
 [ext_resource type="Resource" uid="uid://4afmc3x8uv0p" path="res://Resources/Presente/Ana Beatriz Ribeiro/Ana Beatriz Ribeiro.tres" id="32_lucgu"]
 [ext_resource type="Resource" uid="uid://dq761e7xhx1oc" path="res://Resources/Presente/Camila Ferreira/Camila Ferreira.tres" id="33_16u37"]
 [ext_resource type="Resource" uid="uid://v6mdm23eord8" path="res://Resources/Futuro/Bruno Carvalho/Bruno Carvalho.tres" id="33_g4mab"]
@@ -858,9 +859,6 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_w30at")
 sources/1 = SubResource("TileSetAtlasSource_jsu5s")
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cjh4u"]
-blend_mode = 3
-
 [sub_resource type="Gradient" id="Gradient_01kpq"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -1433,30 +1431,7 @@ tile_set = SubResource("TileSet_2eut3")
 process_mode = 4
 visible = false
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Past"]
-visible = false
-y_sort_enabled = true
-color = Color(0.101960786, 0.10980392, 0.22745098, 1)
-script = ExtResource("2_ltv3l")
-
-[node name="CanvasModulate3" type="CanvasModulate" parent="Past"]
-self_modulate = Color(1, 1, 1, 0.12156863)
-z_index = 999
-y_sort_enabled = true
-
-[node name="TextureRect" type="TextureRect" parent="Past/CanvasModulate3"]
-material = SubResource("CanvasItemMaterial_cjh4u")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -942.0
-offset_top = -394.00003
-offset_right = 4035.1265
-offset_bottom = 1727.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.26149058, 0.22063893)
-texture = ExtResource("18_r8djo")
+[node name="CanvasModulate3" parent="Past" instance=ExtResource("4_6yv5g")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="Past"]
 y_sort_enabled = true
@@ -1545,7 +1520,6 @@ npc_data = ExtResource("28_ahe3a")
 [node name="Present" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Present"]
-visible = false
 y_sort_enabled = true
 color = Color(0.101960786, 0.10980392, 0.22745098, 1)
 script = ExtResource("2_ltv3l")
@@ -1636,26 +1610,7 @@ npc_data = ExtResource("35_g4mab")
 process_mode = 4
 visible = false
 
-[node name="CanvasModulate3" type="CanvasModulate" parent="Future"]
-self_modulate = Color(1, 1, 1, 0.12156863)
-z_index = 999
-y_sort_enabled = true
-color = Color(0, 0.6627451, 1, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Future/CanvasModulate3"]
-visible = false
-material = SubResource("CanvasItemMaterial_cjh4u")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -942.0
-offset_top = -394.00003
-offset_right = 4035.1265
-offset_bottom = 1727.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.26149058, 0.22063893)
-texture = ExtResource("18_r8djo")
+[node name="CanvasModulate4" parent="Future" instance=ExtResource("31_mirxx")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="Future"]
 y_sort_enabled = true

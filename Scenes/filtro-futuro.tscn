@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://6vwa1r241528"]
+
+[ext_resource type="Shader" uid="uid://b1usx2idod5y1" path="res://future-shader.gdshader" id="1_38wi7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4mab"]
+shader = ExtResource("1_38wi7")
+shader_parameter/hologram_color = Color(0, 0.8, 1, 1)
+shader_parameter/tint_intensity = 0.9
+shader_parameter/wave_speed = 2.0
+shader_parameter/wave_frequency = 15.0
+shader_parameter/wave_amplitude = 0.15
+shader_parameter/pixel_size = 0.1
+shader_parameter/glitch_intensity = 0.03
+shader_parameter/particle_density = 0.98
+shader_parameter/particle_color = Color(0, 1, 0.8, 1)
+shader_parameter/particle_glow = 2.0
+
+[node name="CanvasModulate3" type="CanvasModulate"]
+self_modulate = Color(1, 1, 1, 0.12156863)
+z_index = 999
+y_sort_enabled = true
+scale = Vector2(1.0017058, 1)
+color = Color(0.9282415, 0.960072, 0.9999998, 1)
+
+[node name="CanvasModulate4" type="ColorRect" parent="."]
+z_index = 999
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_g4mab")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 483.0
+offset_top = 217.99998
+offset_right = 683.0
+offset_bottom = 418.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-7.655208, -3.9093752)

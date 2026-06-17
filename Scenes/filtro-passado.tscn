@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://j41l7pemrtvc"]
+
+[ext_resource type="Texture2D" uid="uid://v31pbt35po5o" path="res://assets/premium_photo-1667761637876-e704c906927d.jpg" id="1_hmtv7"]
+[ext_resource type="Shader" uid="uid://c3oqil7qvbuhl" path="res://past-shader.gdshader" id="2_8mtvj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cjh4u"]
+blend_mode = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgxe1"]
+shader = ExtResource("2_8mtvj")
+shader_parameter/sepia_intensity = 1.0
+shader_parameter/sepia_tint = Color(1.2, 1.05, 0.9, 1)
+shader_parameter/grain_amount = 0.08
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/scratch_amount = 0.995
+shader_parameter/dust_density = 0.99
+shader_parameter/dust_speed = 0.5
+
+[node name="CanvasModulate3" type="CanvasModulate"]
+self_modulate = Color(1, 1, 1, 0.12156863)
+z_index = 999
+y_sort_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_cjh4u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -870.0
+offset_top = -339.0
+offset_right = 4107.1265
+offset_bottom = 1782.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.26149058, 0.22063893)
+texture = ExtResource("1_hmtv7")
+
+[node name="CanvasModulate4" type="ColorRect" parent="."]
+z_index = 999
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_lgxe1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 483.0
+offset_top = 217.99998
+offset_right = 683.0
+offset_bottom = 418.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-7.655208, -3.9093752)
