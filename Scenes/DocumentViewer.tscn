@@ -1,24 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://djyskblg0wiky"]
+[gd_scene format=3 uid="uid://djyskblg0wiky"]
 
 [ext_resource type="Script" uid="uid://d2k0jspiifito" path="res://Scripts/document_viewer.gd" id="1_203gv"]
 
-[node name="DocumentViewer" type="CanvasLayer"]
+[node name="DocumentViewer" type="CanvasLayer" unique_id=1669014672]
 layer = 3
 script = ExtResource("1_203gv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=194970151]
 offset_left = 298.0
 offset_top = 12.0
 offset_right = 783.0
 offset_bottom = 640.0
 
-[node name="DocImage" type="TextureRect" parent="."]
-offset_left = 298.0
+[node name="DocImage" type="TextureRect" parent="." unique_id=1826600348]
+offset_left = 13.0
 offset_top = 15.0
-offset_right = 781.0
+offset_right = 1137.0
 offset_bottom = 638.0
+expand_mode = 3
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=136033577]
 offset_left = 714.0
 offset_top = 599.0
 offset_right = 764.0

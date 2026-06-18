@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var doc_data: DocumentResource
-@onready var sprite = $Sprite2D
+@onready var sprite = $TextureRect
 @onready var label = $Label
 
 var is_player_close = false

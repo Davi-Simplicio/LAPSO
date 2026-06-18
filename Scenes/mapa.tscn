@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://y8085ey8cpbd" path="res://assets/house_assets/TopDownHouse_FurnitureState2.png" id="8_o68h1"]
 [ext_resource type="PackedScene" uid="uid://ccnncabq2mige" path="res://Scenes/DocumentPickup.tscn" id="9_2eut3"]
 [ext_resource type="Texture2D" uid="uid://hwd37sicfg6x" path="res://assets/house_assets/TopDownHouse_SmallItems.png" id="9_6fw57"]
-[ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Passado/Eduarda Faria/Documents/PostIt_Morgan.tres" id="10_rugew"]
 [ext_resource type="PackedScene" uid="uid://7aoftr3p3flb" path="res://Scenes/npc.tscn" id="11_6fw57"]
 [ext_resource type="Resource" uid="uid://cmbys0kn5mysk" path="res://Resources/Passado/Eduarda Faria/Eduarda Faria.tres" id="12_00yci"]
 [ext_resource type="Resource" uid="uid://sbdf1noyotdn" path="res://Resources/Passado/Ricardo Veloso/Ricardo Veloso.tres" id="13_0drt5"]
@@ -22,11 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://d2ijuycbc4kas" path="res://Relogio Moderno/Clock Model Modern.tscn" id="18_qguc3"]
 [ext_resource type="PackedScene" uid="uid://dut4j31uaowtb" path="res://Scenes/elavator_door.tscn" id="20_5xr4q"]
 [ext_resource type="PackedScene" uid="uid://beijvxr4tdjfg" path="res://TimeMachine/TimeMachine.tscn" id="21_qguc3"]
+[ext_resource type="Texture2D" uid="uid://cuui367wu82tj" path="res://assets/Gemini_Generated_Image_aibzllaibzllaibz (1) 1.png" id="21_vegrp"]
+[ext_resource type="Texture2D" uid="uid://c3v6i5b3r0vxa" path="res://assets/note2.png" id="22_0f4fb"]
 [ext_resource type="PackedScene" uid="uid://d1vmdhqm2vhtt" path="res://Scenes/PuzzleFios_Model.tscn" id="22_4yu56"]
+[ext_resource type="Texture2D" uid="uid://dsong054s5icp" path="res://assets/Gemini_Generated_Image_uoqga5uoqga5uoqg 1.png" id="23_0f4fb"]
 [ext_resource type="Resource" uid="uid://dceg5xxhj20mk" path="res://Resources/Presente/Thiago Mendes/Thiago Mendes.tres" id="23_fqiy1"]
 [ext_resource type="PackedScene" uid="uid://cagadspykx25t" path="res://Scenes/PuzzleFlowFree_Model.tscn" id="23_r8djo"]
+[ext_resource type="Texture2D" uid="uid://bqiirgoxm8vw2" path="res://assets/note.png" id="24_qcrcq"]
+[ext_resource type="Texture2D" uid="uid://cmy2ydoq81no1" path="res://assets/Gemini_Generated_Image_jq4pysjq4pysjq4p (3) 1.png" id="25_5fh05"]
 [ext_resource type="Resource" uid="uid://j6n8fvm81i7k" path="res://Resources/Passado/Márcio Albuquerque/Márcio Albuquerque.tres" id="25_anodm"]
 [ext_resource type="Resource" uid="uid://c76d1vcvxqcah" path="res://Resources/Passado/Sérgio Duarte/SergioDuarte.tres" id="25_cjh4u"]
+[ext_resource type="Texture2D" uid="uid://c1mk0c3e4a3kk" path="res://assets/note3.png" id="26_qcfu8"]
+[ext_resource type="Texture2D" uid="uid://bhfahyvltk7dv" path="res://assets/Gemini_Generated_Image_t4qnjxt4qnjxt4qn (1) 1.png" id="27_6jw0y"]
 [ext_resource type="Resource" uid="uid://c54flfhjofhi3" path="res://Resources/Passado/Sílvia Nogueira/Sílvia Nogueira.tres" id="27_nnce2"]
 [ext_resource type="Resource" uid="uid://0km6l584lj43" path="res://Resources/Passado/Vera Lúcia/Vera Lúcia.tres" id="28_ahe3a"]
 [ext_resource type="Resource" uid="uid://cftleug0br0cm" path="res://Resources/Presente/Eduardo Oliveira/Eduardo Oliveira.tres" id="31_14j86"]
@@ -40,7 +46,15 @@
 [ext_resource type="Resource" uid="uid://um81tk0ad6rh" path="res://Resources/Presente/Diego Alves/Diego Alves.tres" id="35_g4mab"]
 [ext_resource type="Resource" uid="uid://cfwjha03y4ow2" path="res://Resources/Futuro/Carla Nogueira/Carla Nogueira.tres" id="35_oi720"]
 [ext_resource type="Resource" uid="uid://cpnlkl4d45bvf" path="res://Resources/Futuro/Gilberto Santos/Gilberto Santos.tres" id="36_oi720"]
+[ext_resource type="Texture2D" uid="uid://b5x3o2b24psyl" path="res://assets/imagem (1).png" id="37_d3ikj"]
 [ext_resource type="Resource" uid="uid://c8wp3e2wsoqs7" path="res://Resources/Futuro/Sofia Ribeiro/Sofia Ribeiro.tres" id="37_j3bc4"]
+[ext_resource type="Texture2D" uid="uid://cralbpphvrrek" path="res://assets/note4.png" id="38_03coa"]
+[ext_resource type="Texture2D" uid="uid://csk2on34ih8j4" path="res://assets/Gemini_Generated_Image_yqltuhyqltuhyqlt 1.png" id="39_2myjj"]
+[ext_resource type="Texture2D" uid="uid://b4xerynuthc8" path="res://assets/Gemini_Generated_Image_gxewjbgxewjbgxew 1.png" id="39_w75w5"]
+[ext_resource type="Texture2D" uid="uid://bhsg33csfe1xw" path="res://assets/Camada 3.png" id="40_ggk25"]
+[ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="41_2myjj"]
+[ext_resource type="Texture2D" uid="uid://ckulxmvq22wwo" path="res://assets/Gemini_Generated_Image_2nizvg2nizvg2niz 1.png" id="41_nbfjm"]
+[ext_resource type="Texture2D" uid="uid://dcdv33k3j6cg8" path="res://assets/Gemini_Generated_Image_hgt7kmhgt7kmhgt7 1.png" id="43_0f4fb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wan0n"]
 texture = ExtResource("6_wan0n")
@@ -1329,6 +1343,30 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5d3jg")
 sources/1 = SubResource("TileSetAtlasSource_pobkc")
 
+[sub_resource type="Resource" id="Resource_qcrcq"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("21_vegrp")
+icon = ExtResource("22_0f4fb")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_5fh05"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("23_0f4fb")
+icon = ExtResource("24_qcrcq")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_o5eno"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("25_5fh05")
+icon = ExtResource("26_qcfu8")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_e1ld7"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("27_6jw0y")
+icon = ExtResource("26_qcfu8")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
 [sub_resource type="Gradient" id="Gradient_2qpv4"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -1346,6 +1384,36 @@ gradient = SubResource("Gradient_wlgur")
 fill = 1
 fill_from = Vector2(0.18224299, 0.21028037)
 fill_to = Vector2(0.19626169, 0.53271025)
+
+[sub_resource type="Resource" id="Resource_y8e7w"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("37_d3ikj")
+icon = ExtResource("38_03coa")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_1llh2"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("39_w75w5")
+icon = ExtResource("24_qcrcq")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_nbfjm"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("39_2myjj")
+icon = ExtResource("40_ggk25")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_vegrp"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("41_nbfjm")
+icon = ExtResource("40_ggk25")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
+
+[sub_resource type="Resource" id="Resource_0f4fb"]
+script = ExtResource("41_2myjj")
+full_image = ExtResource("43_0f4fb")
+icon = ExtResource("40_ggk25")
+metadata/_custom_type_script = "uid://bfxadw6o7lgu5"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00yci"]
 texture = ExtResource("6_2eut3")
@@ -1429,7 +1497,6 @@ tile_set = SubResource("TileSet_2eut3")
 
 [node name="Past" type="Node2D" parent="." unique_id=613704414]
 process_mode = 4
-visible = false
 
 [node name="CanvasModulate3" parent="Past" unique_id=1846776299 instance=ExtResource("4_6yv5g")]
 
@@ -1452,10 +1519,6 @@ z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAPD/AAAFAAEAAAAKAPL/AAAFAAQAAAALAPP/AAADAAUAAAALAPL/AAAEAAcAAAAJAPb/AAACAAQAAAALAPb/AAACAAQAAAAJAPf/AQAHAAAAAAALAPf/AQAHAAAAAAD8//X/AQABABAAAAD8//b/AQABABEAAAD9//X/AQACABAAAAD9//b/AQACABEAAAD8/wAAAQABABAAAAD8/wEAAQABABEAAAD9/wAAAQACABAAAAD9/wEAAQACABEAAADr/wIAAQAHAAAAAADt/wIAAQAHAAAAAADt/wEAAAAFAAYAAADt//3/AAAFAAQAAADp//3/AAAGAAQAAADo//H/AAAHAAUAAADu//H/AAAHAAUAAAD0//v/AAABAAEAAAD0//D/AAABAAEAAADn//v/AAABAAEAAADf//H/AAABAAEAAADZ//3/AAABAAAAAADZ//X/AAABAAAAAAD9//L/AAABAAAAAAD9//3/AAABAAAAAAD2/wMAAAAAAAIAAADp/wIAAAAFAAcAAADn//f/AAAEAAcAAAAKAAIAAAADAAQAAADn/wIAAAADAAQAAADu//f/AAADAAQAAADx//7/AQAIAAMAAADy//7/AQAJAAMAAADs/wAAAQAIAAIAAADt/wAAAQAJAAIAAADr//T/AQAIAAIAAADs//T/AQAJAAIAAADm//T/AQAIAAIAAADn//T/AQAJAAIAAAA=")
 tile_set = SubResource("TileSet_wan0n")
-
-[node name="PostIt" parent="Past" unique_id=2106496041 instance=ExtResource("9_2eut3")]
-position = Vector2(-24, -123)
-doc_data = ExtResource("10_rugew")
 
 [node name="Eduarda Faria" parent="Past" unique_id=1620361622 instance=ExtResource("11_6fw57")]
 process_physics_priority = -1
@@ -1516,7 +1579,25 @@ y_sort_enabled = true
 position = Vector2(-494, 8)
 npc_data = ExtResource("28_ahe3a")
 
+[node name="DocumentPickup" parent="Past" unique_id=1073567258 instance=ExtResource("9_2eut3")]
+position = Vector2(-143, -48)
+skew = -0.033161256
+doc_data = SubResource("Resource_qcrcq")
+
+[node name="DocumentPickup2" parent="Past" unique_id=597894556 instance=ExtResource("9_2eut3")]
+position = Vector2(-539, -45)
+doc_data = SubResource("Resource_5fh05")
+
+[node name="DocumentPickup3" parent="Past" unique_id=1330171060 instance=ExtResource("9_2eut3")]
+position = Vector2(-649, -47)
+doc_data = SubResource("Resource_o5eno")
+
+[node name="DocumentPickup4" parent="Past" unique_id=1511337478 instance=ExtResource("9_2eut3")]
+position = Vector2(-891, -111)
+doc_data = SubResource("Resource_e1ld7")
+
 [node name="Present" type="Node2D" parent="." unique_id=547886034]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Present" unique_id=1692568178]
 visible = false
@@ -1609,6 +1690,14 @@ position = Vector2(-501, -155)
 dialogue_text = ""
 npc_data = ExtResource("35_g4mab")
 
+[node name="DocumentPickup" parent="Present" unique_id=1832581603 instance=ExtResource("9_2eut3")]
+position = Vector2(-893, -112)
+doc_data = SubResource("Resource_y8e7w")
+
+[node name="DocumentPickup2" parent="Present" unique_id=1070244007 instance=ExtResource("9_2eut3")]
+position = Vector2(-654, -47)
+doc_data = SubResource("Resource_1llh2")
+
 [node name="Future" type="Node2D" parent="." unique_id=1119240482]
 process_mode = 4
 visible = false
@@ -1688,6 +1777,18 @@ position = Vector2(-488, 10)
 dialogue_text = "
 "
 npc_data = ExtResource("37_j3bc4")
+
+[node name="DocumentPickup" parent="Future" unique_id=1910756057 instance=ExtResource("9_2eut3")]
+position = Vector2(-654, -48)
+doc_data = SubResource("Resource_nbfjm")
+
+[node name="DocumentPickup2" parent="Future" unique_id=38860066 instance=ExtResource("9_2eut3")]
+position = Vector2(-534, -227)
+doc_data = SubResource("Resource_vegrp")
+
+[node name="DocumentPickup3" parent="Future" unique_id=172835299 instance=ExtResource("9_2eut3")]
+position = Vector2(-893, -115)
+doc_data = SubResource("Resource_0f4fb")
 
 [node name="hotel_doors" type="TileMapLayer" parent="." unique_id=894843684]
 tile_set = SubResource("TileSet_tbd83")

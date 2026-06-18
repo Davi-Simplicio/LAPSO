@@ -9,8 +9,8 @@ extends Area2D
 @export var drag_sensitivity: float = 1.0
 @export var gear_rotates_visually: bool = true
 
-@export var target_hour: int = 12
-@export var target_minute: int = 30
+@export var target_hour: int = 16
+@export var target_minute: int = 15
 
 @export var start_hour: int = 12
 @export var start_minute: int = 0

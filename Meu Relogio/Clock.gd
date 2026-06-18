@@ -29,7 +29,7 @@ func _ready() -> void:
 	pivot.position = Vector2(dial_x, dial_y)
 
 	# ── Ponteiro de Horas (32x120px, pivot na base) ───────────────────────
-	var hour_w := 15.0
+	var hour_w := 22.0
 	var hour_h := 160.0
 	if hour.texture:
 		hour_w = float(hour.texture.get_width())

@@ -1,32 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccnncabq2mige"]
+[gd_scene format=3 uid="uid://ccnncabq2mige"]
 
 [ext_resource type="Script" uid="uid://disgv5bysm8uy" path="res://Scripts/documents.gd" id="1_m320e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m320e"]
-size = Vector2(66.25, 64)
+size = Vector2(53, 39)
 
-[node name="DocumentPickup" type="Area2D"]
+[node name="DocumentPickup" type="Area2D" unique_id=1073567258]
 z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_m320e")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1398955598]
 position = Vector2(160, 86.000015)
 scale = Vector2(0.171875, 0.171875)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872901871]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(161, 86)
+position = Vector2(159.5, 86.5)
 shape = SubResource("RectangleShape2D_m320e")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1582510833]
 offset_left = 147.0
 offset_top = 61.0
 offset_right = 282.0
 offset_bottom = 94.0
 scale = Vector2(0.2, 0.2)
 text = "Press E to pick up"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1298289966]
+offset_left = 149.0
+offset_top = 78.00001
+offset_right = 183.65
+offset_bottom = 111.00001
+scale = Vector2(0.4810004, 0.4125775)
+expand_mode = 3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
