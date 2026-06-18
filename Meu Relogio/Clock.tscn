@@ -37,4 +37,5 @@ script = ExtResource("2_gear")
 texture = ExtResource("6_gear")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GearControl"]
+z_index = 999
 shape = SubResource("CircleShape2D_1")

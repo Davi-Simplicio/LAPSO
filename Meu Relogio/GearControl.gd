@@ -3,6 +3,7 @@ extends Area2D
 @onready var hour_hand: Sprite2D = $"../CenterPivot/HourHand"
 @onready var minute_hand: Sprite2D = $"../CenterPivot/MinuteHand"
 @onready var gear_sprite: Sprite2D = $Gear
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 @export var smoothing: float = 0.15
 @export var drag_sensitivity: float = 1.0
@@ -25,13 +26,10 @@ var _tempo_no_alvo: float = 0.0
 var puzzle_resolvido: bool = false
 var _saindo: bool = false
 
-signal puzzle_fechado
-
 func _ready() -> void:
-	input_event.connect(_on_input_event)
+	input_pickable = false
 	set_process_input(true)
 	set_process(true)
-	input_pickable = true
 
 	puzzle_resolvido = false
 	_saindo = false
@@ -40,7 +38,7 @@ func _ready() -> void:
 
 	set_time(start_hour, start_minute)
 	var t := get_time()
-	print("🕐 Horário inicial: %02d:%02d" % [t["hours"], t["minutes"]])
+	print("Base: Horário inicial configurado para %02d:%02d" % [t["hours"], t["minutes"]])
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -50,7 +48,6 @@ func _process(delta: float) -> void:
 	if _is_dragging and not puzzle_resolvido:
 		_handle_drag()
 		var t := get_time()
-		print("🕐 %02d:%02d" % [t["hours"], t["minutes"]])
 
 		if t["hours"] == target_hour and t["minutes"] == target_minute:
 			_tempo_no_alvo += delta
@@ -68,6 +65,35 @@ func _process(delta: float) -> void:
 	if gear_rotates_visually and _is_dragging and not puzzle_resolvido:
 		gear_sprite.rotation = _gear_rotation_acc
 
+# FORÇA BRUTA: Intercepta o clique no nível mais alto do motor da Godot, antes de qualquer outro nó
+func _input(event: InputEvent) -> void:
+	if puzzle_resolvido:
+		return
+
+	if event is InputEventMouseButton:
+		var mb := event as InputEventMouseButton
+		if mb.button_index == MOUSE_BUTTON_LEFT:
+			if mb.pressed:
+				if _is_mouse_over_gear():
+					_start_drag()
+			else:
+				if _is_dragging:
+					_stop_drag()
+
+func _is_mouse_over_gear() -> bool:
+	if not is_inside_tree() or not is_visible_in_tree():
+		return false
+		
+	# Distância direta global do mouse até o centro da engrenagem
+	var dist = global_position.distance_to(get_global_mouse_position())
+	
+	# Usando um raio fixo generoso baseado no tamanho padrão da engrenagem (65 pixels)
+	# Isso ignora completamente se houver colisores ou mapas na frente
+	if collision_shape and collision_shape.shape is CircleShape2D:
+		return dist <= (collision_shape.shape as CircleShape2D).radius
+		
+	return dist < 65.0
+
 func _ao_resolver() -> void:
 	await get_tree().create_timer(1.0).timeout
 	sair_do_puzzle()
@@ -81,9 +107,9 @@ func sair_do_puzzle() -> void:
 		if has_node("/root/GameState"):
 			get_node("/root/GameState").puzzle_relogio_resolvido = true
 
-	if is_instance_valid(get_parent()):
-		emit_signal("puzzle_fechado")
-		get_parent().queue_free()
+	var pai = get_parent()
+	if is_instance_valid(pai) and pai.has_method("notificar_fechamento"):
+		pai.notificar_fechamento()
 
 func _handle_drag() -> void:
 	var gear_center: Vector2 = global_position
@@ -111,25 +137,7 @@ func _apply_smooth_rotation(delta: float) -> void:
 		minute_hand.rotation = _target_minute_rotation
 		hour_hand.rotation   = _target_hour_rotation
 
-func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		var mb := event as InputEventMouseButton
-		if mb.button_index == MOUSE_BUTTON_LEFT:
-			if mb.pressed:
-				_start_drag()
-			else:
-				_stop_drag()
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		var mb := event as InputEventMouseButton
-		if mb.button_index == MOUSE_BUTTON_LEFT and not mb.pressed:
-			if _is_dragging:
-				_stop_drag()
-
 func _start_drag() -> void:
-	if puzzle_resolvido:
-		return
 	_is_dragging = true
 	var dir: Vector2 = get_global_mouse_position() - global_position
 	_prev_angle = atan2(dir.y, dir.x)

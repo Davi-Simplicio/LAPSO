@@ -3,11 +3,13 @@
 
 extends Node2D
 
+signal puzzle_fechado
+
 func _ready() -> void:
 	var screen := get_viewport_rect().size
 	position = screen / 2.0
 
-	var bg          := $background             as Sprite2D
+	var bg          := $background           as Sprite2D
 	var pivot       := $CenterPivot            as Node2D
 	var hour        := $CenterPivot/HourHand   as Sprite2D
 	var minute      := $CenterPivot/MinuteHand as Sprite2D
@@ -35,7 +37,6 @@ func _ready() -> void:
 
 	hour.centered = false
 	hour.position = Vector2.ZERO
-	# offset: centraliza X, base da joia (10px do fundo) no origin
 	hour.offset = Vector2(-hour_w / 2.0, -hour_h + 14.0)
 
 	# ── Ponteiro de Minutos (22x160px, pivot na base) ─────────────────────
@@ -47,7 +48,6 @@ func _ready() -> void:
 
 	minute.centered = false
 	minute.position = Vector2.ZERO
-	# offset: centraliza X, base da joia (12px do fundo) no origin
 	minute.offset = Vector2(-min_w / 2.0, -min_h + 12.0)
 
 	# ── Engrenagem ────────────────────────────────────────────────────────
@@ -64,3 +64,7 @@ func _set_initial_time() -> void:
 	var gear_area := $GearControl
 	if gear_area.has_method(&"set_time"):
 		gear_area.call(&"set_time", 10, 10)
+
+func notificar_fechamento() -> void:
+	emit_signal("puzzle_fechado")
+	queue_free()

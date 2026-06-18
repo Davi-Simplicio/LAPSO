@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var interaction_label = $LabelOld
-@onready var sprite = $Door/Sprite2DOld
+var sprite = null
 @onready var collision = $CollisionShape2DOld
 
 var player_nearby = false
@@ -13,6 +13,10 @@ const PUZZLE_CENA = preload("res://Meu Relogio/Clock.tscn")
 func _ready():
 	if interaction_label:
 		interaction_label.visible = false
+	
+	# Busca dinâmica segura para o sprite antigo
+	if has_node("DoorOld/Sprite2DOld"):
+		sprite = get_node("DoorOld/Sprite2DOld")
 	
 	$InteractionAreaRelogio.body_entered.connect(_on_interaction_area_body_entered)
 	$InteractionAreaRelogio.body_exited.connect(_on_interaction_area_body_exited)
@@ -44,20 +48,19 @@ func abrir_puzzle():
 		canvas_antigo.queue_free()
 	
 	puzzle_aberto = true
-	puzzle_instance = null
 	interaction_label.visible = false
 	
+	# CORREÇÃO CRÍTICA DO CANVAS: Ativa o recebimento de cliques por cima do Map
 	var canvas = CanvasLayer.new()
 	canvas.name = "PuzzleLayer"
-	canvas.layer = 10
+	canvas.layer = 100 # Camada muito alta para passar por cima de qualquer modulação do mapa
 	get_tree().root.add_child(canvas)
 	
 	puzzle_instance = PUZZLE_CENA.instantiate()
 	canvas.add_child(puzzle_instance)
 	
-	var gear = puzzle_instance.get_node_or_null("GearControl")
-	if gear and gear.has_signal("puzzle_fechado"):
-		gear.puzzle_fechado.connect(_on_puzzle_fechado)
+	if puzzle_instance and puzzle_instance.has_signal("puzzle_fechado"):
+		puzzle_instance.puzzle_fechado.connect(_on_puzzle_fechado)
 
 func _on_puzzle_fechado():
 	puzzle_aberto = false

@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://chynhh6jwvsyl"]
+[gd_scene load_steps=5 format=3 uid="uid://cg0lhunxt6pyj"]
 
-[ext_resource type="Script" uid="uid://b20hrh5tajft6" path="res://Meu Relogio/clock_model.gd" id="1_n05pn"]
+[ext_resource type="Script" uid="uid://dyi0or235o60a" path="res://Meu Relogio/clock_model.gd" id="1_n05pn"]
 [ext_resource type="Texture2D" uid="uid://bjwgla5tcky8g" path="res://assets/house_assets/TopDownHouse_FurnitureState1.png" id="2_n05pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
