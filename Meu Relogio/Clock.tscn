@@ -30,6 +30,7 @@ texture = ExtResource("4_awj0o")
 centered = false
 
 [node name="GearControl" type="Area2D" parent="."]
+z_index = 999
 position = Vector2(86, 118)
 script = ExtResource("2_gear")
 

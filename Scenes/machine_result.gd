@@ -12,7 +12,7 @@ var digits = [0, 0, 0, 0]
 @onready var missing_message = $MissingMessage
 
 # Set your hardcoded target value here
-const TARGET_VALUE = "1234"
+const TARGET_VALUE = "7252"
 
 
 func _ready():
@@ -76,6 +76,6 @@ func get_final_number() -> String:
 func _on_try_pressed():
 	if get_final_number() == TARGET_VALUE:
 		# Replace the path below with the path to your actual scene
-		get_tree().change_scene_to_file("res://path_to_your_next_scene.tscn")
+		get_tree().change_scene_to_file("res://HotelScreens/end_screen.tscn")
 	else:
 		print("Parece que nao funcionou")
