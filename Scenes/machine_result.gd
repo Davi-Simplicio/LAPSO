@@ -76,6 +76,7 @@ func get_final_number() -> String:
 func _on_try_pressed():
 	if get_final_number() == TARGET_VALUE:
 		# Replace the path below with the path to your actual scene
+		queue_free()
 		get_tree().change_scene_to_file("res://HotelScreens/end_screen.tscn")
 	else:
 		print("Parece que nao funcionou")

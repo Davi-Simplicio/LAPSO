@@ -63,10 +63,39 @@ func _draw_clock() -> void:
 func _jogar() -> void:
 	_btn_jogar.disabled   = true
 	_btn_credits.disabled = true
+	
 	var tw := create_tween()
 	tw.tween_property(_fade, "color", Color(0, 0, 0, 1), 0.9)\
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-	tw.finished.connect(func(): emit_signal("start_game"))
+		
+	# Call a separate function when the fade finishes
+	tw.finished.connect(_on_fade_finished)
+
+
+func _on_fade_finished() -> void:
+	emit_signal("start_game")
+	
+	# Reset GameState variables
+	get_node("/root/GameState").puzzle_relogio_resolvido = false
+	get_node("/root/GameState").puzzle_fios_resolvido = false
+	get_node("/root/GameState").puzzle_flow_free_resolvido = false
+	get_node("/root/GameState").puzzle_relogio_moderno_resolvido = false
+	get_node("/root/GameState").unlocked_facts = {}
+	
+	# Reset Player and Mapa positions
+	# Change Vector2(0, 0) to your exact starting coordinates
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.global_position = Vector2(38, 10)
+		
+	var mapa = get_tree().get_first_node_in_group("mapa")
+	if mapa:
+		mapa.global_position = Vector2(0,0)
+			
+	# Safely delete the MainMenu now that the fade is done
+	queue_free()
+
+
 
 func _abrir_creditos() -> void:
 	_credits_layer.visible = true

@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxoy204gudfum"]
+[gd_scene format=3 uid="uid://cxoy204gudfum"]
 
-[ext_resource type="PackedScene" path="res://StickNote.tscn" id="1_l468l"]
+[ext_resource type="PackedScene" uid="uid://duvbp03xo1wnl" path="res://StickNote.tscn" id="1_l468l"]
 [ext_resource type="Script" uid="uid://b06ddqumynq0x" path="res://stick_note.gd" id="2_rg47x"]
 [ext_resource type="Texture2D" uid="uid://dt2ebcku8l60w" path="res://assets/PhysicWorkstation/stick-note-open.png" id="3_s6vmt"]
 [ext_resource type="FontFile" uid="uid://cwfahrx6v0wu3" path="res://assets/PhysicWorkstation/Banda Note.ttf" id="4_rsusq"]
 
-[node name="Calcs" type="Node2D"]
+[node name="Calcs" type="Node2D" unique_id=766380354]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=428775848]
 offset_left = -20.999998
 offset_top = -4.0
 offset_right = 19.000002
@@ -15,7 +15,7 @@ offset_bottom = 36.0
 scale = Vector2(29.440079, 16.792185)
 color = Color(0, 0, 0, 0.3254902)
 
-[node name="A" parent="." instance=ExtResource("1_l468l")]
+[node name="A" parent="." unique_id=1678103963 instance=ExtResource("1_l468l")]
 position = Vector2(112, 101.999985)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "A:
@@ -24,21 +24,21 @@ texto_grande = "A:
       CTT
 "
 
-[node name="C" parent="." instance=ExtResource("1_l468l")]
+[node name="C" parent="." unique_id=918559117 instance=ExtResource("1_l468l")]
 position = Vector2(574, 59.999985)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "C:
 (5 * (CTD/100)-¹ + MVR)
 "
 
-[node name="B" parent="." instance=ExtResource("1_l468l")]
+[node name="B" parent="." unique_id=1255300485 instance=ExtResource("1_l468l")]
 position = Vector2(331, 41.999985)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "B:
     √(CTT+4) - 2
 "
 
-[node name="D" parent="." instance=ExtResource("1_l468l")]
+[node name="D" parent="." unique_id=736752676 instance=ExtResource("1_l468l")]
 position = Vector2(884, 38)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "D:
@@ -47,14 +47,14 @@ texto_grande = "D:
          6
 "
 
-[node name="E" parent="." instance=ExtResource("1_l468l")]
+[node name="E" parent="." unique_id=1565934039 instance=ExtResource("1_l468l")]
 position = Vector2(84.99999, 302.00003)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "E:
   (QDI² - FDM) * 0,1
 "
 
-[node name="F" parent="." instance=ExtResource("1_l468l")]
+[node name="F" parent="." unique_id=212897248 instance=ExtResource("1_l468l")]
 position = Vector2(357, 317)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "F:
@@ -63,7 +63,7 @@ texto_grande = "F:
        5
 "
 
-[node name="G" parent="." instance=ExtResource("1_l468l")]
+[node name="G" parent="." unique_id=1909490708 instance=ExtResource("1_l468l")]
 position = Vector2(623, 253.99998)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "G:
@@ -71,7 +71,7 @@ texto_grande = "G:
     3 * ⁴√RAP - 1
 "
 
-[node name="H" parent="." instance=ExtResource("1_l468l")]
+[node name="H" parent="." unique_id=1747513235 instance=ExtResource("1_l468l")]
 position = Vector2(869, 284)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "H:
@@ -80,35 +80,35 @@ texto_grande = "H:
         3 
 "
 
-[node name="Coeficiente da Máquina" parent="." instance=ExtResource("1_l468l")]
+[node name="Coeficiente da Máquina" parent="." unique_id=1993143058 instance=ExtResource("1_l468l")]
 position = Vector2(539, 464)
 scale = Vector2(0.62068963, 0.6374765)
 texto_grande = "Coeficiente da Máquina:
 
 A + B - C + D - E - F + G + H"
 
-[node name="StickNote" type="Node2D" parent="."]
+[node name="StickNote" type="Node2D" parent="." unique_id=1977776835]
 position = Vector2(777.00006, 456.99997)
 scale = Vector2(0.76503253, 0.6839544)
 script = ExtResource("2_rg47x")
 metadata/content = ""
 
-[node name="StickNoteOpen" type="Sprite2D" parent="StickNote"]
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote" unique_id=1774906968]
 position = Vector2(119.99999, 159.00002)
 scale = Vector2(0.44592643, 0.44800982)
 texture = ExtResource("3_s6vmt")
 
-[node name="Label" type="Label" parent="StickNote"]
+[node name="Label" type="Label" parent="StickNote" unique_id=794904561]
 offset_left = 32.67827
 offset_top = 33.62801
 offset_right = 251.67827
-offset_bottom = 807.628
+offset_bottom = 244.16835
 theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
 theme_override_fonts/font = ExtResource("4_rsusq")
 theme_override_font_sizes/font_size = 16
 autowrap_mode = 2
 
-[node name="StickNote2" type="Node2D" parent="."]
+[node name="StickNote2" type="Node2D" parent="." unique_id=210860137]
 position = Vector2(144.00002, 420.99997)
 scale = Vector2(0.76503253, 0.6839544)
 script = ExtResource("2_rg47x")
@@ -120,16 +120,33 @@ PPO = Parametro de Potência do Cristal
 "
 metadata/content = ""
 
-[node name="StickNoteOpen" type="Sprite2D" parent="StickNote2"]
+[node name="StickNoteOpen" type="Sprite2D" parent="StickNote2" unique_id=360182941]
 position = Vector2(119.99999, 159.00002)
 scale = Vector2(0.44592643, 0.44800982)
 texture = ExtResource("3_s6vmt")
 
-[node name="Label" type="Label" parent="StickNote2"]
+[node name="Label" type="Label" parent="StickNote2" unique_id=1805279532]
 offset_left = 31.371195
 offset_top = 27.779667
 offset_right = 250.3712
-offset_bottom = 801.77966
+offset_bottom = 256.77966
+theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
+theme_override_fonts/font = ExtResource("4_rsusq")
+theme_override_font_sizes/font_size = 16
+text = "FDM = Fator de Decaimento da Massa Crítica
+RHD = Ramificações Históricas Descartadas 
+RAP = Resistência à Atração Paradoxal 
+PQU = Parametro de Fluido Químico 
+PPO = Parametro de Potência do Cristal
+"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="StickNote2/Label" unique_id=1708044784]
+layout_mode = 0
+offset_left = 820.8802
+offset_top = 51.172997
+offset_right = 1039.8801
+offset_bottom = 280.173
 theme_override_colors/font_color = Color(0.40219086, 0.39870352, 0.013467947, 1)
 theme_override_fonts/font = ExtResource("4_rsusq")
 theme_override_font_sizes/font_size = 16

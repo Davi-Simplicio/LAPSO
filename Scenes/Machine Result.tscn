@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0vlhc55rd8f3"]
+[gd_scene format=3 uid="uid://c0vlhc55rd8f3"]
 
 [ext_resource type="Texture2D" uid="uid://bqeuqay74e1et" path="res://assets/MachineResult/dijuntor.png" id="1_0ajo8"]
 [ext_resource type="Script" uid="uid://bur73sk3hq33" path="res://Scenes/machine_result.gd" id="1_gegmj"]
@@ -15,7 +15,7 @@ atlas = ExtResource("5_oqkgs")
 atlas = ExtResource("6_6nh2f")
 region = Rect2(172.80191, 74.97397, 153.065, 166.37502)
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" unique_id=1340387674]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -27,7 +27,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_gegmj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=960455013]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -38,7 +38,7 @@ grow_vertical = 2
 texture = ExtResource("1_0ajo8")
 expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1907319890]
 layout_mode = 0
 offset_left = 334.0
 offset_top = 126.00001
@@ -46,11 +46,11 @@ offset_right = 960.0
 offset_bottom = 593.0
 scale = Vector2(0.79780143, 0.84882855)
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1170718945]
 layout_mode = 2
 texture = ExtResource("2_biase")
 
-[node name="Value1" type="Label" parent="."]
+[node name="Value1" type="Label" parent="." unique_id=1018755688]
 layout_mode = 0
 offset_left = 370.0
 offset_top = 201.0
@@ -66,7 +66,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Value2" type="Label" parent="."]
+[node name="Value2" type="Label" parent="." unique_id=596780696]
 layout_mode = 0
 offset_left = 479.0
 offset_top = 201.0
@@ -82,7 +82,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Value4" type="Label" parent="."]
+[node name="Value4" type="Label" parent="." unique_id=1478039214]
 layout_mode = 0
 offset_left = 697.0
 offset_top = 200.0
@@ -98,7 +98,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Value3" type="Label" parent="."]
+[node name="Value3" type="Label" parent="." unique_id=1731369064]
 layout_mode = 0
 offset_left = 587.0
 offset_top = 200.0
@@ -114,7 +114,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlusValue1" type="TextureButton" parent="."]
+[node name="PlusValue1" type="TextureButton" parent="." unique_id=930869373]
 layout_mode = 0
 offset_left = 370.0
 offset_top = 167.00002
@@ -123,7 +123,7 @@ offset_bottom = 207.00002
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="PlusValue1"]
+[node name="Value1" type="Label" parent="PlusValue1" unique_id=518698970]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -140,7 +140,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MinorValue1" type="TextureButton" parent="."]
+[node name="MinorValue1" type="TextureButton" parent="." unique_id=863569921]
 layout_mode = 0
 offset_left = 462.0
 offset_top = 485.99997
@@ -150,7 +150,7 @@ rotation = 3.1402078
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="MinorValue1"]
+[node name="Value1" type="Label" parent="MinorValue1" unique_id=1661160367]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -167,7 +167,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlusValue2" type="TextureButton" parent="."]
+[node name="PlusValue2" type="TextureButton" parent="." unique_id=1299408000]
 layout_mode = 0
 offset_left = 480.0
 offset_top = 169.0
@@ -176,7 +176,7 @@ offset_bottom = 233.0
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="PlusValue2"]
+[node name="Value1" type="Label" parent="PlusValue2" unique_id=707036343]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -193,7 +193,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MinorValue2" type="TextureButton" parent="."]
+[node name="MinorValue2" type="TextureButton" parent="." unique_id=103857786]
 layout_mode = 0
 offset_left = 572.0
 offset_top = 487.99997
@@ -203,7 +203,7 @@ rotation = 3.1402078
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="MinorValue2"]
+[node name="Value1" type="Label" parent="MinorValue2" unique_id=1163948912]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -220,7 +220,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlusValue3" type="TextureButton" parent="."]
+[node name="PlusValue3" type="TextureButton" parent="." unique_id=1119037000]
 layout_mode = 0
 offset_left = 589.0
 offset_top = 168.0
@@ -229,7 +229,7 @@ offset_bottom = 232.0
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="PlusValue3"]
+[node name="Value1" type="Label" parent="PlusValue3" unique_id=1204101530]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -246,7 +246,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MinorValue3" type="TextureButton" parent="."]
+[node name="MinorValue3" type="TextureButton" parent="." unique_id=1197775198]
 layout_mode = 0
 offset_left = 681.0
 offset_top = 486.99997
@@ -256,7 +256,7 @@ rotation = 3.1402078
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="MinorValue3"]
+[node name="Value1" type="Label" parent="MinorValue3" unique_id=1204452348]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -273,7 +273,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlusValue4" type="TextureButton" parent="."]
+[node name="PlusValue4" type="TextureButton" parent="." unique_id=197684205]
 layout_mode = 0
 offset_left = 699.0
 offset_top = 168.0
@@ -282,7 +282,7 @@ offset_bottom = 232.0
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="PlusValue4"]
+[node name="Value1" type="Label" parent="PlusValue4" unique_id=1918908690]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -299,7 +299,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MinorValue4" type="TextureButton" parent="."]
+[node name="MinorValue4" type="TextureButton" parent="." unique_id=1685218739]
 layout_mode = 0
 offset_left = 791.0
 offset_top = 486.99997
@@ -309,7 +309,7 @@ rotation = 3.1402078
 scale = Vector2(1.3843244, 0.7468215)
 texture_normal = SubResource("AtlasTexture_f03d7")
 
-[node name="Value1" type="Label" parent="MinorValue4"]
+[node name="Value1" type="Label" parent="MinorValue4" unique_id=1592214126]
 layout_mode = 0
 offset_left = 54.90042
 offset_top = 6.695013
@@ -326,7 +326,7 @@ text = "^"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Try" type="TextureButton" parent="."]
+[node name="Try" type="TextureButton" parent="." unique_id=1976088669]
 layout_mode = 0
 offset_left = 1027.0
 offset_top = 263.00003
@@ -336,7 +336,7 @@ rotation = 3.1402078
 scale = Vector2(0.7073132, -0.72877437)
 texture_normal = SubResource("AtlasTexture_k3qkk")
 
-[node name="MissingMessage" type="Sprite2D" parent="."]
+[node name="MissingMessage" type="Sprite2D" parent="." unique_id=700749957]
 position = Vector2(587.19257, 321.1875)
 scale = Vector2(0.43363202, 0.42941338)
 texture = ExtResource("7_t2ie1")

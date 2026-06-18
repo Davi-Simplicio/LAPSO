@@ -60,11 +60,35 @@ func _draw_clock() -> void:
 func _ir_menu() -> void:
 	_btn_menu.disabled    = true
 	_btn_credits.disabled = true
+	
 	var tw := create_tween()
 	tw.tween_property(_fade, "color", Color(0, 0, 0, 1), 0.8)\
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		
 	tw.finished.connect(func():
-		get_tree().change_scene_to_file("res://HotelScreens/main_menu.tscn"))
+		# Zera o GameState para garantir que o jogo comece do zero
+		var state = get_node_or_null("/root/GameState")
+		if state:
+			state.puzzle_relogio_resolvido = false
+			state.puzzle_fios_resolvido = false
+			state.puzzle_flow_free_resolvido = false
+			state.puzzle_relogio_moderno_resolvido = false
+			state.unlocked_facts = {}
+			
+		# Recarrega a cena raiz atual inteira (a sua cena "jogo")
+		get_tree().reload_current_scene()
+	)
+	
+func _on_fade_finished() -> void:
+	var menu = get_tree().get_first_node_in_group("main_menu")
+	if menu:
+		menu.show() # Make the existing menu visible again
+		
+		# If your menu has a fade rect, you might need to reset its alpha here
+		# menu.get_node("FadeLayer/FadeRect").color = Color(0, 0, 0, 0)
+		
+	# Destroy this EndScreen
+	queue_free() 	
 
 func _abrir_creditos() -> void:
 	_credits_layer.visible = true

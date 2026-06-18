@@ -1,24 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://0dm5722t1ls7"]
+[gd_scene format=3 uid="uid://0dm5722t1ls7"]
 
 [ext_resource type="PackedScene" uid="uid://cej532aj3q877" path="res://Scenes/mapa.tscn" id="1_evvns"]
 [ext_resource type="PackedScene" uid="uid://bo1oklui1lpoe" path="res://Scenes/player.tscn" id="2_yq54j"]
 [ext_resource type="PackedScene" uid="uid://6foeujt16n08" path="res://Scenes/dialogueBox.tscn" id="5_qn35j"]
+[ext_resource type="PackedScene" uid="uid://cydirp3qecx15" path="res://HotelScreens/main_menu.tscn" id="7_8ihgy"]
 [ext_resource type="Resource" uid="uid://bamylmneuc8ph" path="res://Resources/Passado/Eduarda Faria/Documents/PostIt_Morgan.tres" id="8_t8pok"]
 [ext_resource type="PackedScene" uid="uid://bky3fyxawu28k" path="res://Scenes/DocumentsMenu.tscn" id="9_t8pok"]
 [ext_resource type="Script" uid="uid://bfxadw6o7lgu5" path="res://Scripts/DocumentResource.gd" id="10_mtw28"]
 
-[node name="jogo" type="Node2D"]
+[node name="jogo" type="Node2D" unique_id=1303590843]
 y_sort_enabled = true
 position = Vector2(215, 295)
 
-[node name="Mapa" parent="." instance=ExtResource("1_evvns")]
+[node name="MainMenu" parent="." unique_id=1398992724 instance=ExtResource("7_8ihgy")]
 
-[node name="Player" parent="." instance=ExtResource("2_yq54j")]
+[node name="Mapa" parent="." unique_id=939590887 groups=["mapa"] instance=ExtResource("1_evvns")]
+
+[node name="Player" parent="." unique_id=461445973 instance=ExtResource("2_yq54j")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(38, 10)
 
-[node name="DialogueBox" parent="." groups=["dialogue_ui"] instance=ExtResource("5_qn35j")]
+[node name="DialogueBox" parent="." unique_id=1755293754 groups=["dialogue_ui"] instance=ExtResource("5_qn35j")]
 
-[node name="DocumentsMenu" parent="." instance=ExtResource("9_t8pok")]
+[node name="DocumentsMenu" parent="." unique_id=600816096 instance=ExtResource("9_t8pok")]
 all_documents_list = Array[ExtResource("10_mtw28")]([ExtResource("8_t8pok")])

@@ -35,6 +35,11 @@ window/stretch/aspect="ignore"
 
 enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
 
+[global_group]
+
+mapa=""
+player=""
+
 [input]
 
 interact={

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqm22f33s6woy"]
+[gd_scene format=3 uid="uid://bqm22f33s6woy"]
 
 [ext_resource type="Script" uid="uid://bkkwct1q5lphg" path="res://Meu Relogio/Clock.gd" id="1_clock"]
 [ext_resource type="Script" uid="uid://qmqcqxbn1gfg" path="res://Meu Relogio/GearControl.gd" id="2_gear"]
@@ -10,33 +10,33 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 40.0
 
-[node name="Clock" type="Node2D"]
+[node name="Clock" type="Node2D" unique_id=1273296926]
 script = ExtResource("1_clock")
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="." unique_id=464585486]
 texture = ExtResource("2_tel7m")
 
-[node name="CenterPivot" type="Node2D" parent="."]
+[node name="CenterPivot" type="Node2D" parent="." unique_id=1579658167]
 position = Vector2(3, 0)
 
-[node name="HourHand" type="Sprite2D" parent="CenterPivot"]
+[node name="HourHand" type="Sprite2D" parent="CenterPivot" unique_id=1471996795]
 position = Vector2(-15, -78)
 texture = ExtResource("3_tel7m")
 centered = false
 
-[node name="MinuteHand" type="Sprite2D" parent="CenterPivot"]
+[node name="MinuteHand" type="Sprite2D" parent="CenterPivot" unique_id=1727932861]
 position = Vector2(-10, -102)
 texture = ExtResource("4_awj0o")
 centered = false
 
-[node name="GearControl" type="Area2D" parent="."]
+[node name="GearControl" type="Area2D" parent="." unique_id=1319644829]
 z_index = 999
 position = Vector2(86, 118)
 script = ExtResource("2_gear")
 
-[node name="Gear" type="Sprite2D" parent="GearControl"]
+[node name="Gear" type="Sprite2D" parent="GearControl" unique_id=2014239223]
 texture = ExtResource("6_gear")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GearControl"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GearControl" unique_id=1761786631]
 z_index = 999
 shape = SubResource("CircleShape2D_1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cydirp3qecx15"]
+[gd_scene format=3 uid="uid://cydirp3qecx15"]
 
 [ext_resource type="Script" uid="uid://3p84h7d8cyt8" path="res://HotelScreens/main_menu.gd" id="1_script"]
 
@@ -47,24 +47,25 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.353, 0.22, 0.063, 1)
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" unique_id=533568505]
 script = ExtResource("1_script")
 
-[node name="BgColor" type="ColorRect" parent="."]
+[node name="BgColor" type="ColorRect" parent="." unique_id=369347423]
+z_index = 999
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0.055, 0.031, 0.012, 1)
 
-[node name="DarkOverlay" type="ColorRect" parent="."]
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1455147813]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0.02, 0.01, 0.004, 0.5)
 
-[node name="Dust" type="GPUParticles2D" parent="."]
+[node name="Dust" type="GPUParticles2D" parent="." unique_id=350744918]
 position = Vector2(960, 1080)
 amount = 40
 lifetime = 10.0
@@ -73,10 +74,10 @@ randomness = 1.0
 visibility_rect = Rect2(-1000, -1200, 2000, 1400)
 process_material = SubResource("DustMat")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1123757209]
 layer = 20
 
-[node name="Root" type="Control" parent="UI"]
+[node name="Root" type="Control" parent="UI" unique_id=1727310644]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,7 +85,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Margin" type="MarginContainer" parent="UI/Root"]
+[node name="Margin" type="MarginContainer" parent="UI/Root" unique_id=1005234113]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,102 +94,102 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 400
 theme_override_constants/margin_bottom = 20
 
-[node name="VBox" type="VBoxContainer" parent="UI/Root/Margin"]
+[node name="VBox" type="VBoxContainer" parent="UI/Root/Margin" unique_id=968942028]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="TopSpacer" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="TopSpacer" type="Control" parent="UI/Root/Margin/VBox" unique_id=317409959]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="Eyebrow" type="Label" parent="UI/Root/Margin/VBox"]
+[node name="Eyebrow" type="Label" parent="UI/Root/Margin/VBox" unique_id=1008834132]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.478, 0.353, 0.165, 1)
 theme_override_font_sizes/font_size = 10
 text = "--- Um Misterio de Escape ---"
 horizontal_alignment = 1
 
-[node name="Sp0" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="Sp0" type="Control" parent="UI/Root/Margin/VBox" unique_id=844337469]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UI/Root/Margin/VBox"]
+[node name="Title" type="Label" parent="UI/Root/Margin/VBox" unique_id=1181237599]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.91, 0.773, 0.416, 1)
 theme_override_font_sizes/font_size = 30
 text = "Hotel Delacroix"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="UI/Root/Margin/VBox"]
+[node name="Subtitle" type="Label" parent="UI/Root/Margin/VBox" unique_id=879665412]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.43, 0.16, 1)
 theme_override_font_sizes/font_size = 16
 text = "O Lapso Temporal"
 horizontal_alignment = 1
 
-[node name="Sp1" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="Sp1" type="Control" parent="UI/Root/Margin/VBox" unique_id=343929873]
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
-[node name="DivRow" type="HBoxContainer" parent="UI/Root/Margin/VBox"]
+[node name="DivRow" type="HBoxContainer" parent="UI/Root/Margin/VBox" unique_id=1569589789]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="LineL" type="ColorRect" parent="UI/Root/Margin/VBox/DivRow"]
+[node name="LineL" type="ColorRect" parent="UI/Root/Margin/VBox/DivRow" unique_id=1085333314]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.478, 0.353, 0.102, 0.7)
 
-[node name="Gem" type="ColorRect" parent="UI/Root/Margin/VBox/DivRow"]
+[node name="Gem" type="ColorRect" parent="UI/Root/Margin/VBox/DivRow" unique_id=1833593054]
 custom_minimum_size = Vector2(6, 6)
 layout_mode = 2
 color = Color(0.784, 0.565, 0.165, 1)
 
-[node name="LineR" type="ColorRect" parent="UI/Root/Margin/VBox/DivRow"]
+[node name="LineR" type="ColorRect" parent="UI/Root/Margin/VBox/DivRow" unique_id=1426539364]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.478, 0.353, 0.102, 0.7)
 
-[node name="Sp2" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="Sp2" type="Control" parent="UI/Root/Margin/VBox" unique_id=1138931169]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="ClockPanel" type="ColorRect" parent="UI/Root/Margin/VBox"]
+[node name="ClockPanel" type="ColorRect" parent="UI/Root/Margin/VBox" unique_id=1913471436]
 custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="Sp3" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="Sp3" type="Control" parent="UI/Root/Margin/VBox" unique_id=2013841139]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="Tagline" type="Label" parent="UI/Root/Margin/VBox"]
+[node name="Tagline" type="Label" parent="UI/Root/Margin/VBox" unique_id=852539662]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.541, 0.416, 0.165, 0.85)
 theme_override_font_sizes/font_size = 13
 text = "O tempo nunca para. Mas voce pode."
 horizontal_alignment = 1
 
-[node name="Sp4" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="Sp4" type="Control" parent="UI/Root/Margin/VBox" unique_id=577839054]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Buttons" type="VBoxContainer" parent="UI/Root/Margin/VBox"]
+[node name="Buttons" type="VBoxContainer" parent="UI/Root/Margin/VBox" unique_id=117626909]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="BtnJogar" type="Button" parent="UI/Root/Margin/VBox/Buttons"]
+[node name="BtnJogar" type="Button" parent="UI/Root/Margin/VBox/Buttons" unique_id=716159587]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.91, 0.773, 0.416, 1)
@@ -200,7 +201,7 @@ theme_override_styles/hover = SubResource("SB_primary_hover")
 theme_override_styles/focus = SubResource("SB_primary")
 text = "JOGAR"
 
-[node name="BtnCreditos" type="Button" parent="UI/Root/Margin/VBox/Buttons"]
+[node name="BtnCreditos" type="Button" parent="UI/Root/Margin/VBox/Buttons" unique_id=1064419120]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.353, 0.22, 0.063, 1)
@@ -212,33 +213,33 @@ theme_override_styles/hover = SubResource("SB_ghost")
 theme_override_styles/focus = SubResource("SB_ghost")
 text = "Creditos"
 
-[node name="BottomSpacer" type="Control" parent="UI/Root/Margin/VBox"]
+[node name="BottomSpacer" type="Control" parent="UI/Root/Margin/VBox" unique_id=1897657343]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="FadeLayer" type="CanvasLayer" parent="."]
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=727742035]
 layer = 99
 
-[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+[node name="FadeRect" type="ColorRect" parent="FadeLayer" unique_id=598492519]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CreditsLayer" type="CanvasLayer" parent="."]
+[node name="CreditsLayer" type="CanvasLayer" parent="." unique_id=1241540415]
 layer = 30
 visible = false
 
-[node name="BgDim" type="ColorRect" parent="CreditsLayer"]
+[node name="BgDim" type="ColorRect" parent="CreditsLayer" unique_id=719722518]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 0)
 
-[node name="Panel" type="PanelContainer" parent="CreditsLayer"]
+[node name="Panel" type="PanelContainer" parent="CreditsLayer" unique_id=557151729]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -253,70 +254,70 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("SB_credits")
 
-[node name="VBox" type="VBoxContainer" parent="CreditsLayer/Panel"]
+[node name="VBox" type="VBoxContainer" parent="CreditsLayer/Panel" unique_id=614693965]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="TitleCredits" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="TitleCredits" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=745961265]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.91, 0.773, 0.416, 1)
 theme_override_font_sizes/font_size = 14
 text = "CREDITOS"
 horizontal_alignment = 1
 
-[node name="Div1" type="ColorRect" parent="CreditsLayer/Panel/VBox"]
+[node name="Div1" type="ColorRect" parent="CreditsLayer/Panel/VBox" unique_id=1643404971]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 color = Color(0.353, 0.22, 0.063, 0.4)
 
-[node name="DevBy" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="DevBy" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=873179917]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.478, 0.353, 0.165, 1)
 theme_override_font_sizes/font_size = 10
 text = "Desenvolvido por"
 horizontal_alignment = 1
 
-[node name="N1" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="N1" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=73784911]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.831, 0.627, 0.29, 1)
 theme_override_font_sizes/font_size = 13
 text = "Wesley Diorrani Ferreira"
 horizontal_alignment = 1
 
-[node name="N2" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="N2" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=1382328612]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.831, 0.627, 0.29, 1)
 theme_override_font_sizes/font_size = 13
 text = "Jonatas Jackson"
 horizontal_alignment = 1
 
-[node name="N3" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="N3" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=1032848782]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.831, 0.627, 0.29, 1)
 theme_override_font_sizes/font_size = 13
 text = "Davi Simplicio"
 horizontal_alignment = 1
 
-[node name="N4" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="N4" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=1358153683]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.831, 0.627, 0.29, 1)
 theme_override_font_sizes/font_size = 13
 text = "Gabriel Koehler da Silva"
 horizontal_alignment = 1
 
-[node name="N5" type="Label" parent="CreditsLayer/Panel/VBox"]
+[node name="N5" type="Label" parent="CreditsLayer/Panel/VBox" unique_id=677607844]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.831, 0.627, 0.29, 1)
 theme_override_font_sizes/font_size = 13
 text = "Ana Clara Borchardt"
 horizontal_alignment = 1
 
-[node name="Div2" type="ColorRect" parent="CreditsLayer/Panel/VBox"]
+[node name="Div2" type="ColorRect" parent="CreditsLayer/Panel/VBox" unique_id=1399981142]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 color = Color(0.353, 0.22, 0.063, 0.4)
 
-[node name="BtnFechar" type="Button" parent="CreditsLayer/Panel/VBox"]
+[node name="BtnFechar" type="Button" parent="CreditsLayer/Panel/VBox" unique_id=718063848]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.541, 0.416, 0.165, 1)
