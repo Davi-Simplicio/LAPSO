@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="DialogueTopic" load_steps=2 format=3 uid="uid://cahikdj5npk00"]
+[gd_resource type="Resource" script_class="DialogueTopic" format=3 uid="uid://cahikdj5npk00"]
 
 [ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="1_ccv2b"]
 
 [resource]
 script = ExtResource("1_ccv2b")
-button_label = "Talk"
-lines = Array[String](["José: I'm good and you?", "Eduarda Faria: I'm fine too."])
+lines = Array[String](["Eduarda Faria: Tô esperando pra usar o orelhão do saguão. Exatamente às 16:15, a rádio FM local solta a senha secreta do concurso no ar. É sempre um padrão, cara: eles sempre tocam a 4ª música da fita."])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"

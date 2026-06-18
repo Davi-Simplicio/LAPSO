@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://j6n8fvm81i7k"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://j6n8fvm81i7k"]
 
 [ext_resource type="Texture2D" uid="uid://dgs0colb2f1iq" path="res://Resources/Passado/Márcio Albuquerque/Márcio Albuquerque.png" id="1_7jyyt"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_ffjfj"]

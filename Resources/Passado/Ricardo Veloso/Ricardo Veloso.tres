@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://sbdf1noyotdn"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://sbdf1noyotdn"]
 
 [ext_resource type="Texture2D" uid="uid://rhbs7uts8lvi" path="res://Resources/Passado/Ricardo Veloso/Ricardo Veloso.png" id="1_518lp"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_r84bc"]
@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_dy3nx"]
 script = ExtResource("2_drwtd")
-lines = Array[String](["José: Eae", "Ricardo Veloso: E aí? Não te conheço. Está perdido? Aquela explosão de ontem foi um evento e tanto. A história está sempre cheia de momentos assim, onde o futuro muda em um único instante."])
+lines = Array[String](["Ricardo Veloso: O síndico disse que o prédio está totalmente vazio acima do meu andar, mas isso não explica o som."])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
 
 [resource]

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://um81tk0ad6rh"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://um81tk0ad6rh"]
 
 [ext_resource type="Texture2D" uid="uid://b0tde1u2pgb1t" path="res://Resources/Presente/Diego Alves/Diego Alves.png" id="1_4aidh"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_ts14x"]
 [ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_ifu34"]
 [ext_resource type="Texture2D" uid="uid://cktt7ov30cp65" path="res://Resources/Presente/Diego Alves/10.png" id="3_i3004"]
 
-[sub_resource type="Resource" id="Resource_batm8"]
+[sub_resource type="Resource" id="Resource_4aidh"]
 script = ExtResource("2_ifu34")
-lines = Array[String](["José: Olá", "Diego Alves: Você viu? O vizinho do 7 sumiu. Outro cientista doido. O cara vivia me pedindo pra levar umas peças eletrônicas esquisitas. Ele dizia que precisava de um 'fluxo de energia limpo' pra um experimento. Fica esperto, esse prédio é amaldiçoado."])
+lines = Array[String](["Diego Alves: Cara, eu não aguento mais o síndico. Eu tenho uma rotina sagrada: meu alarme toca no meio-dia em ponto para eu pausar o trabalho. Eu levo exatamente meia hora para fritar meus ovos e esquentar o arroz. E adivinha? É sempre nesse exato minuto, quando vou dar a primeira garfada, que o morador de cima começa a arrastar os móveis e o encanamento do prédio começa a estalar! Dá para acertar o relógio pelo barulho."])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
 
 [resource]
@@ -15,6 +15,6 @@ script = ExtResource("1_ts14x")
 npc_name = "Diego Alves"
 portrait = ExtResource("1_4aidh")
 greeting_text = "Salve."
-topics = Array[ExtResource("2_ifu34")]([SubResource("Resource_batm8")])
+topics = Array[ExtResource("2_ifu34")]([SubResource("Resource_4aidh")])
 sprite_sheet = ExtResource("3_i3004")
 metadata/_custom_type_script = "uid://bu7jjxyxibyf"

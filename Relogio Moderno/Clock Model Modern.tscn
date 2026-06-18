@@ -1,31 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2ijuycbc4kas"]
+[gd_scene format=3 uid="uid://d2ijuycbc4kas"]
 
 [ext_resource type="Script" uid="uid://dvpb0y2oy3kd4" path="res://Relogio Moderno/Clock_model_moderno.gd" id="1_lhkfk"]
 [ext_resource type="Texture2D" uid="uid://ctgpx15v7k1ig" path="res://Relogio Moderno/Wooden_nightstand_with_clock_202605191932-removebg-preview.png" id="2_lhkfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
-size = Vector2(26, 40)
+size = Vector2(28, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
 size = Vector2(33, 62)
 
-[node name="Clock ModelModern" type="StaticBody2D"]
-z_index = 3
+[node name="Clock ModelModern" type="StaticBody2D" unique_id=1497372614]
+z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_lhkfk")
 
-[node name="CollisionShape2DModern" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -10)
+[node name="CollisionShape2DModern" type="CollisionShape2D" parent="." unique_id=2065759166]
+position = Vector2(-2, -7.5)
 shape = SubResource("RectangleShape2D_v6xrn")
 
-[node name="DoorModern" type="Node2D" parent="."]
+[node name="DoorModern" type="Node2D" parent="." unique_id=228636820]
 
-[node name="Sprite2DModern" type="Sprite2D" parent="DoorModern"]
+[node name="Sprite2DModern" type="Sprite2D" parent="DoorModern" unique_id=1579458588]
 position = Vector2(-1.0555335, -9.779886)
 scale = Vector2(0.10778935, 0.12450465)
 texture = ExtResource("2_lhkfk")
 
-[node name="LabelModern" type="Label" parent="."]
+[node name="LabelModern" type="Label" parent="." unique_id=2093820952]
 z_index = 10
 offset_left = -3.0
 offset_top = -14.0
@@ -36,8 +36,8 @@ text = "Press E to Open"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractionAreaModerno" type="Area2D" parent="."]
+[node name="InteractionAreaModerno" type="Area2D" parent="." unique_id=312856930]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaModerno"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaModerno" unique_id=1200097147]
 position = Vector2(-1.5, -7)
 shape = SubResource("RectangleShape2D_p0e35")

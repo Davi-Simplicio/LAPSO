@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://dceg5xxhj20mk"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://dceg5xxhj20mk"]
 
 [ext_resource type="Texture2D" uid="uid://cvmcyvo1uskb0" path="res://Resources/Presente/Thiago Mendes/Thiago Mendes.png" id="1_b8j0x"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="2_rtrdc"]
@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_3ugxu"]
 script = ExtResource("4_6nkdc")
-lines = Array[String](["José: Olá", "Thiago Mendes: ..."])
+lines = Array[String](["Thiago Mendes: Se você vai usar o elevador de serviço, use agora. Todo santo dia ele desliga para manutenção exatamente na metade da primeira hora da tarde. Se o relógio marcar doze horas e meia e você estiver lá dentro, vai ficar preso no escuro até as uma!"])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
 
 [resource]

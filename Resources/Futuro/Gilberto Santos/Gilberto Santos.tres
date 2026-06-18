@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=5 format=3 uid="uid://cpnlkl4d45bvf"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://cpnlkl4d45bvf"]
 
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_012vu"]
 [ext_resource type="Texture2D" uid="uid://bo0lbidd0qav5" path="res://Resources/Futuro/Gilberto Santos/Gilberto Santos (2).png" id="1_bcpxd"]
 [ext_resource type="Script" uid="uid://bu5dk5m3o7xlm" path="res://Scripts/DialogueTopic.gd" id="2_f77w5"]
 [ext_resource type="Texture2D" uid="uid://bgimuctq848u8" path="res://Resources/Futuro/Gilberto Santos/Gilberto Santos_remensionado.png" id="3_vblmh"]
 
+[sub_resource type="Resource" id="Resource_bcpxd"]
+script = ExtResource("2_f77w5")
+lines = Array[String](["Gilberto Santos: Alguém andou mexendo no meu sintetizador de alimentos! Eu estava tentando replicar uma receita antiga de sopa de tomate, mas o tubo de descarte de aminoácidos entupiu. Agora, em vez de sopa, a máquina está expelindo uma espuma rosa fluorescente que não para de crescer! Ela já cobriu o chão da cozinha e está descendo pelas frestas do piso tático para o andar de baixo!"])
+metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
+
 [resource]
 script = ExtResource("1_012vu")
 npc_name = "Gilberto Santos"
 portrait = ExtResource("1_bcpxd")
 greeting_text = "Olá."
+topics = Array[ExtResource("2_f77w5")]([SubResource("Resource_bcpxd")])
 sprite_sheet = ExtResource("3_vblmh")
 metadata/_custom_type_script = "uid://bu7jjxyxibyf"

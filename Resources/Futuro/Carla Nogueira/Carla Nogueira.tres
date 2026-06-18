@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://cfwjha03y4ow2"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://cfwjha03y4ow2"]
 
 [ext_resource type="Texture2D" uid="uid://cceiteytvrlor" path="res://Resources/Futuro/Carla Nogueira/Carla Nogueira.png" id="1_skrj7"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_w4215"]

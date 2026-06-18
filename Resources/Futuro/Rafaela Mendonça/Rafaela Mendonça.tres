@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://c6mp5rcor7xqo"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://c6mp5rcor7xqo"]
 
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="1_1y1ww"]
 [ext_resource type="Texture2D" uid="uid://coygi1ok87iuf" path="res://Resources/Futuro/Rafaela Mendonça/Rafaela Mendonça.png" id="1_2vn4g"]

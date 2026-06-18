@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=6 format=3 uid="uid://v6mdm23eord8"]
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://v6mdm23eord8"]
 
 [ext_resource type="Texture2D" uid="uid://bgau1f0wvms7y" path="res://Resources/Futuro/Bruno Carvalho/Bruno Carvalho.png" id="1_q7gta"]
 [ext_resource type="Script" uid="uid://bu7jjxyxibyf" path="res://Scripts/NPCResource.gd" id="2_4rklq"]
@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_0b3vi"]
 script = ExtResource("4_f36yu")
 button_label = "Aconteceu algo ontem?"
-lines = Array[String](["José: ...", "Bruno Carvalho: Cara, você está perdido? A explosão de ontem foi louca. A gente está acostumado, sabe? O Hugo, que morava no apê 7, tentava consertar uma máquina antiga. Ele dizia que o projeto era do avô e bisavô dele... uma loucura, né? Ele me pediu ajuda com a interface da máquina, para que ela pudesse 'conversar' com diferentes épocas. Mas ele falava que faltava a 'linguagem' certa...\"", "José: Quem é Hugo?", "Bruno Carvalho: Ele era muito ambicioso. Dizia que tinha a chave para consertar a máquina, mas que o problema era entender como conectar os diferentes fragmentos que o avô e o pai dele tinham descoberto..."])
+lines = Array[String](["Bruno Carvalho: Ei, você viu o zelador por aí? Os amortecedores hidráulicos das minhas botas magnéticas estouraram. Elas usam um gel de absorção de impacto que é rosa choque. O problema é que o gel vazou todo no duto de ventilação do prédio... se aquilo secar, vai travar as hélices de circulação de ar do condomínio inteiro e todo mundo vai respirar poeira cósmica!"])
 metadata/_custom_type_script = "uid://bu5dk5m3o7xlm"
 
 [resource]
