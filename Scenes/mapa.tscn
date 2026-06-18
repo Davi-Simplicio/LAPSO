@@ -1462,17 +1462,13 @@ process_physics_priority = -1
 z_index = 1
 y_sort_enabled = true
 position = Vector2(32, 8)
-dialogue_text = "Olá
+dialogue_text = "Tô esperando pra usar o orelhão do saguão. Exatamente às 16:15, a rádio FM local solta a senha secreta do concurso no ar. É sempre um padrão, cara: eles sempre tocam a 4ª música da fita.
 "
 npc_data = ExtResource("12_00yci")
 
 [node name="Relogio Puzzle" parent="Past" instance=ExtResource("17_5xr4q")]
 z_index = 1
 position = Vector2(-231, -216)
-
-[node name="Quimica Model" parent="Past" instance=ExtResource("15_qguc3")]
-z_index = 1
-position = Vector2(-667, -167)
 
 [node name="Fisica Model" parent="Past" instance=ExtResource("15_5xr4q")]
 z_index = 1
@@ -1487,6 +1483,7 @@ process_physics_priority = -1
 z_index = 1
 y_sort_enabled = true
 position = Vector2(47, -170)
+dialogue_text = "O prédio ainda é novo, mas já tem barulhos estranhos vindo das paredes durante a madrugada."
 npc_data = ExtResource("25_anodm")
 
 [node name="Ricardo Veloso" parent="Past" instance=ExtResource("11_6fw57")]
@@ -1494,6 +1491,7 @@ process_physics_priority = -1
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-496, -157)
+dialogue_text = "O síndico disse que o prédio está totalmente vazio acima do meu andar, mas isso não explica o som."
 npc_data = ExtResource("13_0drt5")
 
 [node name="Sérgio duarte" parent="Past" instance=ExtResource("11_6fw57")]
@@ -1508,6 +1506,7 @@ process_physics_priority = -1
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-182, 5)
+dialogue_text = "Minha novela começa daqui a pouco, mas o sinal é horrível. Todo dia, pontualmente às 16:15, passa um avião bimotor e a imagem fica cheia de chuvisco."
 npc_data = ExtResource("27_nnce2")
 
 [node name="Vera Lúcia" parent="Past" instance=ExtResource("11_6fw57")]
@@ -1520,6 +1519,7 @@ npc_data = ExtResource("28_ahe3a")
 [node name="Present" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Present"]
+visible = false
 y_sort_enabled = true
 color = Color(0.101960786, 0.10980392, 0.22745098, 1)
 script = ExtResource("2_ltv3l")
@@ -1564,7 +1564,7 @@ tile_set = SubResource("TileSet_wan0n")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(8, -170)
-dialogue_text = "Olá!"
+dialogue_text = "Se você vai usar o elevador de serviço, use agora. Todo santo dia  o disjuntor principal dele desliga para manutenção exatamente na metade da hora sagrada do almoço. Se o relógio marcar doze horas e meia e você estiver lá dentro, vai ficar preso no escuro até as uma!"
 npc_data = ExtResource("23_fqiy1")
 
 [node name="PuzzleFiosModel" parent="Present" instance=ExtResource("22_4yu56")]
@@ -1577,13 +1577,14 @@ position = Vector2(-231, -216)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(8, 1)
-dialogue_text = "Olá!"
+dialogue_text = "Eu acordo todos os dias no mesmo horário, mesmo quando desligo todos os alarmes antes de dormir."
 npc_data = ExtResource("31_14j86")
 
 [node name="Ana Beatriz Ribeiro" parent="Present" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-174, 4)
+dialogue_text = "Cara, eu não aguento mais o síndico. Eu tenho uma rotina sagrada: meu alarme toca no meio-dia em ponto para eu pausar o trabalho. Eu levo exatamente meia hora para fritar meus ovos e esquentar o arroz. E adivinha? É sempre nesse exato minuto, quando vou dar a primeira garfada, que o morador de cima começa a arrastar os móveis e o encanamento do prédio começa a estalar! Dá para acertar o relógio pelo barulho."
 npc_data = ExtResource("32_lucgu")
 
 [node name="Camila Ferreira" parent="Present" instance=ExtResource("11_6fw57")]
@@ -1597,13 +1598,14 @@ npc_data = ExtResource("33_16u37")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-496, 5)
-dialogue_text = "Eai!"
+dialogue_text = "Eu parei de tentar entender o calendário do prédio, ele não faz mais sentido nenhum."
 npc_data = ExtResource("34_lgxe1")
 
 [node name="Ana Beatriz Ribeiro3" parent="Present" instance=ExtResource("11_6fw57")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-501, -155)
+dialogue_text = "Quando eu saio do apartamento, o corredor parece exatamente igual ao de ontem, sem diferença nenhuma."
 npc_data = ExtResource("35_g4mab")
 
 [node name="Future" type="Node2D" parent="."]
@@ -1619,6 +1621,10 @@ scale = Vector2(3.644531, 2.2500002)
 color = Color(0.5019608, 1, 1, 1)
 energy = 0.38
 texture = SubResource("GradientTexture2D_2eut3")
+
+[node name="Quimica Model" parent="Future" instance=ExtResource("15_qguc3")]
+z_index = 1
+position = Vector2(-737, -94)
 
 [node name="hotel_decoration" type="TileMapLayer" parent="Future"]
 z_index = 1
@@ -1647,7 +1653,7 @@ npc_data = ExtResource("33_lgxe1")
 z_index = 3
 y_sort_enabled = true
 position = Vector2(33, -166)
-dialogue_text = "Olá
+dialogue_text = "Ei, você viu o zelador por aí? Os amortecedores hidráulicos das minhas botas magnéticas estouraram. Elas usam um gel de absorção de impacto que é rosa choque. O problema é que o gel vazou todo no duto de ventilação do prédio... se aquilo secar, vai travar as hélices de circulação de ar do condomínio inteiro e todo mundo vai respirar poeira cósmica!
 "
 npc_data = ExtResource("33_g4mab")
 
@@ -1671,15 +1677,14 @@ npc_data = ExtResource("35_oi720")
 z_index = 3
 y_sort_enabled = true
 position = Vector2(-498, -165)
-dialogue_text = "Olá
-"
+dialogue_text = "Alguém andou mexendo no meu sintetizador de alimentos! Eu estava tentando replicar uma receita antiga de sopa de tomate, mas o tubo de descarte de aminoácidos entupiu. Agora, em vez de sopa, a máquina está expelindo uma espuma rosa fluorescente que não para de crescer! Ela já cobriu o chão da cozinha e está descendo pelas frestas do piso tático para o andar de baixo!"
 npc_data = ExtResource("36_oi720")
 
 [node name="Sofia Ribeiro" parent="Future" instance=ExtResource("11_6fw57")]
 z_index = 3
 y_sort_enabled = true
 position = Vector2(-488, 10)
-dialogue_text = "Olá
+dialogue_text = "A sensação é que ninguém chegou aqui… nós apenas sempre estivemos aqui.
 "
 npc_data = ExtResource("37_j3bc4")
 

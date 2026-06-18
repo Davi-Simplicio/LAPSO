@@ -1,10 +1,10 @@
 # GameState.gd
 extends Node
 
-var puzzle_relogio_resolvido: bool = false
-var puzzle_fios_resolvido: bool = false 
-var puzzle_flow_free_resolvido: bool = false
-var puzzle_relogio_moderno_resolvido: bool = false
+var puzzle_relogio_resolvido: bool = true
+var puzzle_fios_resolvido: bool = true 
+var puzzle_flow_free_resolvido: bool = true
+var puzzle_relogio_moderno_resolvido: bool = true
 
 # This dictionary stores simple text keys like "found_post_it" : true
 var unlocked_facts: Dictionary = {}
